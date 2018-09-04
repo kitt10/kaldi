@@ -1,0 +1,208 @@
+# lattice-best-path --lm-scale=17 --word-symbol-table=exp/tri1/graph/words.txt "ark:gunzip -c exp/tri1/decode/lat.*.gz|" ark,t:exp/tri1/decode/scoring/17.tra 
+# Started at Thu Jun 21 12:54:43 CEST 2018
+#
+lattice-best-path --lm-scale=17 --word-symbol-table=exp/tri1/graph/words.txt 'ark:gunzip -c exp/tri1/decode/lat.*.gz|' ark,t:exp/tri1/decode/scoring/17.tra 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_0_0_1_0042, best cost 335.613 + 11222.1 = 11557.8 over 97 frames.
+theo_0_0_1_0042 zero four one 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_0_0_5_0016, best cost 368.007 + 12534.8 = 12902.8 over 118 frames.
+theo_0_0_5_0016 one zero five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_0_2_1_0004, best cost 317.049 + 13494.9 = 13811.9 over 122 frames.
+theo_0_2_1_0004 zero two one 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_0_3_0_0078, best cost 344.423 + 15284.1 = 15628.5 over 132 frames.
+theo_0_3_0_0078 zero three zero 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_0_3_2_0062, best cost 276.944 + 11166.2 = 11443.1 over 96 frames.
+theo_0_3_2_0062 zero three 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_0_4_5_0055, best cost 217.024 + 13520.3 = 13737.3 over 122 frames.
+theo_0_4_5_0055 five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_0_5_3_0050, best cost 275.32 + 11864.8 = 12140.1 over 111 frames.
+theo_0_5_3_0050 zero five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_0_5_5_0071, best cost 278.433 + 13108.9 = 13387.3 over 117 frames.
+theo_0_5_5_0071 five five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_0_5_9_0021, best cost 386.147 + 19034.6 = 19420.7 over 180 frames.
+theo_0_5_9_0021 zero five seven 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_0_7_4_0070, best cost 307.328 + 9668.58 = 9975.91 over 84 frames.
+theo_0_7_4_0070 zero seven four 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_0_7_8_0031, best cost 260.345 + 11703.2 = 11963.6 over 104 frames.
+theo_0_7_8_0031 seven eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_1_1_1_0044, best cost 310.586 + 7929.26 = 8239.84 over 71 frames.
+theo_1_1_1_0044 one one one 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_1_1_5_0073, best cost 287.214 + 13551.4 = 13838.7 over 118 frames.
+theo_1_1_5_0073 one five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_1_4_2_0005, best cost 312.24 + 9904.64 = 10216.9 over 88 frames.
+theo_1_4_2_0005 one four two 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_1_9_4_0056, best cost 332.839 + 10385.7 = 10718.6 over 94 frames.
+theo_1_9_4_0056 one five four 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_1_9_4_0093, best cost 331.405 + 11348.4 = 11679.8 over 105 frames.
+theo_1_9_4_0093 one five four 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_1_9_8_0053, best cost 332.925 + 10889 = 11221.9 over 101 frames.
+theo_1_9_8_0053 one five eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_2_2_6_0066, best cost 364.065 + 18142.9 = 18506.9 over 156 frames.
+theo_2_2_6_0066 one two eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_2_3_3_0089, best cost 267.461 + 12255.1 = 12522.6 over 94 frames.
+theo_2_3_3_0089 eight three 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_2_3_5_0088, best cost 332.926 + 11429.7 = 11762.6 over 106 frames.
+theo_2_3_5_0088 two three five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_2_4_9_0025, best cost 363.484 + 16312 = 16675.5 over 138 frames.
+theo_2_4_9_0025 two four seven 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_2_6_2_0002, best cost 343.364 + 16482.4 = 16825.7 over 150 frames.
+theo_2_6_2_0002 two eight two 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_2_7_0_0007, best cost 270.937 + 11116.2 = 11387.2 over 100 frames.
+theo_2_7_0_0007 seven zero 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_2_8_0_0096, best cost 267.203 + 10142.4 = 10409.7 over 89 frames.
+theo_2_8_0_0096 eight zero 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_2_9_5_0008, best cost 355.244 + 12926.6 = 13281.9 over 131 frames.
+theo_2_9_5_0008 two five five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_1_3_0052, best cost 312.659 + 14655.3 = 14968 over 123 frames.
+theo_3_1_3_0052 three five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_1_5_0037, best cost 355.68 + 13905.7 = 14261.4 over 128 frames.
+theo_3_1_5_0037 three five five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_2_5_0076, best cost 278.219 + 10516.1 = 10794.3 over 94 frames.
+theo_3_2_5_0076 one five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_2_8_0009, best cost 246.883 + 12251.6 = 12498.5 over 96 frames.
+theo_3_2_8_0009 eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_3_2_0001, best cost 314.978 + 9514.3 = 9829.28 over 80 frames.
+theo_3_3_2_0001 eight eight two 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_3_9_0011, best cost 395.666 + 18684.3 = 19079.9 over 141 frames.
+theo_3_3_9_0011 three five one 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_5_5_0061, best cost 329.07 + 13588.9 = 13918 over 117 frames.
+theo_3_5_5_0061 three five five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_7_6_0075, best cost 315.981 + 11406.6 = 11722.5 over 94 frames.
+theo_3_7_6_0075 three seven eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_7_7_0032, best cost 184.28 + 10725.2 = 10909.5 over 90 frames.
+theo_3_7_7_0032 seven 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_8_3_0082, best cost 346.935 + 16074.1 = 16421 over 130 frames.
+theo_3_8_3_0082 three eight eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_9_0_0095, best cost 342.398 + 13123.8 = 13466.2 over 121 frames.
+theo_3_9_0_0095 three five zero 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_3_9_7_0023, best cost 341.053 + 13216.9 = 13557.9 over 111 frames.
+theo_3_9_7_0023 three five seven 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_4_0_1_0051, best cost 333.593 + 15450.3 = 15783.9 over 129 frames.
+theo_4_0_1_0051 four zero one 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_4_1_5_0079, best cost 357.986 + 14906.9 = 15264.8 over 132 frames.
+theo_4_1_5_0079 four one five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_4_1_7_0014, best cost 312.527 + 11156.7 = 11469.3 over 103 frames.
+theo_4_1_7_0014 four one seven 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_4_3_0_0015, best cost 353.418 + 14114.3 = 14467.7 over 106 frames.
+theo_4_3_0_0015 four eight zero 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_4_5_6_0043, best cost 326.687 + 13316.2 = 13642.9 over 120 frames.
+theo_4_5_6_0043 four five six 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_4_6_2_0013, best cost 320.49 + 12536 = 12856.5 over 110 frames.
+theo_4_6_2_0013 four eight two 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_4_6_5_0049, best cost 350.485 + 13218.6 = 13569.1 over 121 frames.
+theo_4_6_5_0049 four eight five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_0_4_0086, best cost 335.84 + 15295.1 = 15630.9 over 142 frames.
+theo_5_0_4_0086 five zero four 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_0_5_0091, best cost 253.258 + 9825.56 = 10078.8 over 92 frames.
+theo_5_0_5_0091 five five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_1_2_0087, best cost 306.224 + 8493.1 = 8799.33 over 82 frames.
+theo_5_1_2_0087 five one two 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_1_3_0065, best cost 322.688 + 9775.5 = 10098.2 over 91 frames.
+theo_5_1_3_0065 five one three 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_1_4_0026, best cost 384.034 + 17910.7 = 18294.7 over 158 frames.
+theo_5_1_4_0026 five one four 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_1_4_0092, best cost 253.542 + 13282.6 = 13536.1 over 109 frames.
+theo_5_1_4_0092 five four 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_2_3_0006, best cost 269.315 + 9805.27 = 10074.6 over 82 frames.
+theo_5_2_3_0006 five three 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_2_6_0058, best cost 358.662 + 13130.5 = 13489.2 over 112 frames.
+theo_5_2_6_0058 five one eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_2_9_0060, best cost 357.959 + 12866.1 = 13224.1 over 126 frames.
+theo_5_2_9_0060 five one five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_3_3_0035, best cost 354.168 + 14827.5 = 15181.7 over 119 frames.
+theo_5_3_3_0035 five three eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_5_2_0018, best cost 324.043 + 11641.5 = 11965.6 over 101 frames.
+theo_5_5_2_0018 five five two 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_5_3_0064, best cost 277.179 + 10661 = 10938.2 over 97 frames.
+theo_5_5_3_0064 five five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_6_3_0057, best cost 327.813 + 13140.7 = 13468.5 over 119 frames.
+theo_5_6_3_0057 five eight three 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_6_7_0038, best cost 341.668 + 14332.6 = 14674.2 over 132 frames.
+theo_5_6_7_0038 five eight seven 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_5_7_3_0097, best cost 259.279 + 9449.26 = 9708.54 over 86 frames.
+theo_5_7_3_0097 five seven 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_0_1_0094, best cost 362.387 + 14272.1 = 14634.5 over 130 frames.
+theo_6_0_1_0094 eight zero one 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_0_2_0039, best cost 315.815 + 14916.3 = 15232.2 over 137 frames.
+theo_6_0_2_0039 eight zero 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_1_1_0047, best cost 367.927 + 14803.8 = 15171.8 over 130 frames.
+theo_6_1_1_0047 eight one one 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_1_9_0072, best cost 329.101 + 12484.8 = 12813.9 over 106 frames.
+theo_6_1_9_0072 six one five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_2_2_0040, best cost 290.513 + 11029.3 = 11319.8 over 92 frames.
+theo_6_2_2_0040 eight two 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_3_3_0067, best cost 255.097 + 12290.1 = 12545.2 over 107 frames.
+theo_6_3_3_0067 eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_3_9_0029, best cost 328.568 + 11648.1 = 11976.7 over 104 frames.
+theo_6_3_9_0029 eight three nine 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_4_4_0054, best cost 280.92 + 12694 = 12975 over 112 frames.
+theo_6_4_4_0054 four four 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_4_5_0090, best cost 268.956 + 11242.4 = 11511.4 over 103 frames.
+theo_6_4_5_0090 four five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_4_9_0036, best cost 287.562 + 13434.8 = 13722.3 over 115 frames.
+theo_6_4_9_0036 four five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_6_0_0074, best cost 356.422 + 15212.9 = 15569.3 over 137 frames.
+theo_6_6_0_0074 eight eight zero 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_6_9_0048, best cost 348.961 + 12974.1 = 13323 over 115 frames.
+theo_6_6_9_0048 eight eight five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_7_2_0000, best cost 265.407 + 13086.6 = 13352 over 109 frames.
+theo_6_7_2_0000 seven two 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_7_2_0081, best cost 324.601 + 15118.3 = 15442.9 over 132 frames.
+theo_6_7_2_0081 eight seven 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_7_7_0017, best cost 323.201 + 13396.7 = 13719.9 over 118 frames.
+theo_6_7_7_0017 eight seven seven 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_6_9_3_0024, best cost 263.505 + 16758.6 = 17022.1 over 140 frames.
+theo_6_9_3_0024 five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_7_1_0_0027, best cost 258.541 + 10119.7 = 10378.2 over 85 frames.
+theo_7_1_0_0027 one zero 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_7_1_1_0063, best cost 312.917 + 10834.7 = 11147.6 over 89 frames.
+theo_7_1_1_0063 five one one 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_7_1_3_0045, best cost 309.108 + 9943.64 = 10252.7 over 90 frames.
+theo_7_1_3_0045 seven one three 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_7_1_6_0099, best cost 352.332 + 14532.9 = 14885.2 over 134 frames.
+theo_7_1_6_0099 seven one eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_7_3_5_0041, best cost 317.79 + 12456.3 = 12774.1 over 113 frames.
+theo_7_3_5_0041 seven three five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_7_4_5_0028, best cost 351.631 + 12919.9 = 13271.6 over 118 frames.
+theo_7_4_5_0028 five four five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_7_5_3_0069, best cost 315.611 + 11900 = 12215.6 over 112 frames.
+theo_7_5_3_0069 seven five three 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_7_6_9_0068, best cost 342.961 + 13405 = 13748 over 120 frames.
+theo_7_6_9_0068 seven eight five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_7_7_8_0033, best cost 322.287 + 12205.3 = 12527.6 over 109 frames.
+theo_7_7_8_0033 seven seven eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_7_9_9_0034, best cost 354.815 + 14475.8 = 14830.7 over 123 frames.
+theo_7_9_9_0034 seven five five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_8_2_3_0022, best cost 333.043 + 11421.2 = 11754.2 over 104 frames.
+theo_8_2_3_0022 eight one three 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_8_2_5_0046, best cost 287.553 + 10773.1 = 11060.7 over 99 frames.
+theo_8_2_5_0046 eight five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_8_2_5_0085, best cost 258.882 + 9377.02 = 9635.9 over 90 frames.
+theo_8_2_5_0085 eight five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_8_2_9_0019, best cost 304.905 + 11049.1 = 11354 over 106 frames.
+theo_8_2_9_0019 eight two five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_8_4_6_0083, best cost 341.435 + 11962.7 = 12304.1 over 106 frames.
+theo_8_4_6_0083 eight four eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_8_5_2_0084, best cost 297.32 + 13426.4 = 13723.7 over 114 frames.
+theo_8_5_2_0084 eight five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_8_5_7_0030, best cost 356.539 + 13782.3 = 14138.9 over 129 frames.
+theo_8_5_7_0030 eight five seven 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_8_6_9_0012, best cost 344.173 + 11958.1 = 12302.3 over 108 frames.
+theo_8_6_9_0012 eight eight nine 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_8_9_1_0077, best cost 323.733 + 13386.2 = 13709.9 over 108 frames.
+theo_8_9_1_0077 eight five one 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_9_1_1_0020, best cost 330.723 + 9569.49 = 9900.22 over 92 frames.
+theo_9_1_1_0020 five one one 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_9_1_8_0003, best cost 337.887 + 12766.2 = 13104.1 over 122 frames.
+theo_9_1_8_0003 five one eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_9_4_6_0080, best cost 376.421 + 15470.6 = 15847 over 142 frames.
+theo_9_4_6_0080 five four eight 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_9_7_4_0059, best cost 446.569 + 28942.3 = 29388.9 over 293 frames.
+theo_9_7_4_0059 five seven four 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_9_7_9_0098, best cost 396.462 + 17352.2 = 17748.7 over 162 frames.
+theo_9_7_9_0098 five seven five 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:99) For utterance theo_9_9_0_0010, best cost 342.373 + 12226.4 = 12568.8 over 113 frames.
+theo_9_9_0_0010 five five zero 
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:124) Overall cost per frame is 115.428 = 2.78323 [graph] + 112.645 [acoustic] over 11486 frames.
+LOG (lattice-best-path[5.4.167~1-28e4e]:main():lattice-best-path.cc:128) Done 100 lattices, failed for 0
+# Accounting: time=0 threads=1
+# Ended (code 0) at Thu Jun 21 12:54:43 CEST 2018, elapsed time 0 seconds

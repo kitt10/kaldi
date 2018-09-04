@@ -1,0 +1,216 @@
+# gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.0 1 exp/tri1/10.mdl - |" "ark:gunzip -c exp/tri1/fsts.1.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c >exp/tri1/ali.1.gz" 
+# Started at Thu Jun 21 12:54:33 CEST 2018
+#
+gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.0 1 exp/tri1/10.mdl - |' 'ark:gunzip -c exp/tri1/fsts.1.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c >exp/tri1/ali.1.gz' 
+gmm-boost-silence --boost=1.0 1 exp/tri1/10.mdl - 
+WARNING (gmm-boost-silence[5.4.167~1-28e4e]:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
+LOG (gmm-boost-silence[5.4.167~1-28e4e]:main():gmm-boost-silence.cc:93) Boosted weights for 4 pdfs, by factor of 1
+LOG (gmm-boost-silence[5.4.167~1-28e4e]:main():gmm-boost-silence.cc:103) Wrote model to -
+apply-cmvn --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- 
+add-deltas ark:- ark:- 
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_2_0_0045
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_4_6_0041
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_6_0_0022
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_7_6_0031
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_7_9_0049
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_8_3_0047
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_8_7_0011
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_8_9_0021
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_9_0_0029
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_9_7_0050
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_0_3_0004
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_0_9_0099
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_2_2_0059
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_3_7_0036
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_3_7_0051
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_3_8_0000
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_4_1_0052
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_4_9_0092
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_5_5_0001
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_6_0_0055
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_6_8_0072
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_6_9_0010
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_9_9_0023
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_0_1_0063
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_0_5_0070
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_1_8_0003
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_1_9_0098
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_4_0_0046
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_5_3_0080
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_5_8_0033
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_6_4_0079
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_6_7_0077
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_7_2_0086
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_7_3_0064
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_7_8_0028
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_8_9_0030
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_0_3_0044
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_1_9_0084
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_3_3_0040
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_3_8_0009
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_6_7_0042
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_6_9_0082
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_7_8_0007
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_9_4_0053
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_9_5_0038
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_1_3_0062
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_1_6_0018
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_1_9_0083
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_5_1_0006
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_6_2_0020
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_6_5_0057
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_6_9_0048
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_7_0_0085
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_8_2_0087
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_9_6_0096
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_5_1_3_0066
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_5_1_5_0075
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_5_2_5_0088
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_5_3_2_0034
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_5_3_3_0027
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_5_4_6_0094
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_5_4_8_0014
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_5_6_4_0093
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_5_6_6_0073
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_5_7_8_0061
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_0_8_0058
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_3_0_0056
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_4_3_0090
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_4_4_0089
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_5_6_0065
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_7_2_0017
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_7_2_0043
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_7_9_0019
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_8_3_0081
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_9_4_0025
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_7_2_0_0091
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_7_2_7_0078
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_7_6_1_0026
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_7_6_1_0068
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_7_6_5_0037
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_0_6_0067
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_1_0_0095
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_3_1_0076
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_3_2_0032
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_4_2_0035
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_4_9_0002
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_5_8_0005
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_7_1_0039
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_8_9_0016
+LOG (apply-cmvn[5.4.167~1-28e4e]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 100 utterances, errors on 0
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_0_2_0015
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_0_9_0012
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_1_1_0074
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_4_2_0024
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_7_1_0008
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_7_3_0069
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_8_1_0097
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_8_6_0071
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_8_9_0013
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_9_4_0060
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_9_8_0054
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_0_4_0081
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_2_4_0055
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_2_9_0001
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_3_8_0080
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_6_5_0033
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_7_1_0021
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_8_6_0056
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_9_1_0090
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_9_3_0016
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_9_5_0029
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_9_9_0046
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_1_2_7_0093
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_1_3_2_0087
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_1_4_6_0070
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_1_5_1_0095
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_1_5_7_0088
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_1_7_3_0050
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_1_9_0_0004
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_1_9_4_0061
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_1_9_6_0094
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_2_0_2_0024
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_2_1_6_0060
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_2_4_3_0044
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_2_4_8_0038
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_2_5_0_0037
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_2_5_2_0035
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_2_5_8_0057
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_2_8_7_0040
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_0_8_0098
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_1_3_0039
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_1_6_0063
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_2_5_0053
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_2_6_0071
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_2_9_0051
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_3_2_0066
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_4_1_0068
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_4_1_0069
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_5_6_0011
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_7_9_0017
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_8_2_0074
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_3_9_0_0077
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_1_1_0062
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_1_3_0096
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_1_4_0089
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_1_7_0032
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_3_4_0052
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_6_0_0027
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_6_4_0082
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_7_2_0083
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_8_0_0054
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_8_7_0030
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_8_8_0007
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_9_2_0064
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_4_9_5_0003
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_5_0_2_0045
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_5_2_2_0072
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_5_2_3_0000
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_5_3_5_0097
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_5_4_9_0042
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_5_6_1_0006
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_5_6_9_0012
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_6_3_1_0067
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_6_4_3_0058
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_6_5_1_0036
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_6_7_1_0091
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_6_7_7_0086
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_6_7_9_0059
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_6_8_3_0018
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_1_0_0002
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_1_5_0005
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_2_4_0099
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_3_1_0092
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_3_4_0078
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_4_5_0049
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_4_8_0013
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_5_2_0076
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_5_6_0075
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_5_7_0048
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_6_5_0009
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_7_9_0025
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_7_8_7_0019
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_8_0_3_0034
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_8_0_8_0028
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_8_0_9_0031
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_8_1_3_0041
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_8_3_1_0026
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_8_3_2_0022
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_8_6_4_0020
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_8_7_2_0047
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_8_7_3_0043
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_8_7_8_0015
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_8_8_2_0073
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_9_0_2_0085
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_9_1_2_0023
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_9_2_8_0010
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_9_4_8_0079
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_9_6_5_0065
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_9_6_9_0008
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_9_6_9_0014
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_9_8_4_0084
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:135) Overall log-likelihood per frame is -82.4574 over 15514 frames.
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:137) Retried 0 out of 200 utterances.
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:139) Done 100, errors on 100
+# Accounting: time=0 threads=1
+# Ended (code 0) at Thu Jun 21 12:54:33 CEST 2018, elapsed time 0 seconds

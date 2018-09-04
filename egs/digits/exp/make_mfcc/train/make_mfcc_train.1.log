@@ -1,0 +1,1919 @@
+# compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.1.scp ark:- | copy-feats --compress=true ark:- ark,scp:/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_train.1.ark,/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_train.1.scp 
+# Started at Thu Jun 21 12:54:04 CEST 2018
+#
+copy-feats --compress=true ark:- ark,scp:/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_train.1.ark,/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_train.1.scp 
+compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.1.scp ark:- 
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_2_0_0045
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_4_6_0041
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_6_0_0022
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_7_6_0031
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_7_9_0049
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_8_3_0047
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_8_7_0011
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_8_9_0021
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_9_0_0029
+LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 10 utterances
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_9_7_0050
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_0_3_0004
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_0_9_0099
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_2_2_0059
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_3_7_0036
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_3_7_0051
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_3_8_0000
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_4_1_0052
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_4_9_0092
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_5_5_0001
+LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 20 utterances
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_6_0_0055
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_6_8_0072
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_6_9_0010
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_9_9_0023
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_0_1_0063
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_0_5_0070
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_1_8_0003
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_1_9_0098
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_4_0_0046
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_5_3_0080
+LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 30 utterances
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_5_8_0033
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_6_4_0079
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_6_7_0077
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_7_2_0086
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_7_3_0064
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_7_8_0028
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_8_9_0030
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_0_3_0044
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_1_9_0084
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_3_3_0040
+LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 40 utterances
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_3_8_0009
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_6_7_0042
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_6_9_0082
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_7_8_0007
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_9_4_0053
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_9_5_0038
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_1_3_0062
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_1_6_0018
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_1_9_0083
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_5_1_0006
+LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 50 utterances
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_6_2_0020
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_6_5_0057
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_6_9_0048
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_7_0_0085
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_8_2_0087
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_9_6_0096
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_1_3_0066
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_1_5_0075
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_2_5_0088
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_3_2_0034
+LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 60 utterances
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_3_3_0027
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_4_6_0094
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_4_8_0014
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_6_4_0093
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_6_6_0073
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_7_8_0061
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_0_8_0058
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_3_0_0056
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_4_3_0090
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_4_4_0089
+LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 70 utterances
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_5_6_0065
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_7_2_0017
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_7_2_0043
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_7_9_0019
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_8_3_0081
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_9_4_0025
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_7_2_0_0091
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_7_2_7_0078
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_7_6_1_0026
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_7_6_1_0068
+LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 80 utterances
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_7_6_5_0037
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_0_6_0067
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_1_0_0095
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_3_1_0076
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_3_2_0032
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_4_2_0035
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_4_9_0002
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_5_8_0005
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_7_1_0039
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_8_9_0016
+LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 90 utterances
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_0_2_0015
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_0_9_0012
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_1_1_0074
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_4_2_0024
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_7_1_0008
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_7_3_0069
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_8_1_0097
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_8_6_0071
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_8_9_0013
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_9_4_0060
+LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 100 utterances
+VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_9_8_0054
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/0_0_4_0081.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/0_2_4_0055.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/0_2_9_0001.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/0_3_8_0080.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/0_6_5_0033.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/0_7_1_0021.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/0_8_6_0056.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/0_9_1_0090.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/0_9_3_0016.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/0_9_5_0029.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/0_9_9_0046.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/1_2_7_0093.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/1_3_2_0087.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/1_4_6_0070.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/1_5_1_0095.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/1_5_7_0088.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/1_7_3_0050.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/1_9_0_0004.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/1_9_4_0061.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/1_9_6_0094.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/2_0_2_0024.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/2_1_6_0060.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/2_4_3_0044.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/2_4_8_0038.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/2_5_0_0037.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/2_5_2_0035.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/2_5_8_0057.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/2_8_7_0040.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_0_8_0098.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_1_3_0039.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_1_6_0063.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_2_5_0053.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_2_6_0071.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_2_9_0051.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_3_2_0066.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_4_1_0068.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_4_1_0069.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_5_6_0011.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_7_9_0017.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_8_2_0074.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/3_9_0_0077.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_1_1_0062.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_1_3_0096.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_1_4_0089.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_1_7_0032.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_3_4_0052.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_6_0_0027.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_6_4_0082.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_7_2_0083.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_8_0_0054.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_8_7_0030.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_8_8_0007.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_9_2_0064.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/4_9_5_0003.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/5_0_2_0045.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/5_2_2_0072.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/5_2_3_0000.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/5_3_5_0097.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/5_4_9_0042.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/5_6_1_0006.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/5_6_9_0012.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/6_3_1_0067.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/6_4_3_0058.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/6_5_1_0036.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/6_7_1_0091.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/6_7_7_0086.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/6_7_9_0059.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/6_8_3_0018.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_1_0_0002.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_1_5_0005.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_2_4_0099.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_3_1_0092.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_3_4_0078.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_4_5_0049.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_4_8_0013.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_5_2_0076.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_5_6_0075.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_5_7_0048.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_6_5_0009.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_7_9_0025.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/7_8_7_0019.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/8_0_3_0034.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/8_0_8_0028.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/8_0_9_0031.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/8_1_3_0041.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/8_3_1_0026.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/8_3_2_0022.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/8_6_4_0020.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/8_7_2_0047.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/8_7_3_0043.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/8_7_8_0015.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/8_8_2_0073.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/9_0_2_0085.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/9_1_2_0023.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/9_2_8_0010.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/9_4_8_0079.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/9_6_5_0065.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/9_6_9_0008.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/9_6_9_0014.wav
+ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
+
+[ Stack-Trace: ]
+
+kaldi::MessageLogger::HandleMessage(kaldi::LogMessageEnvelope const&, char const*)
+kaldi::MessageLogger::~MessageLogger()
+kaldi::WaveInfo::Read(std::istream&)
+kaldi::WaveData::Read(std::istream&)
+kaldi::WaveHolder::Read(std::istream&)
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::EnsureObjectLoaded()
+kaldi::SequentialTableReaderScriptImpl<kaldi::WaveHolder>::Next()
+kaldi::SequentialTableReader<kaldi::WaveHolder>::Next()
+main
+__libc_start_main
+_start
+
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exception caught in WaveHolder::Read(). 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/9_8_4_0084.wav
+LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:176)  Done 100 out of 100 utterances.
+LOG (copy-feats[5.4.167~1-28e4e]:main():copy-feats.cc:143) Copied 100 feature matrices.
+# Accounting: time=1 threads=1
+# Ended (code 0) at Thu Jun 21 12:54:05 CEST 2018, elapsed time 1 seconds
