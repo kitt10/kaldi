@@ -1,5 +1,5 @@
 # compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/test/wav_test.1.scp ark:- | copy-feats --compress=true ark:- ark,scp:/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_test.1.ark,/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_test.1.scp 
-# Started at Thu Jun 21 12:54:05 CEST 2018
+# Started at Tue Sep  4 16:03:53 CEST 2018
 #
 copy-feats --compress=true ark:- ark,scp:/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_test.1.ark,/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_test.1.scp 
 compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/test/wav_test.1.scp ark:- 
@@ -33,13 +33,16 @@ VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) P
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_1_3_0052
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_1_5_0037
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_2_5_0076
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 15688 bytes of wave data, but read only 15687 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_2_8_0009
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 30 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_3_2_0001
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 22814 bytes of wave data, but read only 22813 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_3_9_0011
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_5_5_0061
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_7_6_0075
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_7_7_0032
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 21086 bytes of wave data, but read only 21085 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_8_3_0082
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_9_0_0095
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_3_9_7_0023
@@ -59,8 +62,10 @@ VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) P
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 50 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_5_1_4_0092
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_5_2_3_0006
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 18292 bytes of wave data, but read only 18291 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_5_2_6_0058
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_5_2_9_0060
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 19432 bytes of wave data, but read only 19431 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_5_3_3_0035
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_5_5_2_0018
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key theo_5_5_3_0064
@@ -116,4 +121,4 @@ VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) P
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:176)  Done 100 out of 100 utterances.
 LOG (copy-feats[5.4.167~1-28e4e]:main():copy-feats.cc:143) Copied 100 feature matrices.
 # Accounting: time=0 threads=1
-# Ended (code 0) at Thu Jun 21 12:54:05 CEST 2018, elapsed time 0 seconds
+# Ended (code 0) at Tue Sep  4 16:03:53 CEST 2018, elapsed time 0 seconds

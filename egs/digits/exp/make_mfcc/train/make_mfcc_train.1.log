@@ -1,83 +1,125 @@
 # compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.1.scp ark:- | copy-feats --compress=true ark:- ark,scp:/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_train.1.ark,/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_train.1.scp 
-# Started at Thu Jun 21 12:54:04 CEST 2018
+# Started at Tue Sep  4 16:03:53 CEST 2018
 #
 copy-feats --compress=true ark:- ark,scp:/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_train.1.ark,/home/kitt/kaldi/egs/digits/mfcc/raw_mfcc_train.1.scp 
 compute-mfcc-feats --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.1.scp ark:- 
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 28520 bytes of wave data, but read only 28518 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_2_0_0045
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_4_6_0041
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 33364 bytes of wave data, but read only 33363 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_6_0_0022
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_7_6_0031
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 26150 bytes of wave data, but read only 26149 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_7_9_0049
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_8_3_0047
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_8_7_0011
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 26972 bytes of wave data, but read only 26971 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_8_9_0021
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 29758 bytes of wave data, but read only 29757 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_9_0_0029
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 26456 bytes of wave data, but read only 26455 bytes. Truncated file?
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 10 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_0_9_7_0050
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_0_3_0004
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 25964 bytes of wave data, but read only 25962 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_0_9_0099
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 24086 bytes of wave data, but read only 24085 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_2_2_0059
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 24062 bytes of wave data, but read only 24061 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_3_7_0036
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23772 bytes of wave data, but read only 23770 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_3_7_0051
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23174 bytes of wave data, but read only 23173 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_3_8_0000
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_4_1_0052
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23246 bytes of wave data, but read only 23245 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_4_9_0092
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 20138 bytes of wave data, but read only 20137 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_5_5_0001
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 25930 bytes of wave data, but read only 25927 bytes. Truncated file?
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 20 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_6_0_0055
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 24498 bytes of wave data, but read only 24497 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_6_8_0072
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 28906 bytes of wave data, but read only 28904 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_6_9_0010
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_1_9_9_0023
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 27124 bytes of wave data, but read only 27123 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_0_1_0063
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_0_5_0070
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23620 bytes of wave data, but read only 23619 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_1_8_0003
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23222 bytes of wave data, but read only 23221 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_1_9_0098
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_4_0_0046
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_5_3_0080
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23032 bytes of wave data, but read only 23030 bytes. Truncated file?
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 30 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_5_8_0033
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_6_4_0079
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_6_7_0077
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23518 bytes of wave data, but read only 23517 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_7_2_0086
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23942 bytes of wave data, but read only 23940 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_7_3_0064
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 22042 bytes of wave data, but read only 22041 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_7_8_0028
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_2_8_9_0030
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_0_3_0044
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_1_9_0084
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 24492 bytes of wave data, but read only 24491 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_3_3_0040
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 21308 bytes of wave data, but read only 21306 bytes. Truncated file?
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 40 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_3_8_0009
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_6_7_0042
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_6_9_0082
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 22530 bytes of wave data, but read only 22527 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_7_8_0007
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_9_4_0053
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 24386 bytes of wave data, but read only 24383 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_3_9_5_0038
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 21218 bytes of wave data, but read only 21217 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_1_3_0062
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_1_6_0018
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23056 bytes of wave data, but read only 23055 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_1_9_0083
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 20510 bytes of wave data, but read only 20509 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_5_1_0006
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 50 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_6_2_0020
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 25024 bytes of wave data, but read only 25023 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_6_5_0057
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_6_9_0048
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_7_0_0085
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23186 bytes of wave data, but read only 23184 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_8_2_0087
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 28694 bytes of wave data, but read only 28693 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_4_9_6_0096
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 20994 bytes of wave data, but read only 20991 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_1_3_0066
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 22812 bytes of wave data, but read only 22810 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_1_5_0075
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 22666 bytes of wave data, but read only 22665 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_2_5_0088
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 21760 bytes of wave data, but read only 21759 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_3_2_0034
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 22204 bytes of wave data, but read only 22203 bytes. Truncated file?
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 60 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_3_3_0027
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 21610 bytes of wave data, but read only 21608 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_4_6_0094
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 20546 bytes of wave data, but read only 20544 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_4_8_0014
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_6_4_0093
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_6_6_0073
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_5_7_8_0061
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_0_8_0058
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 33848 bytes of wave data, but read only 33847 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_3_0_0056
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_4_3_0090
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_4_4_0089
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 27134 bytes of wave data, but read only 27131 bytes. Truncated file?
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 70 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_5_6_0065
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_7_2_0017
@@ -85,32 +127,44 @@ VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) P
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_7_9_0019
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_8_3_0081
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_6_9_4_0025
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23960 bytes of wave data, but read only 23959 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_7_2_0_0091
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23396 bytes of wave data, but read only 23395 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_7_2_7_0078
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_7_6_1_0026
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 28020 bytes of wave data, but read only 28018 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_7_6_1_0068
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 80 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_7_6_5_0037
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_0_6_0067
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 26312 bytes of wave data, but read only 26310 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_1_0_0095
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_3_1_0076
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 22674 bytes of wave data, but read only 22673 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_3_2_0032
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 22448 bytes of wave data, but read only 22447 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_4_2_0035
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 23158 bytes of wave data, but read only 23157 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_4_9_0002
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_5_8_0005
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_7_1_0039
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_8_8_9_0016
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 25680 bytes of wave data, but read only 25679 bytes. Truncated file?
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 90 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_0_2_0015
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_0_9_0012
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_1_1_0074
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 25302 bytes of wave data, but read only 25299 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_4_2_0024
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_7_1_0008
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 25900 bytes of wave data, but read only 25898 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_7_3_0069
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_8_1_0097
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 26578 bytes of wave data, but read only 26577 bytes. Truncated file?
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_8_6_0071
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_8_9_0013
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_9_4_0060
+WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:304) Expected 25606 bytes of wave data, but read only 25605 bytes. Truncated file?
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:172) Processed 100 utterances
 VLOG[2] (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:173) Processed features for key jackson_9_9_8_0054
 ERROR (compute-mfcc-feats[5.4.167~1-28e4e]:Read():wave-reader.cc:200) WaveData: unsupported bits_per_sample = 8
@@ -1915,5 +1969,5 @@ WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:Read():feat/wave-reader.h:197) Exce
 WARNING (compute-mfcc-feats[5.4.167~1-28e4e]:EnsureObjectLoaded():util/kaldi-table-inl.h:317) Failed to load object from /home/kitt/kaldi/egs/digits/digits_audio/train/nicolas/9_8_4_0084.wav
 LOG (compute-mfcc-feats[5.4.167~1-28e4e]:main():compute-mfcc-feats.cc:176)  Done 100 out of 100 utterances.
 LOG (copy-feats[5.4.167~1-28e4e]:main():copy-feats.cc:143) Copied 100 feature matrices.
-# Accounting: time=1 threads=1
-# Ended (code 0) at Thu Jun 21 12:54:05 CEST 2018, elapsed time 1 seconds
+# Accounting: time=0 threads=1
+# Ended (code 0) at Tue Sep  4 16:03:53 CEST 2018, elapsed time 0 seconds

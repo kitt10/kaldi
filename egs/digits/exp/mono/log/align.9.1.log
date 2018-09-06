@@ -1,5 +1,5 @@
 # gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false "gmm-boost-silence --boost=1.0 1 exp/mono/9.mdl - |" "ark:gunzip -c exp/mono/fsts.1.gz|" "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark,t:|gzip -c >exp/mono/ali.1.gz" 
-# Started at Thu Jun 21 12:54:12 CEST 2018
+# Started at Tue Sep  4 16:04:01 CEST 2018
 #
 gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=10 --retry-beam=40 --careful=false 'gmm-boost-silence --boost=1.0 1 exp/mono/9.mdl - |' 'ark:gunzip -c exp/mono/fsts.1.gz|' 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split1/1/utt2spk scp:data/train/split1/1/cmvn.scp scp:data/train/split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,t:|gzip -c >exp/mono/ali.1.gz' 
 gmm-boost-silence --boost=1.0 1 exp/mono/9.mdl - 
@@ -11,13 +11,19 @@ add-deltas ark:- ark:-
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_2_0_0045
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_4_6_0041
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_6_0_0022
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_0_6_0_0022 with beam 40
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file jackson_0_6_0_0022, len = 207
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_7_6_0031
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_7_9_0049
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_8_3_0047
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_8_7_0011
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_8_9_0021
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_9_0_0029
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_0_9_0_0029 with beam 40
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file jackson_0_9_0_0029, len = 184
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_0_9_7_0050
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_0_9_7_0050 with beam 40
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file jackson_0_9_7_0050, len = 163
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_0_3_0004
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_0_9_0099
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_2_2_0059
@@ -28,13 +34,19 @@ LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jacks
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_4_9_0092
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_5_5_0001
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_6_0_0055
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_1_6_0_0055 with beam 40
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file jackson_1_6_0_0055, len = 160
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_6_8_0072
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_1_6_8_0072 with beam 40
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file jackson_1_6_8_0072, len = 151
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_6_9_0010
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_1_9_9_0023
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_0_1_0063
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_0_5_0070
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_1_8_0003
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_2_1_8_0003 with beam 40
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_1_9_0098
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_2_1_9_0098 with beam 40
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_4_0_0046
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_5_3_0080
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_5_8_0033
@@ -43,6 +55,8 @@ LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jacks
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_7_2_0086
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_7_3_0064
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_7_8_0028
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_2_7_8_0028 with beam 40
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file jackson_2_7_8_0028, len = 136
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_2_8_9_0030
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_0_3_0044
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_1_9_0084
@@ -54,9 +68,11 @@ LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jacks
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_9_4_0053
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_3_9_5_0038
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_1_3_0062
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_4_1_3_0062 with beam 40
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_1_6_0018
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_1_9_0083
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_5_1_0006
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_4_5_1_0006 with beam 40
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_6_2_0020
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_6_5_0057
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_4_6_9_0048
@@ -75,6 +91,8 @@ LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jacks
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_5_7_8_0061
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_0_8_0058
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_3_0_0056
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_6_3_0_0056 with beam 40
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file jackson_6_3_0_0056, len = 210
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_4_3_0090
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_4_4_0089
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_5_6_0065
@@ -85,6 +103,8 @@ LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jacks
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_6_9_4_0025
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_7_2_0_0091
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_7_2_7_0078
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_7_2_7_0078 with beam 40
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file jackson_7_2_7_0078, len = 144
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_7_6_1_0026
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_7_6_1_0068
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_7_6_5_0037
@@ -92,16 +112,23 @@ LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jacks
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_1_0_0095
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_3_1_0076
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_3_2_0032
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_8_3_2_0032 with beam 40
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_4_2_0035
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_8_4_2_0035 with beam 40
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file jackson_8_4_2_0035, len = 138
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_4_9_0002
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_5_8_0005
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_7_1_0039
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_8_8_9_0016
 LOG (apply-cmvn[5.4.167~1-28e4e]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 100 utterances, errors on 0
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_0_2_0015
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_9_0_2_0015 with beam 40
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file jackson_9_0_2_0015, len = 158
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_0_9_0012
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_1_1_0074
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_4_2_0024
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_9_4_2_0024 with beam 40
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file jackson_9_4_2_0024, len = 156
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_7_1_0008
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_7_3_0069
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_8_1_0097
@@ -109,6 +136,7 @@ LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jacks
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_8_9_0013
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_9_4_0060
 LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:127) jackson_9_9_8_0054
+WARNING (gmm-align-compiled[5.4.167~1-28e4e]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jackson_9_9_8_0054 with beam 40
 WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_0_4_0081
 WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_2_4_0055
 WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_0_2_9_0001
@@ -209,8 +237,8 @@ WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) N
 WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_9_6_9_0008
 WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_9_6_9_0014
 WARNING (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:103) No features for utterance nicolas_9_8_4_0084
-LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:135) Overall log-likelihood per frame is -90.1726 over 15514 frames.
-LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:137) Retried 0 out of 200 utterances.
-LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:139) Done 100, errors on 100
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:135) Overall log-likelihood per frame is -90.1952 over 13706 frames.
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:137) Retried 17 out of 200 utterances.
+LOG (gmm-align-compiled[5.4.167~1-28e4e]:main():gmm-align-compiled.cc:139) Done 89, errors on 111
 # Accounting: time=1 threads=1
-# Ended (code 0) at Thu Jun 21 12:54:13 CEST 2018, elapsed time 1 seconds
+# Ended (code 0) at Tue Sep  4 16:04:02 CEST 2018, elapsed time 1 seconds

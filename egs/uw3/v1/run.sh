@@ -12,7 +12,7 @@ nj=30
 # This is the database path on the JHU grid. You may set this
 # to data/download, in which case the script will automatically download
 # the database:
-uw3_database=/export/a10/corpora5/handwriting_ocr/UW3/
+uw3_database=/media/kitt/snorlax/data/ocr_uw3/
 
 . ./path.sh
 . ./cmd.sh ## You'll want to change cmd.sh to something that will work on your system.
