@@ -1,62 +1,68 @@
 #!/usr/bin/env python3
 
-# Copyright       2017  Chun Chieh Chang
-
-# This script goes through the downloaded UW3 dataset and creates data files "text",
-# "utt2spk", and "images.scp" for the train and test subsets in data/train and data/test.
+# creates data files "text", "utt2spk", and "images.scp" for the train and test subsets in data/train and data/test.
 
 # text - matches the transcriptions with the image id
 # utt2spk - matches the image id's with the speaker/writer names
 # images.scp - matches the image is's with the actual image file
 
-import argparse
-import os
-import random
+from argparse import ArgumentParser
+from os import listdir, path
+from glob import glob
+from shutil import copyfile
+from codecs import open as cod_open
+from random import randint
 
-parser = argparse.ArgumentParser(description="""Creates data/train and data/test.""")
-parser.add_argument('database_path', type=str, help='path to downloaded (and extracted) UW3 corpus')
-parser.add_argument('out_dir', type=str, default='data',
-                    help='where to create the train and test data directories')
-parser.add_argument('n_pages', type=int, default=int(1e6), help='how many pages out of the 1600 from uw3 should be used?')
-args = parser.parse_args()
+def parse_args():
+    parser = ArgumentParser(description='Creates data/train and data/test.')
+    parser.add_argument('--data_path_tr', type=str, help='path to the PASHTO data transcriptions')
+    parser.add_argument('--data_path_im', type=str, help='path to the PASHTO data images')
+    parser.add_argument('--out_dir', type=str, default='data', help='where to create the train and test data directories')
+    parser.add_argument('--spks', type=str, help='list of speakers (string with comma sep)')
+    return parser.parse_args()
 
-### main ###
-train_text_file = os.path.join(args.out_dir, 'train', 'text')
-train_text_fh = open(train_text_file, 'w+')
-train_utt2spk_file = os.path.join(args.out_dir, 'train', 'utt2spk')
-train_utt2spk_fh = open(train_utt2spk_file, 'w+')
-train_image_file = os.path.join(args.out_dir, 'train', 'images.scp')
-train_image_fh = open(train_image_file, 'w+')
+if __name__ == '__main__':
+    args = parse_args()
+    im_mimetype = '.bmp'
 
-test_text_file = os.path.join(args.out_dir, 'test', 'text')
-test_text_fh = open(test_text_file, 'w+')
-test_utt2spk_file = os.path.join(args.out_dir, 'test', 'utt2spk')
-test_utt2spk_fh = open(test_utt2spk_file, 'w+')
-test_image_file = os.path.join(args.out_dir, 'test', 'images.scp')
-test_image_fh = open(test_image_file, 'w+')
+    f_text_train = cod_open(args.out_dir+'/train/text', 'w+', encoding='utf-8')
+    f_utt2spk_train = open(args.out_dir+'/train/utt2spk', 'w+')
+    f_images_train = open(args.out_dir+'/train/images.scp', 'w+')
+    f_text_test = cod_open(args.out_dir+'/test/text', 'w+', encoding='utf-8')
+    f_utt2spk_test = open(args.out_dir+'/test/utt2spk', 'w+')
+    f_images_test = open(args.out_dir+'/test/images.scp', 'w+')
 
-random.seed(0)
-page_count = 0
-for page in sorted(os.listdir(args.database_path))[:args.n_pages]:
-  page_path = os.path.join(args.database_path, page)
-  page_count = page_count + 1
-  for line in sorted(os.listdir(page_path)):
-    if line.endswith('.txt'):
-      text_path = os.path.join(args.database_path, page, line)
-      image_name = line.split('.')[0]
-      image_path = os.path.join(args.database_path, page, image_name + '.png')
-      utt_id = page + '_' + image_name
-      gt_fh = open(text_path, 'r')
-      text = gt_fh.readlines()[0].strip()
+    spks_count = dict([(spk, 0) for spk in args.spks.split()])
+    for w_id in listdir(args.data_path_im):
+        trs = dict()
+        with cod_open(args.data_path_tr+'/'+w_id+'.txt', 'r', encoding='utf-8') as f:
+            for line in f.readlines():
+                trs[line[line.find('(')+1:line.find(')')]] = line[4:line.find(' </s>')]
+                            
+        for im_path_orig in glob(path.join(args.data_path_im+w_id, '*'+im_mimetype)):
+            im_filename = im_path_orig.split('/')[-1]
+            spk_id = im_filename.split('_')[1]
+            spks_count[spk_id] += 1
+            im_id = spk_id+'_'+str(spks_count[spk_id]).zfill(5)+'_'+w_id.zfill(5)
+            im_path = args.out_dir+'/local/images/'+spk_id+'/'+im_id+im_mimetype
+            
+            # copy the image
+            copyfile(im_path_orig, im_path)
 
-      # The UW3 dataset doesn't have established training and testing splits
-      # The dataset is randomly split train 95% and test 5%
-      coin = random.randint(0, 20)
-      if coin >= 1:
-        train_text_fh.write(utt_id + ' ' + text + '\n')
-        train_utt2spk_fh.write(utt_id + ' ' + str(page_count) + '\n')
-        train_image_fh.write(utt_id + ' ' + image_path + '\n')
-      elif coin < 1:
-        test_text_fh.write(utt_id + ' ' + text + '\n')
-        test_utt2spk_fh.write(utt_id + ' ' + str(page_count) + '\n')
-        test_image_fh.write(utt_id + ' ' + image_path + '\n')
+            # register the sample (randomly split train 95% and test 5%)
+            coin = randint(0, 20)
+            if coin >= 1:
+                f_text_train.write(im_id+' '+trs[im_filename.rstrip(im_mimetype)]+'\n') # train/text: <im_id> <transcription>
+                f_utt2spk_train.write(im_id+' '+spk_id+'\n')                            # train/utt2spk: <im_id> <spk_id>
+                f_images_train.write(im_id+' '+im_path+'\n')                            # train/images.scp: <im_id> <path_to_image>
+            else:
+                f_text_test.write(im_id+' '+trs[im_filename.rstrip(im_mimetype)]+'\n')  # test/text: <im_id> <transcription>
+                f_utt2spk_test.write(im_id+' '+spk_id+'\n')                             # test/utt2spk: <im_id> <spk_id>
+                f_images_test.write(im_id+' '+im_path+'\n')                             # test/images.scp: <im_id> <path_to_image>
+
+    f_text_train.close()
+    f_utt2spk_train.close()
+    f_images_train.close()
+    f_text_test.close()
+    f_utt2spk_test.close()
+    f_images_test.close()

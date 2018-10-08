@@ -7,11 +7,12 @@ export PATH=$PWD/utils/:$KALDI_ROOT/tools/openfst/bin:$PWD:$PATH
 [ ! -f $KALDI_ROOT/tools/config/common_path.sh ] && echo >&2 "The standard file $KALDI_ROOT/tools/config/common_path.sh is not present -> Exit!" && exit 1
 . $KALDI_ROOT/tools/config/common_path.sh
 
-# Defining database directory
-export UW3_DATA_ROOT="/media/kitt/snorlax/data/ocr_uw3"
+# Data source
+export DATA_PATH_TR="/media/kitt/snorlax/data/ocr_pashto/WordImages/US_Final/extractedWords/transcriptions/"
+export DATA_PATH_IM="/media/kitt/snorlax/data/ocr_pashto/WordImages/US_Final/extractedWords/words/"
 
-# Number of pages to be used
-export N_PAGES=100
+# Speakers to be used
+export SPKS="us1 us2 us3 us4 us5 us6 us7 us8 us9 us10 us11 us12"
 
 # Variable needed for proper data sorting
 export LC_ALL=C

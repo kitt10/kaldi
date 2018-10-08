@@ -1,2 +1,0 @@
-
-OSI_Pashto_Project_572GB

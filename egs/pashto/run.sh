@@ -1,24 +1,18 @@
 #!/bin/bash
 
-# Copyright      2017  Chun Chieh Chang
-#                2017  Ashish Arora
-#                2017  Hossein Hadian
-#           adjusted 2018 kitt
-
-
 set -e      # exit if a pipeline returns a non-zero status
 stage=0
-nj=12
 
 . ./path.sh
 . ./cmd.sh
 . utils/parse_options.sh  # e.g. this parses the --stage option if supplied.
 
-
-if [ $stage -le 0 ]; then
-  # Data preparation
+# Data preparation
+if [ $stage -le 0 ]; then 
   local/prepare_data.sh
 fi
+
+exit
 
 mkdir -p data/{train,test}/data
 if [ $stage -le 1 ]; then
