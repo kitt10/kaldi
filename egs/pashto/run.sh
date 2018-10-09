@@ -2,6 +2,7 @@
 
 set -e      # exit if a pipeline returns a non-zero status
 stage=0
+nj=12
 
 . ./path.sh
 . ./cmd.sh
@@ -12,13 +13,11 @@ if [ $stage -le 0 ]; then
   local/prepare_data.sh
 fi
 
-exit
-
 mkdir -p data/{train,test}/data
 if [ $stage -le 1 ]; then
   echo "$0: Preparing feature files for the test and training data..."
   for f in train test; do
-    local/make_features.py --feat-dim 40 --pad true data/$f | \
+    local/make_features.py --feat-dim $FEAT_DIM --pad true data/$f | \
       copy-feats --compress=true --compression-method=7 \
       ark:- ark,scp:data/$f/data/images.ark,data/$f/feats.scp || exit 1
 
@@ -27,10 +26,10 @@ if [ $stage -le 1 ]; then
 fi
 
 if [ $stage -le 2 ]; then
-  echo "$0: Preparing dictionary and lang..."
+  echo "$0: Preparing dictionary..."
   local/prepare_dict.sh
-  utils/prepare_lang.sh --num-sil-states 4 --num-nonsil-states 8 \
-    data/local/dict "<unk>" data/lang/temp data/lang
+  echo "$0: Preparing lang..."
+  utils/prepare_lang.sh --num-sil-states 4 --num-nonsil-states 8 data/local/dict "<unk>" data/lang/temp data/lang
 fi
 
 if [ $stage -le 3 ]; then
@@ -52,7 +51,9 @@ if [ $stage -le 4 ]; then
   steps/train_mono.sh --nj $nj --cmd $cmd \
     data/train data/lang exp/mono
 fi
+
 exit 0
+
 if [ $stage -le 5 ]; then
   steps/align_si.sh --nj $nj --cmd $cmd \
     data/train data/lang exp/mono exp/mono_ali

@@ -14,5 +14,8 @@ export DATA_PATH_IM="/media/kitt/snorlax/data/ocr_pashto/WordImages/US_Final/ext
 # Speakers to be used
 export SPKS="us1 us2 us3 us4 us5 us6 us7 us8 us9 us10 us11 us12"
 
+# Features dimension (images height)
+export FEAT_DIM=190
+
 # Variable needed for proper data sorting
 export LC_ALL=C
