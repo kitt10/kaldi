@@ -25,12 +25,12 @@ if __name__ == '__main__':
     args = parse_args()
     im_mimetype = '.bmp'
 
-    f_text_train = cod_open(args.out_dir+'/train/text', 'w+', encoding='utf-8')
-    f_utt2spk_train = open(args.out_dir+'/train/utt2spk', 'w+')
-    f_images_train = open(args.out_dir+'/train/images.scp', 'w+')
-    f_text_test = cod_open(args.out_dir+'/test/text', 'w+', encoding='utf-8')
-    f_utt2spk_test = open(args.out_dir+'/test/utt2spk', 'w+')
-    f_images_test = open(args.out_dir+'/test/images.scp', 'w+')
+    text_train = list()
+    utt2spk_train = list()
+    images_train = list()
+    text_test = list()
+    utt2spk_test = list()
+    images_test = list()
 
     spks_count = dict([(spk, 0) for spk in args.spks.split()])
     for w_id in listdir(args.data_path_im):
@@ -52,17 +52,34 @@ if __name__ == '__main__':
             # register the sample (randomly split train 95% and test 5%)
             coin = randint(0, 20)
             if coin >= 1:
-                f_text_train.write(im_id+' '+trs[im_filename.rstrip(im_mimetype)]+'\n') # train/text: <im_id> <transcription>
-                f_utt2spk_train.write(im_id+' '+spk_id+'\n')                            # train/utt2spk: <im_id> <spk_id>
-                f_images_train.write(im_id+' '+im_path+'\n')                            # train/images.scp: <im_id> <path_to_image>
+                text_train.append(im_id+' '+trs[im_filename.rstrip(im_mimetype)]+'\n')  # train/text: <im_id> <transcription>
+                utt2spk_train.append(im_id+' '+spk_id+'\n')                             # train/utt2spk: <im_id> <spk_id>
+                images_train.append(im_id+' '+im_path+'\n')                             # train/images.scp: <im_id> <path_to_image>
             else:
-                f_text_test.write(im_id+' '+trs[im_filename.rstrip(im_mimetype)]+'\n')  # test/text: <im_id> <transcription>
-                f_utt2spk_test.write(im_id+' '+spk_id+'\n')                             # test/utt2spk: <im_id> <spk_id>
-                f_images_test.write(im_id+' '+im_path+'\n')                             # test/images.scp: <im_id> <path_to_image>
+                text_test.append(im_id+' '+trs[im_filename.rstrip(im_mimetype)]+'\n')   # test/text: <im_id> <transcription>
+                utt2spk_test.append(im_id+' '+spk_id+'\n')                              # test/utt2spk: <im_id> <spk_id>
+                images_test.append(im_id+' '+im_path+'\n')                              # test/images.scp: <im_id> <path_to_image>
 
-    f_text_train.close()
-    f_utt2spk_train.close()
-    f_images_train.close()
-    f_text_test.close()
-    f_utt2spk_test.close()
-    f_images_test.close()
+    with cod_open(args.out_dir+'/train/text', 'w+', encoding='utf-8') as f:
+        for line in sorted(text_train):
+            f.write(line)
+
+    with open(args.out_dir+'/train/utt2spk', 'w+') as f:
+        for line in sorted(utt2spk_train):
+            f.write(line)
+
+    with open(args.out_dir+'/train/images.scp', 'w+') as f:
+        for line in sorted(images_train):
+            f.write(line)
+
+    with cod_open(args.out_dir+'/test/text', 'w+', encoding='utf-8') as f:
+        for line in sorted(text_test):
+            f.write(line)
+
+    with open(args.out_dir+'/test/utt2spk', 'w+') as f:
+        for line in sorted(utt2spk_test):
+            f.write(line)
+
+    with open(args.out_dir+'/test/images.scp', 'w+') as f:
+        for line in sorted(images_test):
+            f.write(line)

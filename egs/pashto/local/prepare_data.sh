@@ -6,7 +6,7 @@ set -e
 
 echo "$0: Preparing the test and train subsets..."
 
-rm -r data
+rm -rf data
 mkdir -p data/train
 mkdir -p data/test
 for spk in ${SPKS[@]}; do mkdir -p data/local/images/$spk; done
