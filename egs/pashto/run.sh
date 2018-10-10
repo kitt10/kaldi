@@ -2,7 +2,7 @@
 
 set -e      # exit if a pipeline returns a non-zero status
 stage=0
-nj=12
+nj=$NJ
 
 . ./path.sh
 . ./cmd.sh
@@ -90,5 +90,6 @@ if [ $stage -le 10 ]; then
 fi
 
 if [ $stage -le 11 ]; then
-  local/chain/run_cnn_1a.sh
+  #local/chain/run_cnn_1a.sh
+  local/chain/run_cnn_1a.sh --stage 4
 fi
