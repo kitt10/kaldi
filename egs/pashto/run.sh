@@ -29,7 +29,7 @@ if [ $stage -le 2 ]; then
   echo "$0: Preparing dictionary..."
   local/prepare_dict.sh
   echo "$0: Preparing lang..."
-  utils/prepare_lang.sh --num-sil-states 4 --num-nonsil-states 8 data/local/dict "<unk>" data/lang/temp data/lang
+  utils/prepare_lang.sh --num-sil-states 4 --num-nonsil-states 8 data/local/dict $OOV_WORD data/lang/temp data/lang
 fi
 
 if [ $stage -le 3 ]; then
@@ -43,7 +43,7 @@ if [ $stage -le 3 ]; then
                             data/local/dict exp/unk_lang_model
   utils/prepare_lang.sh --num-sil-states 4 --num-nonsil-states 8 \
                         --unk-fst exp/unk_lang_model/unk_fst.txt \
-                        data/local/dict "<unk>" data/lang_unk/temp data/lang_unk
+                        data/local/dict $OOV_WORD data/lang_unk/temp data/lang_unk
   cp data/lang_test/G.fst data/lang_unk/G.fst
 fi
 
@@ -51,8 +51,6 @@ if [ $stage -le 4 ]; then
   steps/train_mono.sh --nj $nj --cmd $cmd \
     data/train data/lang exp/mono
 fi
-
-exit 0
 
 if [ $stage -le 5 ]; then
   steps/align_si.sh --nj $nj --cmd $cmd \

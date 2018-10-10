@@ -16,6 +16,7 @@ def parse_args():
     parser = ArgumentParser(description='Creates data/local/dict.')
     parser.add_argument('--trs_files', nargs='+', type=str, help='path to all text files with transcriptions')
     parser.add_argument('--out_dir', type=str, default='data/local/dict/', help='where to create the dict directory')
+    parser.add_argument('--oov_word', type=str, default='<unk>', help='unknown (oov) word')
     return parser.parse_args()
 
 if __name__ == '__main__':
@@ -38,6 +39,9 @@ if __name__ == '__main__':
         f_lexicon.write(word+' '+word_aer+'\n')
         f_lexiconp.write(word+' 1.0 '+word_aer+'\n')
 
+    f_lexicon.write(args.oov_word+' spn\n')
+    f_lexiconp.write(args.oov_word+' 1.0 spn\n')
+
     f_lexicon.close()
     f_lexiconp.close()
 
@@ -50,6 +54,7 @@ if __name__ == '__main__':
     
     with cod_open(args.out_dir+'silence_phones.txt', 'w', encoding='utf-8') as f:
         f.write('sil\n')
+        f.write('spn\n')
 
     with cod_open(args.out_dir+'optional_silence.txt', 'w', encoding='utf-8') as f:
         f.write('sil\n')

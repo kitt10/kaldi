@@ -77,6 +77,11 @@ GSYMS
 /egs/*/s*/plp
 /egs/*/s*/exp
 /egs/*/s*/data
+/egs/*/data
+/egs/*/exp
+/egs/*/utils
+/egs/*/steps
+/egs/uw3
 
 # /tools/
 /tools/ATLAS/
@@ -142,3 +147,6 @@ GSYMS
 /tools/mmseg-1.3.0.tar.gz
 /tools/mmseg-1.3.0/
 /kaldiwin_vs*
+
+# VS Code
+*.vscode

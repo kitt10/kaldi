@@ -58,7 +58,7 @@ if [ $stage -le 4 ]; then
   steps/train_mono.sh --nj $nj --cmd $cmd \
     data/train data/lang exp/mono
 fi
-exit 0
+
 if [ $stage -le 5 ]; then
   steps/align_si.sh --nj $nj --cmd $cmd \
     data/train data/lang exp/mono exp/mono_ali
