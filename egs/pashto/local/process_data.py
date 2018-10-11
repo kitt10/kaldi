@@ -18,7 +18,7 @@ def parse_args():
     parser.add_argument('--data_path_tr', type=str, help='path to the PASHTO data transcriptions')
     parser.add_argument('--data_path_im', type=str, help='path to the PASHTO data images')
     parser.add_argument('--out_dir', type=str, default='data', help='where to create the train and test data directories')
-    parser.add_argument('--spks', type=str, help='list of speakers (string with comma sep)')
+    parser.add_argument('--spks', type=str, help='list of speakers (string with space sep)')
     return parser.parse_args()
 
 if __name__ == '__main__':
@@ -42,6 +42,9 @@ if __name__ == '__main__':
         for im_path_orig in glob(path.join(args.data_path_im+w_id, '*'+im_mimetype)):
             im_filename = im_path_orig.split('/')[-1]
             spk_id = im_filename.split('_')[1]
+            if spk_id not in spks_count.keys():
+                continue
+                
             spks_count[spk_id] += 1
             im_id = spk_id+'_'+str(spks_count[spk_id]).zfill(5)+'_'+w_id.zfill(5)
             im_path = args.out_dir+'/local/images/'+spk_id+'/'+im_id+im_mimetype
