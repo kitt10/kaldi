@@ -2,7 +2,6 @@
 
 set -e      # exit if a pipeline returns a non-zero status
 stage=0
-nj=$NJ
 
 . ./path.sh
 . ./cmd.sh
@@ -48,19 +47,18 @@ if [ $stage -le 3 ]; then
 fi
 
 if [ $stage -le 4 ]; then
-  steps/train_mono.sh --nj $nj --cmd $cmd \
-    data/train data/lang exp/mono
+  steps/train_mono.sh --nj $NJ --cmd $cmd data/train data/lang exp/mono
 fi
 
 if [ $stage -le 5 ]; then
-  steps/align_si.sh --nj $nj --cmd $cmd \
+  steps/align_si.sh --nj $NJ --cmd $cmd \
     data/train data/lang exp/mono exp/mono_ali
   steps/train_deltas.sh --cmd $cmd 500 20000 \
     data/train data/lang exp/mono_ali exp/tri
 fi
 
 if [ $stage -le 6 ]; then
-  steps/align_si.sh --nj $nj --cmd $cmd \
+  steps/align_si.sh --nj $NJ --cmd $cmd \
     data/train data/lang exp/tri exp/tri_ali
   steps/train_lda_mllt.sh --cmd $cmd --splice-opts "--left-context=3 --right-context=3" 500 20000 \
     data/train data/lang exp/tri_ali exp/tri2
@@ -68,28 +66,28 @@ fi
 
 if [ $stage -le 7 ]; then
   utils/mkgraph.sh --mono data/lang_test exp/mono exp/mono/graph
-  steps/decode.sh --nj $nj --cmd $cmd \
+  steps/decode.sh --nj $NJ --cmd $cmd \
     exp/mono/graph data/test exp/mono/decode_test
 fi
 
 if [ $stage -le 8 ]; then
   utils/mkgraph.sh data/lang_test exp/tri exp/tri/graph
-  steps/decode.sh --nj $nj --cmd $cmd \
+  steps/decode.sh --nj $NJ --cmd $cmd \
     exp/tri/graph data/test exp/tri/decode_test
 fi
 
 if [ $stage -le 9 ]; then
   utils/mkgraph.sh data/lang_test exp/tri2 exp/tri2/graph
-  steps/decode.sh --nj $nj --cmd $cmd \
+  steps/decode.sh --nj $NJ --cmd $cmd \
     exp/tri2/graph data/test exp/tri2/decode_test
 fi
 
 if [ $stage -le 10 ]; then
-  steps/align_si.sh --nj $nj --cmd $cmd --use-graphs true \
+  steps/align_si.sh --nj $NJ --cmd $cmd --use-graphs true \
     data/train data/lang exp/tri2 exp/tri2_ali
 fi
 
 if [ $stage -le 11 ]; then
-  #local/chain/run_cnn_1a.sh
-  local/chain/run_cnn_1a.sh --stage 4
+  local/chain/run_cnn_1a.sh
+  #local/chain/run_cnn_1a.sh --stage 3
 fi
