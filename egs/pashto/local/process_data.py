@@ -38,17 +38,17 @@ if __name__ == '__main__':
         with cod_open(args.data_path_tr+'/'+w_id+'.txt', 'r', encoding='utf-8') as f:
             for line in f.readlines():
                 trs[line[line.find('(')+1:line.find(')')]] = line[4:line.find(' </s>')]
-                            
+
         for im_path_orig in glob(path.join(args.data_path_im+w_id, '*'+im_mimetype)):
             im_filename = im_path_orig.split('/')[-1]
             spk_id = im_filename.split('_')[1]
             if spk_id not in spks_count.keys():
                 continue
-                
+
             spks_count[spk_id] += 1
             im_id = spk_id+'_'+str(spks_count[spk_id]).zfill(5)+'_'+w_id.zfill(5)
             im_path = args.out_dir+'/local/images/'+spk_id+'/'+im_id+im_mimetype
-            
+
             # copy the image
             copyfile(im_path_orig, im_path)
 

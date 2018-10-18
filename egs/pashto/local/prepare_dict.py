@@ -40,7 +40,9 @@ if __name__ == '__main__':
         f_lexiconp.write(word+' 1.0 '+word_aer+'\n')
 
     f_lexicon.write(args.oov_word+' spn\n')
+    f_lexicon.write('<sil> sil\n')
     f_lexiconp.write(args.oov_word+' 1.0 spn\n')
+    f_lexiconp.write('<sil> 1.0 sil\n')
 
     f_lexicon.close()
     f_lexiconp.close()
@@ -53,8 +55,8 @@ if __name__ == '__main__':
             f.write(ch+'\n')
     
     with cod_open(args.out_dir+'silence_phones.txt', 'w', encoding='utf-8') as f:
-        f.write('sil\n')
-        f.write('spn\n')
+        f.write('<sil>\n')
+        f.write('<spn>\n')
 
     with cod_open(args.out_dir+'optional_silence.txt', 'w', encoding='utf-8') as f:
-        f.write('sil\n')
+        f.write('<sil>\n')

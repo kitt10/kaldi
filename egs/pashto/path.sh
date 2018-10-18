@@ -1,30 +1,13 @@
-# Defining Kaldi root directory
-export KALDI_ROOT=`pwd`/../..
+# Adopted from sj5 example
+if [ -z $KALDI_ROOT ]; then
+    export KALDI_ROOT=`pwd`/../..
+fi
 
-# Setting paths to useful tools
-[ -f $KALDI_ROOT/tools/env.sh ] && . $KALDI_ROOT/tools/env.sh
 export PATH=$PWD/utils/:$KALDI_ROOT/tools/openfst/bin:$PWD:$PATH
-[ ! -f $KALDI_ROOT/tools/config/common_path.sh ] && echo >&2 "The standard file $KALDI_ROOT/tools/config/common_path.sh is not present -> Exit!" && exit 1
+[ ! -f $KALDI_ROOT/tools/config/common_path.sh ] && echo >&2 \
+"The standard file $KALDI_ROOT/tools/config/common_path.sh is not present -> Exit!" && exit 1
 . $KALDI_ROOT/tools/config/common_path.sh
 
-# Data source
-export DATA_PATH_TR="/media/kitt/snorlax/data/ocr_pashto/WordImages/US_Final/extractedWords/transcriptions/"
-export DATA_PATH_IM="/media/kitt/snorlax/data/ocr_pashto/WordImages/US_Final/extractedWords/words/"
-
-# Speakers to be used
-export SPKS="us1 us2 us3 us4 us5 us6 us7 us8 us9 us10 us11 us12"
-
-# Variable needed for proper data sorting
-export LC_ALL=C
-
-# Number of parallel jobs
-export NJ=12
-
-# Features dimension (images height)
-export FEAT_DIM=190
-
-# Unknown (oov) word
-export OOV_WORD="<unk>"
-
-# train_lm.sh
-export NUM_DEV_SENTENCES=500
+export PATH=$PATH:/usr/local/cuda/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/lib:\
+/usr/local/lib64:/usr/local/cuda/bin/nvcc

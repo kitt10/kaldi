@@ -1,0 +1,1 @@
+qsub -cwd -o qsub_log/o8_last_run -e qsub_log/e8_last_run -l mem_free=6G,ram_free=6G run.sh --stage 8

@@ -34,7 +34,7 @@ export PATH=$KALDI_ROOT/tools/pocolm/scripts:$PATH
  fi
 ) || exit 1;
 
-num_dev_sentences=$NUM_DEV_SENTENCES
+# num_dev_sentences defined in run.sh
 bypass_metaparam_optim_opt=
 # If you want to bypass the metaparameter optimization steps with specific metaparameters
 # un-comment the following line, and change the numbers to some appropriate values.
