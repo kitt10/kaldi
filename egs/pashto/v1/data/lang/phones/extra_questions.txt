@@ -1,0 +1,9 @@
+ئ_B ا_B ب_B ت_B ث_B ج_B ح_B خ_B د_B ر_B ز_B س_B ش_B ص_B ض_B ط_B ظ_B ع_B غ_B ف_B ق_B ل_B م_B ن_B ه_B و_B ي_B ټ_B پ_B ځ_B څ_B چ_B ډ_B ړ_B ږ_B ژ_B ښ_B ک_B ګ_B ڼ_B ی_B ۍ_B ې_B 
+ئ_E ا_E ب_E ت_E ث_E ج_E ح_E خ_E د_E ر_E ز_E س_E ش_E ص_E ض_E ط_E ظ_E ع_E غ_E ف_E ق_E ل_E م_E ن_E ه_E و_E ي_E ټ_E پ_E ځ_E څ_E چ_E ډ_E ړ_E ږ_E ژ_E ښ_E ک_E ګ_E ڼ_E ی_E ۍ_E ې_E 
+ئ_I ا_I ب_I ت_I ث_I ج_I ح_I خ_I د_I ر_I ز_I س_I ش_I ص_I ض_I ط_I ظ_I ع_I غ_I ف_I ق_I ل_I م_I ن_I ه_I و_I ي_I ټ_I پ_I ځ_I څ_I چ_I ډ_I ړ_I ږ_I ژ_I ښ_I ک_I ګ_I ڼ_I ی_I ۍ_I ې_I 
+ئ_S ا_S ب_S ت_S ث_S ج_S ح_S خ_S د_S ر_S ز_S س_S ش_S ص_S ض_S ط_S ظ_S ع_S غ_S ف_S ق_S ل_S م_S ن_S ه_S و_S ي_S ټ_S پ_S ځ_S څ_S چ_S ډ_S ړ_S ږ_S ژ_S ښ_S ک_S ګ_S ڼ_S ی_S ۍ_S ې_S 
+SIL SPN 
+SIL_B SPN_B 
+SIL_E SPN_E 
+SIL_I SPN_I 
+SIL_S SPN_S 

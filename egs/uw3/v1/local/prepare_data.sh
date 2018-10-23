@@ -28,7 +28,7 @@ else
   fi
   echo "$0: Extracting..."
   tar -xzf $download_dir/uw3-lines-book.tgz -C $data_dir/ || exit 1;
-  echo "$0: Done downloading/extracting the dataset."
+  echo "$0: Done downloading/extracting the datset."
 fi
 
 mkdir -p data/train
