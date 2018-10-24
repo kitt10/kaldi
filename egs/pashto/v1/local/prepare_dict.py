@@ -48,7 +48,7 @@ if __name__ == '__main__':
 
     # corpus.txt
     f_corpus = cod_open(args.local_dir+'/corpus.txt', 'w+', encoding='utf-8')
-    for sentence in sorted(all_sentences_unique):
+    for sentence in sorted(all_sentences):
         f_corpus.write(sentence+'\n')
 
     f_corpus.close()

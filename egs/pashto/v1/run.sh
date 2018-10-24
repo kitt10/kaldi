@@ -11,20 +11,19 @@ stage=0
 export LC_ALL=C
 
 # Number of parallel jobs
-export n_jobs=12
+export n_jobs=32
 
 # Data source
-export data_path_tr="/export/corpora4/ARL_OCR/win/OSI_Pashto_Project_572GB/\
-database/WordImages/US_Final/extractedWords/transcriptions/"
-export data_path_im="/export/corpora4/ARL_OCR/win/OSI_Pashto_Project_572GB/\
-database/WordImages/US_Final/extractedWords/words/"
+export data_path="/export/corpora4/ARL_OCR/win/OSI_Pashto_Project_572GB/\
+database/WordImages"
 
-# Speakers to be used and number of samples per speaker
-export spks="us01 us02 us03 us04 us05 us06 us07 us08 us09 us10 us11 us12"
-export n_samples=10000
+# Speakers to be used and max number of samples per speaker
+export us_spks=12       # 0-12
+export af_spks=370      # 0-370
+export max_samples=10000  # per speaker (max value)
 
 # Features dimension (image height)
-export feature_dim=128
+export feature_dim=40
 
 # Invert colors (black text on white bg)? [True|False]
 export invert_images=True
@@ -73,7 +72,8 @@ if [ $stage -le 3 ]; then
   echo
   echo "===== STAGE 3: LM FILES PREPARATION ====="
   echo
-  utils/prepare_lang.sh $dict_dir $oov_word data/local/lang $lang_dir
+  utils/prepare_lang.sh --num-sil-states 4 --num-nonsil-states 8 \
+			$dict_dir $oov_word data/local/lang $lang_dir
 fi
 
 # ===== 4: LM CREATION (lm.arpa) =====
