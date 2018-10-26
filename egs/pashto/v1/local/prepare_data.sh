@@ -23,7 +23,7 @@ local/prepare_data.py --data_path $data_path \
                       --max_samples $max_samples \
                       --feat_dim $feature_dim \
                       --invert $invert_images \
-                      --pad $pad_images \
+                      --pad_value $pad_images \
                       --add_noise $add_noise \
                       --log_dir local/log || exit 1
 

@@ -26,20 +26,20 @@ def parse_args():
                     help='number of samples per speaker to consider (max value)')
     parser.add_argument('--feat_dim', type=int, default=40,
                     help='size to scale the height of all images (i.e. the dimension of the resulting features)')
-    parser.add_argument('--invert', type=boolean_string, default='True', 
+    parser.add_argument('--invert', type=boolean_string, default='true', 
                     help='invert colors for all images (wanna have black text on white bg?)')
-    parser.add_argument('--pad', type=boolean_string, default='True', 
-                    help='pad the left and right of the images with 10 white pixels.')
-    parser.add_argument('--add_noise', type=boolean_string, default='False', 
+    parser.add_argument('--pad_value', type=int, default=16,
+                    help='how many white pixels shall we pad the left and right of the images?')
+    parser.add_argument('--add_noise', type=boolean_string, default='false', 
                     help='subtract random_normal(2,1) from all pixels?')
     parser.add_argument('--log_dir', type=str, default='local/log', help='dir to leave a log in')                    
     return parser.parse_args()
 
 def boolean_string(s):
-    if s not in ('False', 'True'):
-        raise ValueError('Not a valid boolean string, use [True|False]')
+    if s not in ('false', 'true'):
+        raise ValueError('Not a valid bash boolean string, use [true|false]')
 
-    return s == 'True'
+    return s == 'true'
 
 def scale_image(im):
     sy, sx = im.shape
@@ -117,8 +117,8 @@ if __name__ == '__main__':
                     if args.invert:
                         im = 255-im
 
-                    if args.pad:
-                        padding = np.ones((args.feat_dim, 10)) * 255
+                    if args.pad_value > 0:
+                        padding = np.ones((args.feat_dim, args.pad_value)) * 255
                         im = np.hstack((padding, im, padding))
 
                     imsave(im_path, im)
@@ -169,6 +169,5 @@ if __name__ == '__main__':
             f.write(str(arg)+': '+str(val)+'\n')
 
         f.write('\nCollected '+str(sum(spks_count.values()))+' samples.\n')
-        f.write('Empty pocket found at '+str(sum([1 for c in spks_count.values() if c == 0]))+' speakers (0 samples/speaker).\n')
-        for spk_id, c in sorted(spks_count.items(), key=lambda x: (x[1], x[0])):
+        for spk_id, c in sorted(spks_count.items(), key=lambda x: (-x[1], x[0])):
             f.write(spk_id+': '+str(c)+'\n')
