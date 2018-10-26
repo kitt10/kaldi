@@ -76,7 +76,7 @@ if [ $stage -le 4 ]; then
 fi
 
 # ===== 5: DECODE MONO =====
-if [ $stage -le 5 ] && [ [ $decode_mono_test ] || [ $decode_mono_train ] ]; then
+if [ $stage -le 5 ] && ($decode_mono_test || $decode_mono_train); then
   echo
   echo "===== STAGE 5: MONO DECODING ====="
   echo
@@ -84,12 +84,12 @@ if [ $stage -le 5 ] && [ [ $decode_mono_test ] || [ $decode_mono_train ] ]; then
   utils/mkgraph.sh --mono $lang_dir \
                    exp/mono exp/mono/graph || exit 1
 
-  if [ $decode_mono_test ]; then
+  if $decode_mono_test; then
     echo "== $0: Decoding test mono data.."
     steps/decode.sh --nj $n_jobs --cmd $cmd \
                     exp/mono/graph data/test exp/mono/decode_test
   fi
-  if [ $decode_mono_train ]; then
+  if $decode_mono_train; then
     echo "== $0: Decoding train mono data.."
     steps/decode.sh --nj $n_jobs --cmd $cmd \
                     exp/mono/graph data/train exp/mono/decode_train
@@ -111,19 +111,19 @@ if [ $stage -le 6 ]; then
 fi
 
 # ===== 7: DECODE TRI =====
-if [ $stage -le 7 ] && [ [ $decode_tri_test ] || [ $decode_tri_train ] ]; then
+if [ $stage -le 7 ] && ($decode_tri_test || $decode_tri_train); then
   echo
   echo "===== STAGE 7: TRI DECODING ====="
   echo
   echo "== $0: Making tri graph.."
   utils/mkgraph.sh $lang_dir exp/tri exp/tri/graph
 
-  if [ $decode_tri_test ]; then
+  if $decode_tri_test; then
     echo "== $0: Decoding test tri data.."
     steps/decode.sh --nj $n_jobs --cmd $cmd \
                     exp/tri/graph data/test exp/tri/decode_test
   fi
-  if [ $decode_tri_train ]; then
+  if $decode_tri_train; then
     echo "== $0: Decoding train tri data.."
     steps/decode.sh --nj $n_jobs --cmd $cmd \
                     exp/tri/graph data/train exp/tri/decode_train
@@ -147,19 +147,19 @@ if [ $stage -le 8 ]; then
 fi
 
 # ===== 9: DECODE TRI =====
-if [ $stage -le 9 ] && [ [ $decode_tri2_test ] || [ $decode_tri2_train ] ]; then
+if [ $stage -le 9 ] && ($decode_tri2_test || $decode_tri2_train); then
   echo
   echo "===== STAGE 9: TRI2 DECODING ====="
   echo
   echo "== $0: Making tri2 graph.."
   utils/mkgraph.sh $lang_dir exp/tri2 exp/tri2/graph
 
-  if [ $decode_tri2_test ]; then
+  if $decode_tri2_test; then
     echo "== $0: Decoding test tri2 data.."
     steps/decode.sh --nj $n_jobs --cmd $cmd \
                     exp/tri2/graph data/test exp/tri2/decode_test
   fi
-  if [ $decode_tri2_train ]; then
+  if $decode_tri2_train; then
     echo "== $0: Decoding train tri2 data.."
     steps/decode.sh --nj $n_jobs --cmd $cmd \
                     exp/tri2/graph data/train exp/tri2/decode_train
