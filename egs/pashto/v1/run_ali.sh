@@ -8,6 +8,10 @@ stage=0
 . ./cmd.sh
 . utils/parse_options.sh  # e.g. this parses the --stage option if supplied.
 
+# Lang settings
+lang_num_sil_states=8
+lang_num_nonsil_states=16
+
 # Training settings
 mono_totgauss=2048
 deltas_numleaves=1024
@@ -24,7 +28,7 @@ decode_tri2_test=true
 decode_tri2_train=true
 
 # ===== 0: DATA PREPARATION =====
-if [ $stage -le 0 ]; then 
+if [ $stage -le 0 ]; then
   echo
   echo "===== STAGE 0: DATA PREPARATION ====="
   echo
@@ -32,7 +36,7 @@ if [ $stage -le 0 ]; then
 fi
 
 # ===== 1: FEATURE EXTRACTION =====
-if [ $stage -le 1 ]; then 
+if [ $stage -le 1 ]; then
   echo
   echo "===== STAGE 1: FEATURE EXTRACTION ====="
   echo
@@ -40,7 +44,7 @@ if [ $stage -le 1 ]; then
 fi
 
 # ===== 2: DICTIONARY PREPARATION =====
-if [ $stage -le 2 ]; then 
+if [ $stage -le 2 ]; then
   echo
   echo "===== STAGE 2: DICTIONARY PREPARATION ====="
   echo
@@ -48,12 +52,13 @@ if [ $stage -le 2 ]; then
 fi
 
 # ===== 3: LM FILES PREPARATION =====
-if [ $stage -le 3 ]; then 
+if [ $stage -le 3 ]; then
   echo
   echo "===== STAGE 3: LM FILES PREPARATION AND LM CREATION (lm.arpa) ====="
   echo
-  utils/prepare_lang.sh --num-sil-states 8 --num-nonsil-states 16 \
-			                  $dict_dir $oov_word $local_dir/lang $lang_dir
+  utils/prepare_lang.sh --num-sil-states $lang_num_sil_states \
+                        --num-nonsil-states $lang_num_nonsil_states \
+                        $dict_dir $oov_word $local_dir/lang $lang_dir
 
   echo
   echo "===== LM CREATION (lm.arpa and G.fst) ====="
@@ -62,11 +67,11 @@ if [ $stage -le 3 ]; then
 fi
 
 # ===== 4: TRAIN MONO =====
-if [ $stage -le 4 ]; then 
+if [ $stage -le 4 ]; then
   echo
   echo "===== STAGE 5: TRAIN MONO ====="
   echo
-  steps/train_mono.sh --config config.cfg --nj $n_jobs --cmd $cmd \
+  steps/train_mono.sh --nj $n_jobs --cmd $cmd --totgauss $mono_totgauss \
                       data/train $lang_dir exp/mono  || exit 1
 fi
 
@@ -76,17 +81,17 @@ if [ $stage -le 5 ] && [ [ $decode_mono_test ] || [ $decode_mono_train ] ]; then
   echo "===== STAGE 5: MONO DECODING ====="
   echo
   echo "== $0: Making mono graph.."
-  utils/mkgraph.sh --mono $lang_dir \ 
+  utils/mkgraph.sh --mono $lang_dir \
                    exp/mono exp/mono/graph || exit 1
 
   if [ $decode_mono_test ]; then
     echo "== $0: Decoding test mono data.."
-    steps/decode.sh --nj $n_jobs --cmd $cmd \ 
+    steps/decode.sh --nj $n_jobs --cmd $cmd \
                     exp/mono/graph data/test exp/mono/decode_test
   fi
   if [ $decode_mono_train ]; then
     echo "== $0: Decoding train mono data.."
-    steps/decode.sh --nj $n_jobs --cmd $cmd \ 
+    steps/decode.sh --nj $n_jobs --cmd $cmd \
                     exp/mono/graph data/train exp/mono/decode_train
   fi
 fi
@@ -99,7 +104,7 @@ if [ $stage -le 6 ]; then
   echo "== $0: Aligning based on mono into mono_ali.."
   steps/align_si.sh --nj $n_jobs --cmd $cmd \
                     data/train $lang_dir exp/mono exp/mono_ali
-  
+
   echo "== $0: Training deltas based on mono_ali into tri.."
   steps/train_deltas.sh --cmd $cmd $deltas_numleaves $deltas_totgauss \
                         data/train data/lang exp/mono_ali exp/tri
@@ -133,9 +138,9 @@ if [ $stage -le 8 ]; then
   echo "== $0: Aligning based on tri into tri_ali.."
   steps/align_si.sh --nj $n_jobs --cmd $cmd \
                     data/train $lang_dir exp/tri exp/tri_ali
-  
+
   echo "== $0: Training lda mllt based on tri_ali into tri2.."
-  steps/train_lda_mllt.sh --cmd $cmd \ 
+  steps/train_lda_mllt.sh --cmd $cmd \
                           --splice-opts "--left-context=3 --right-context=3" \
                           $mllt_numleaves $mllt_totgauss \
                           data/train $lang_dir exp/tri_ali exp/tri2
