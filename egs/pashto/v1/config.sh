@@ -35,3 +35,6 @@ export oov_word="<UNK>"
 export lang_dir=data/lang
 export local_dir=data/local
 export lm_order=2
+
+# Use BPE (byte pair encoding)
+export use_bpe=true

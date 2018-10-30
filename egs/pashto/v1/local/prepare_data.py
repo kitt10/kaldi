@@ -126,13 +126,13 @@ if __name__ == '__main__':
                     # register the sample (randomly split train 95% and test 5%)
                     coin = randint(0, 20)
                     if coin >= 1:
-                        text_train.append(im_id+' '+trs+'\n')                                   # train/text: <im_id> <transcription>
-                        utt2spk_train.append(im_id+' '+spk_id+'\n')                             # train/utt2spk: <im_id> <spk_id>
-                        images_train.append(im_id+' '+im_path+'\n')                             # train/images.scp: <im_id> <path_to_image>
+                        text_train.append(im_id+' '+trs+'\n')             # train/text: <im_id> <transcription>
+                        utt2spk_train.append(im_id+' '+spk_id+'\n')       # train/utt2spk: <im_id> <spk_id>
+                        images_train.append(im_id+' '+im_path+'\n')       # train/images.scp: <im_id> <path_to_image>
                     else:
-                        text_test.append(im_id+' '+trs+'\n')                                    # test/text: <im_id> <transcription>
-                        utt2spk_test.append(im_id+' '+spk_id+'\n')                              # test/utt2spk: <im_id> <spk_id>
-                        images_test.append(im_id+' '+im_path+'\n')                              # test/images.scp: <im_id> <path_to_image>
+                        text_test.append(im_id+' '+trs+'\n')              # test/text: <im_id> <transcription>
+                        utt2spk_test.append(im_id+' '+spk_id+'\n')        # test/utt2spk: <im_id> <spk_id>
+                        images_test.append(im_id+' '+im_path+'\n')        # test/images.scp: <im_id> <path_to_image>
 
     with cod_open(join_path(args.out_dir, 'train', 'text'), 'w+', encoding='utf-8') as f:
         for line in sorted(text_train):

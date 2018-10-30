@@ -1,6 +1,6 @@
 #!/bin/bash
 
-stage=0
+stage=2
 
 # remove old log output/error files
 echo '== Removing old output/error log files..'

@@ -3,9 +3,9 @@
 set -e      # exit if a pipeline returns a non-zero status
 stage=0
 
+. ./cmd.sh
 . ./path.sh
 . ./config.sh
-. ./cmd.sh
 . utils/parse_options.sh  # e.g. this parses the --stage option if supplied.
 
 # Lang settings
@@ -27,6 +27,18 @@ decode_tri_train=false
 decode_tri2_test=true
 decode_tri2_train=true
 
+if $use_bpe; then
+    text_filename=text_bpe
+    corpus_file=$local_dir/cleaned/corpus_bpe.txt
+    lang_sil_prob=0.0
+    lang_posdep_phones=false
+else
+    text_filename=text
+    corpus_file=$local_dir/corpus.txt
+    lang_sil_prob=0.5
+    lang_posdep_phones=true
+fi
+
 # ===== 0: DATA PREPARATION =====
 if [ $stage -le 0 ]; then
   echo
@@ -43,12 +55,38 @@ if [ $stage -le 1 ]; then
   local/make_features.sh
 fi
 
-# ===== 2: DICTIONARY PREPARATION =====
+# ===== 2: CORPUS AND DICTIONARY PREPARATION =====
 if [ $stage -le 2 ]; then
   echo
-  echo "===== STAGE 2: DICTIONARY PREPARATION ====="
+  echo "===== STAGE 2: CORPUS AND DICTIONARY PREPARATION ====="
   echo
-  local/prepare_dict.sh
+
+  echo "== $0: Removing old files..."
+  rm -rf $lang_dir
+  rm -rf $local_dir/cleaned
+  rm -rf $local_dir/dict
+  rm -rf $local_dir/lang
+  rm -rf $local_dir/tmp
+  rm -f $local_dir/bpe.txt
+  rm -f $local_dir/corpus.txt
+
+  echo "== $0: Preparing the corpus.."
+  local/prepare_corpus.py --trs_files data/train/text data/test/text \
+                          --local_dir $local_dir
+
+  if $use_bpe; then
+    local/apply_bpe.sh
+  fi
+
+  echo "== $0: Preparing the dictionary.."
+
+  rm -rf $dict_dir
+  mkdir -p $dict_dir
+
+  local/prepare_dict.py --trs_files data/train/$text_filename \
+                                    data/test/$text_filename \
+                        --dict_dir $dict_dir \
+                        --oov_word $oov_word
 fi
 
 # ===== 3: LM FILES PREPARATION =====
@@ -56,14 +94,37 @@ if [ $stage -le 3 ]; then
   echo
   echo "===== STAGE 3: LM FILES PREPARATION AND LM CREATION (lm.arpa) ====="
   echo
+
   utils/prepare_lang.sh --num-sil-states $lang_num_sil_states \
                         --num-nonsil-states $lang_num_nonsil_states \
+                        --sil-prob $lang_sil_prob \
+                        --position-dependent-phones $lang_posdep_phones \
                         $dict_dir $oov_word $local_dir/lang $lang_dir
+
+  if $use_bpe; then
+    echo "Adding final optional silence"
+    utils/lang/bpe/add_final_optional_silence.sh --final-sil-prob 0.5 $lang_dir
+  fi
 
   echo
   echo "===== LM CREATION (lm.arpa and G.fst) ====="
   echo
-  local/create_lm.sh
+  echo "== $0: MAKING lm.arpa"
+
+  rm -rf $local_dir/tmp
+  mkdir -p $local_dir/tmp
+
+  ngram-count -order $lm_order \
+              -write-vocab $local_dir/tmp/vocab-full.txt -wbdiscount \
+              -text $corpus_file \
+              -lm $local_dir/tmp/lm.arpa
+
+  echo "== $0: MAKING G.fst"
+
+  arpa2fst --disambig-symbol=#0 \
+           --read-symbol-table=$lang_dir/words.txt \
+           $local_dir/tmp/lm.arpa \
+           $lang_dir/G.fst
 fi
 
 # ===== 4: TRAIN MONO =====
