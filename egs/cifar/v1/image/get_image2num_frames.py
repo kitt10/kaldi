@@ -43,6 +43,7 @@ data_list_path = os.path.join(args.dir,'images.scp')
 
 if not args.out_ark:
     args.out_ark = os.path.join(args.dir,'image2num_frames')
+
 if args.out_ark == '-':
     out_fh = sys.stdout
 else:

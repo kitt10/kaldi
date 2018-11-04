@@ -210,6 +210,10 @@ def process_args(args):
 
     # set the options corresponding to args.use_gpu
     run_opts = common_train_lib.RunOpts()
+
+    args.use_gpu = "no" # kitt hack
+    print('=== NOT USING GPU (kitt hack)')
+
     if args.use_gpu in ["true", "false"]:
         args.use_gpu = ("yes" if args.use_gpu == "true" else "no")
     if args.use_gpu in ["yes", "wait"]:
@@ -371,7 +375,13 @@ def train(args, run_opts):
                                         egs_left_context_initial,
                                         egs_right_context_final))
 
+    print('\n\nKITT hack:num_archives')
+    print(str(num_archives))
+
     num_archives_expanded = num_archives * args.frame_subsampling_factor
+
+    print('\n\nKITT hack:num_archives_expanded')
+    print(str(num_archives_expanded))
 
     if (args.num_jobs_final > num_archives_expanded):
         raise Exception('num_jobs_final cannot exceed the '
@@ -399,11 +409,18 @@ def train(args, run_opts):
     num_iters = ((num_archives_to_process * 2)
                  / (args.num_jobs_initial + args.num_jobs_final))
 
+    print('\n\nKITT hack:num_archives_to_process')
+    print(str(num_archives_to_process))
+
+    print('\n\nKITT hack:num_iters')
+    print(str(num_iters))
+
     models_to_combine = common_train_lib.get_model_combine_iters(
         num_iters, args.num_epochs,
         num_archives_expanded, args.max_models_combine,
         args.num_jobs_final)
-
+    print('\n\nKITT hack:models_to_combine')
+    print(str(models_to_combine))
     min_deriv_time = None
     max_deriv_time_relative = None
     if args.deriv_truncate_margin is not None:
@@ -547,7 +564,6 @@ def train(args, run_opts):
 
     common_lib.execute_command("steps/info/chain_dir_info.pl "
                                  "{0}".format(args.dir))
-
 
 def main():
     [args, run_opts] = get_args()

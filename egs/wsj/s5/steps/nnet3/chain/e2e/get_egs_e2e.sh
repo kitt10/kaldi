@@ -36,7 +36,7 @@ frames_per_iter=400000 # each iteration of training, see this many frames per
                        # that divides the number of samples in the entire data.
 
 stage=0
-nj=15         # This should be set to the maximum number of jobs you are
+nj=4 # kitt hack, was 15         # This should be set to the maximum number of jobs you are
               # comfortable to run in parallel; you can increase it if your disk
               # speed is greater and you have more machines.
 max_shuffle_jobs_run=50  # the shuffle jobs now include the nnet3-chain-normalize-egs command,
@@ -95,7 +95,7 @@ dir=$4
 [ ! -z "$online_ivector_dir" ] && \
   extra_files="$online_ivector_dir/ivector_online.scp $online_ivector_dir/ivector_period"
 
-for f in $data/feats.scp $data/allowed_lengths.txt \
+for f in $data/feats.scp $local_dir/allowed_lengths.txt \
          $chaindir/{0.trans_mdl,tree,normalization.fst} $extra_files; do
   [ ! -f $f ] && echo "$0: no such file $f" && exit 1;
 done
@@ -110,7 +110,7 @@ mkdir -p $dir/log $dir/info
 frame_shift=$(utils/data/get_frame_shift.sh $data)
 utils/data/get_utt2dur.sh $data
 
-frames_per_eg=$(cat $data/allowed_lengths.txt | tr '\n' , | sed 's/,$//')
+frames_per_eg=$(cat $local_dir/allowed_lengths.txt | tr '\n' , | sed 's/,$//')
 
 [ ! -f "$data/utt2len" ] && feat-to-len scp:$data/feats.scp ark,t:$data/utt2len
 

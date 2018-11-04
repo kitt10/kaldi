@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 
-# Creates corpus:
+# Copyright     2018  Martin Bulin
+# Apache 2.0
 
-# corpus.txt
+"""
+    Creates the corpus file from the transcriptions.
+
+    data/local/corpus.txt
+"""
 
 from argparse import ArgumentParser
 from codecs import open as cod_open

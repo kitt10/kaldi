@@ -11,5 +11,5 @@
 # or search for the string 'default_config' in utils/queue.pl or utils/slurm.pl.
 
 # Setting local system jobs (local CPU - no external clusters)
-#export cmd="run.pl"
-export cmd="queue.pl"
+export cmd="run.pl"
+#export cmd="queue.pl"

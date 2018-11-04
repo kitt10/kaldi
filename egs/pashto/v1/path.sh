@@ -12,4 +12,4 @@ export PATH=$PWD/utils/:$KALDI_ROOT/tools/openfst/bin:$PWD:$PATH
 . $KALDI_ROOT/tools/config/common_path.sh
 
 # cuda
-export LD_LIBRARY_PATH=/home/jtrmal/.local/lib/
+#export LD_LIBRARY_PATH=/home/jtrmal/.local/lib/

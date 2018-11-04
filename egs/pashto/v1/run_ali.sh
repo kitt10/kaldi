@@ -9,21 +9,21 @@ stage=0
 . utils/parse_options.sh  # e.g. this parses the --stage option if supplied.
 
 # Lang settings
-lang_num_sil_states=8
-lang_num_nonsil_states=16
+lang_num_sil_states=4
+lang_num_nonsil_states=8
 
 # Training settings
-mono_totgauss=2048
-deltas_numleaves=1024
-deltas_totgauss=32768
-mllt_numleaves=4096
-mllt_totgauss=131072
+mono_totgauss=1024
+deltas_numleaves=512
+deltas_totgauss=16384
+mllt_numleaves=2048
+mllt_totgauss=65536
 
 # Decoding toggle
 decode_mono_test=true
-decode_mono_train=false
+decode_mono_train=true
 decode_tri_test=true
-decode_tri_train=false
+decode_tri_train=true
 decode_tri2_test=true
 decode_tri2_train=true
 
@@ -86,7 +86,8 @@ if [ $stage -le 2 ]; then
   local/prepare_dict.py --trs_files data/train/$text_filename \
                                     data/test/$text_filename \
                         --dict_dir $dict_dir \
-                        --oov_word $oov_word
+                        --oov_word $oov_word \
+                        --use_bpe $use_bpe
 fi
 
 # ===== 3: LM FILES PREPARATION =====
@@ -133,7 +134,7 @@ if [ $stage -le 4 ]; then
   echo "===== STAGE 5: TRAIN MONO ====="
   echo
   steps/train_mono.sh --nj $n_jobs --cmd $cmd --totgauss $mono_totgauss \
-                      data/train $lang_dir exp/mono  || exit 1
+                      --num_iters 40 data/train $lang_dir exp/mono  || exit 1
 fi
 
 # ===== 5: DECODE MONO =====
@@ -142,7 +143,7 @@ if [ $stage -le 5 ] && ($decode_mono_test || $decode_mono_train); then
   echo "===== STAGE 5: MONO DECODING ====="
   echo
   echo "== $0: Making mono graph.."
-  utils/mkgraph.sh --mono $lang_dir \
+  utils/mkgraph.sh --mono $lang_dir_decode \
                    exp/mono exp/mono/graph || exit 1
 
   if $decode_mono_test; then
@@ -155,6 +156,9 @@ if [ $stage -le 5 ] && ($decode_mono_test || $decode_mono_train); then
     steps/decode.sh --nj $n_jobs --cmd $cmd \
                     exp/mono/graph data/train exp/mono/decode_train
   fi
+
+  echo "Done. Date: $(date). Results:"
+  local/compare_wer.sh exp/mono
 fi
 
 # ===== 6: ALIGN AND TRAIN DELTAS (TRI) =====
@@ -177,7 +181,7 @@ if [ $stage -le 7 ] && ($decode_tri_test || $decode_tri_train); then
   echo "===== STAGE 7: TRI DECODING ====="
   echo
   echo "== $0: Making tri graph.."
-  utils/mkgraph.sh $lang_dir exp/tri exp/tri/graph
+  utils/mkgraph.sh $lang_dir_decode exp/tri exp/tri/graph
 
   if $decode_tri_test; then
     echo "== $0: Decoding test tri data.."
@@ -189,6 +193,9 @@ if [ $stage -le 7 ] && ($decode_tri_test || $decode_tri_train); then
     steps/decode.sh --nj $n_jobs --cmd $cmd \
                     exp/tri/graph data/train exp/tri/decode_train
   fi
+
+  echo "Done. Date: $(date). Results:"
+  local/compare_wer.sh exp/tri
 fi
 
 # ===== 8: ALIGN AND TRAIN MLLT (TRI2) =====
@@ -207,13 +214,13 @@ if [ $stage -le 8 ]; then
                           data/train $lang_dir exp/tri_ali exp/tri2
 fi
 
-# ===== 9: DECODE TRI =====
+# ===== 9: DECODE TRI2 =====
 if [ $stage -le 9 ] && ($decode_tri2_test || $decode_tri2_train); then
   echo
   echo "===== STAGE 9: TRI2 DECODING ====="
   echo
   echo "== $0: Making tri2 graph.."
-  utils/mkgraph.sh $lang_dir exp/tri2 exp/tri2/graph
+  utils/mkgraph.sh $lang_dir_decode exp/tri2 exp/tri2/graph
 
   if $decode_tri2_test; then
     echo "== $0: Decoding test tri2 data.."
@@ -225,6 +232,9 @@ if [ $stage -le 9 ] && ($decode_tri2_test || $decode_tri2_train); then
     steps/decode.sh --nj $n_jobs --cmd $cmd \
                     exp/tri2/graph data/train exp/tri2/decode_train
   fi
+
+  echo "Done. Date: $(date). Results:"
+  local/compare_wer.sh exp/tri2
 fi
 
 # ===== 10: ALIGN =====

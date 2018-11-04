@@ -1,45 +1,53 @@
 #!/usr/bin/env python3
 
-# creates data files "text", "utt2spk", and "images.scp" for the train and test subsets in data/train and data/test.
+# Copyright     2018  Martin Bulin
+# Apache 2.0
 
-# text - matches the transcriptions with the image id
-# utt2spk - matches the image id's with the speaker/writer names
-# images.scp - matches the image is's with the actual image file
+"""
+    Creates data files "text", "utt2spk", and "images.scp"
+    for the train and test subsets in data/train and data/test.
+    Saves the source images into data/local/images/<spk_id>/.
+    Stores widths for all images into data/local/im_widths.txt
+
+    data/{test,train}/text: <im_id> <transcription>
+    data/{test,train}/utt2spk: <im_id> <spk_id>
+    data/{test,train}/images.scp: <im_id> <path_to_image>
+    data/local/images/<spk_id>/<im_id>.<im_mimetype>
+    data/local/im_widths.txt: <im_id> <im_width>
+"""
 
 from argparse import ArgumentParser
 from os import makedirs, listdir
-from os.path import isfile, join as join_path, exists as dir_exists
+from os.path import isfile, join as join_path
 from codecs import open as cod_open
 from random import randint
 from scipy.misc import imread, imresize, imsave
 from time import ctime
 import numpy as np
 
+
 def parse_args():
     parser = ArgumentParser(description='Creates data/train and data/test.')
-    parser.add_argument('--data_path', type=str, help='path to the PASHTO database (WordImages dir)')
-    parser.add_argument('--out_dir', type=str, default='data', 
-                    help='where to create the train and test data directories')
+    parser.add_argument('--data_path', type=str,
+                        help='path to the PASHTO database (WordImages dir)')
+    parser.add_argument('--out_dir', type=str, default='data',
+                        help='where to create the train and test data directories')
     parser.add_argument('--us_spks', type=int, help='number of US speakers (0-12)')
     parser.add_argument('--af_spks', type=int, help='number of Afgh. speakers (0-370)')
-    parser.add_argument('--max_samples', type=int, default=100000, 
-                    help='number of samples per speaker to consider (max value)')
+    parser.add_argument('--max_samples', type=int, default=100000,
+                        help='number of samples per speaker to consider (max value)')
     parser.add_argument('--feat_dim', type=int, default=40,
-                    help='size to scale the height of all images (i.e. the dimension of the resulting features)')
-    parser.add_argument('--invert', type=boolean_string, default='true', 
-                    help='invert colors for all images (wanna have black text on white bg?)')
+                        help='size to scale the height of all images (feature dim)')
+    parser.add_argument('--invert', type=lambda x: (str(x).lower() == 'true'), default='true',
+                        help='invert colors for all images (black text on white bg?)')
     parser.add_argument('--pad_value', type=int, default=16,
-                    help='how many white pixels shall we pad the left and right of the images?')
-    parser.add_argument('--add_noise', type=boolean_string, default='false', 
-                    help='subtract random_normal(2,1) from all pixels?')
-    parser.add_argument('--log_dir', type=str, default='local/log', help='dir to leave a log in')                    
+                        help='how many white pixels shall we pad the images?')
+    parser.add_argument('--add_noise', type=lambda x: (str(x).lower() == 'true'), default='false',
+                        help='subtract random_normal(2,1) from all pixels?')
+    parser.add_argument('--log_dir', type=str, default='local/log',
+                        help='dir to leave a log in')
     return parser.parse_args()
 
-def boolean_string(s):
-    if s not in ('false', 'true'):
-        raise ValueError('Not a valid bash boolean string, use [true|false]')
-
-    return s == 'true'
 
 def scale_image(im):
     sy, sx = im.shape
@@ -62,6 +70,7 @@ if __name__ == '__main__':
     text_test = list()
     utt2spk_test = list()
     images_test = list()
+    im_widths = list()
 
     # List the speakers and make the dirs
     spks_count = dict()
@@ -75,19 +84,20 @@ if __name__ == '__main__':
         spk_id = 'af'+str(af_i).zfill(3)
         makedirs(join_path(images_target_path, spk_id))
         spks_count[spk_id] = 0
-    
+
     # Collect samples
     for set_name in ('US_Final', 'Afghanistan'):
         data_source_path = join_path(args.data_path, set_name, 'extractedWords')
         for w_id in listdir(join_path(data_source_path, 'words')):
-            with cod_open(join_path(data_source_path, 'transcriptions', w_id+'.txt'), \
+            with cod_open(join_path(data_source_path, 'transcriptions', w_id+'.txt'),
                             'r', encoding='utf-8') as f:
                 for line in f.readlines():
                     im_orig_id = line[line.find('(')+1:line.find(')')]
                     trs = line[4:line.find(' </s>')]
 
                     im_dir = im_orig_id[im_orig_id.find('-')+1:]
-                    im_orig_path = join_path(data_source_path, 'words', im_dir, im_orig_id+im_mimetype)
+                    im_orig_path = join_path(data_source_path, 'words', im_dir,
+                                             im_orig_id+im_mimetype)
                     im_orig_filename = im_orig_path.split('/')[-1]
                     if not isfile(im_orig_path):
                         continue
@@ -99,9 +109,10 @@ if __name__ == '__main__':
                     else:
                         print('ERR: Unknown dataset name:', set_name)
                         exit(1)
-                    
+
                     spk_id = spk_id_tmp[:2]+spk_id_tmp[2:].zfill(3)
-                    if spk_id not in spks_count.keys() or spks_count[spk_id] == args.max_samples:
+                    if spk_id not in spks_count.keys() or \
+                                    spks_count[spk_id] == args.max_samples:
                         continue
 
                     spks_count[spk_id] += 1
@@ -121,18 +132,19 @@ if __name__ == '__main__':
                         padding = np.ones((args.feat_dim, args.pad_value)) * 255
                         im = np.hstack((padding, im, padding))
 
+                    im_widths.append((im_id, im.shape[1]))
                     imsave(im_path, im)
 
                     # register the sample (randomly split train 95% and test 5%)
                     coin = randint(0, 20)
                     if coin >= 1:
-                        text_train.append(im_id+' '+trs+'\n')             # train/text: <im_id> <transcription>
-                        utt2spk_train.append(im_id+' '+spk_id+'\n')       # train/utt2spk: <im_id> <spk_id>
-                        images_train.append(im_id+' '+im_path+'\n')       # train/images.scp: <im_id> <path_to_image>
+                        text_train.append(im_id+' '+trs+'\n')       # train/text: <im_id> <transcription>
+                        utt2spk_train.append(im_id+' '+spk_id+'\n') # train/utt2spk: <im_id> <spk_id>
+                        images_train.append(im_id+' '+im_path+'\n') # train/images.scp: <im_id> <path_to_image>
                     else:
-                        text_test.append(im_id+' '+trs+'\n')              # test/text: <im_id> <transcription>
-                        utt2spk_test.append(im_id+' '+spk_id+'\n')        # test/utt2spk: <im_id> <spk_id>
-                        images_test.append(im_id+' '+im_path+'\n')        # test/images.scp: <im_id> <path_to_image>
+                        text_test.append(im_id+' '+trs+'\n')        # test/text: <im_id> <transcription>
+                        utt2spk_test.append(im_id+' '+spk_id+'\n')  # test/utt2spk: <im_id> <spk_id>
+                        images_test.append(im_id+' '+im_path+'\n')  # test/images.scp: <im_id> <path_to_image>
 
     with cod_open(join_path(args.out_dir, 'train', 'text'), 'w+', encoding='utf-8') as f:
         for line in sorted(text_train):
@@ -158,10 +170,11 @@ if __name__ == '__main__':
         for line in sorted(images_test):
             f.write(line)
 
-    # Leave a log
-    if not dir_exists(args.log_dir):
-        makedirs(args.log_dir)
+    with open(join_path(args.out_dir, 'local', 'im_widths.txt'), 'w+') as f:
+        for im_id, im_width in sorted(im_widths, key=lambda x:x[1]):
+            f.write(im_id+' '+str(im_width)+'\n')
 
+    # Leave a log
     with open(join_path(args.log_dir, 'prepare_data.log'), 'w+') as f:
         f.write(ctime()+' :: Pashto DATA PREPARATION\n')
         f.write('\nARGS:\n')
