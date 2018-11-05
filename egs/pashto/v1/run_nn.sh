@@ -29,12 +29,13 @@ minibatch_size=150=64,32/300=32,16/600=16,8/1200=8,4
 cmvn_opts="--norm-means=false --norm-vars=false"
 chunk_left_context=0
 chunk_right_context=0
-
+num_leaves=300
+alignment_subsampling_factor=$subsampling_factor   # but changed to 1 if base is e2e
 
 base_dir=exp/${base}_ali
-lat_dir=exp/chain/nn_${base}_lats
-dir=exp/chain/nn_${base}
-tree_dir=exp/chain/nn_${base}_tree
+lat_dir=exp/work/nn_${base}_lats
+dir=exp/nn_${base}
+tree_dir=exp/work/nn_${base}_tree
 lang_dir_train=data/lang_nn_${base}
 
 if ! cuda-compiled; then
@@ -85,12 +86,13 @@ fi
 if [ $stage -le 2 ]; then
   # Get the alignments as lattices (gives the chain training more freedom).
   # use the same num-jobs as the alignments
-  if [ $base = "e2e" ]; then
+  if [ ${base} = "e2e" ]; then
     steps/nnet3/align_lats.sh --nj $n_jobs --cmd "$cmd" \
                               --acoustic-scale 1.0 \
                               --scale-opts '--transition-scale=1.0 --self-loop-scale=1.0' \
                               ${train_data_dir} $lang_dir $base_dir $lat_dir
     echo "" >$lat_dir/splice_opts
+    alignment_subsampling_factor=1
   else
     steps/align_fmllr_lats.sh --nj $n_jobs --cmd "$cmd" ${train_data_dir} \
                               $lang_dir $base_dir $lat_dir
@@ -107,10 +109,15 @@ if [ $stage -le 3 ]; then
      echo "$0: $tree_dir/final.mdl already exists, refusing to overwrite it."
      exit 1;
   fi
+
+  ## TODO: added alighnment-subsampling-factor for e2e
+  ## need to check if it works also for tri2...
+
   steps/nnet3/chain/build_tree.sh \
     --frame-subsampling-factor $subsampling_factor \
+    --alignment-subsampling-factor $alignment_subsampling_factor \
     --context-opts "--context-width=2 --central-position=1" \
-    --cmd "$cmd" 300 ${train_data_dir} \
+    --cmd "$cmd" $num_leaves ${train_data_dir} \
     $lang_dir_train $base_dir $tree_dir
 fi
 
@@ -160,12 +167,14 @@ EOF
   steps/nnet3/xconfig_to_configs.py --xconfig-file $dir/configs/network.xconfig --config-dir $dir/configs/
 fi
 
-
 if [ $stage -le 5 ]; then
   if [[ $(hostname -f) == *.clsp.jhu.edu ]] && [ ! -d $dir/egs/storage ]; then
     utils/create_split_dir.pl \
      /export/b0{3,4,5,6}/$USER/kaldi-data/egs/iam-$(date +'%m_%d_%H_%M')/s5/$dir/egs/storage $dir/egs/storage
   fi
+
+  ## TODO alignment-subsampling-factor was $subsampling_factor
+  ## need to check if it works also for non-e2e systems
 
   steps/nnet3/chain/train.py --stage=$train_stage \
     --cmd="$cmd" \
@@ -176,10 +185,10 @@ if [ $stage -le 5 ]; then
     --chain.apply-deriv-weights=false \
     --chain.lm-opts="--num-extra-lm-states=500" \
     --chain.frame-subsampling-factor=$subsampling_factor \
-    --chain.alignment-subsampling-factor=$subsampling_factor \
+    --chain.alignment-subsampling-factor=$alignment_subsampling_factor \
     --trainer.srand=$srand \
     --trainer.max-param-change=2.0 \
-    --trainer.num-epochs=4 \
+        --trainer.num-epochs=4 \
     --trainer.frames-per-iter=1500000 \
     --trainer.optimization.num-jobs-initial=3 \
     --trainer.optimization.num-jobs-final=10 \

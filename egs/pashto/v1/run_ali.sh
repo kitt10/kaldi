@@ -131,7 +131,7 @@ if [ $stage -le 6 ]; then
 
   echo "== $0: Training deltas based on mono_ali into tri.."
   steps/train_deltas.sh --cmd $cmd $deltas_numleaves $deltas_totgauss \
-                        data/train data/lang exp/mono_ali exp/tri
+                        data/train $lang_dir exp/mono_ali exp/tri
 fi
 
 # ===== 7: DECODE TRI =====

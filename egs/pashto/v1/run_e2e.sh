@@ -14,7 +14,7 @@ train_data_dir=data/train
 test_data_dir=data/test
 lang_dir_train=data/lang_e2e
 dir=exp/e2e
-treedir=exp/chain/e2e_monotree
+treedir=exp/work/e2e_monotree
 
 # Training and chain options
 train_stage=-10

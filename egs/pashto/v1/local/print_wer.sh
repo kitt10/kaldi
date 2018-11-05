@@ -6,7 +6,7 @@
 #                2017  Ashish Arora
 #                2018  Martin Bulin
 
-if [ $# < 2 ]; then
+if [ $# -le 1 ]; then
   echo "Usage: $0: <dir1> <lm_affix>"
   echo "e.g.: $0 exp/nn_e2e lang_n2"
   exit 1
