@@ -13,8 +13,8 @@ decode_train=false
 train_data_dir=data/train
 test_data_dir=data/test
 lang_dir_train=data/lang_e2e
-dir=exp/nn_e2e
-treedir=exp/chain/nn_e2e_monotree
+dir=exp/e2e
+treedir=exp/chain/e2e_monotree
 
 # Training and chain options
 train_stage=-10
@@ -137,11 +137,11 @@ if [ $stage -le 4 ]; then
 fi
 
 if [ $stage -le 5 ]; then
-  echo "$(date) stage 5: Aligning based on nn_e2e into nn_e2e_ali.."
+  echo "$(date) stage 5: Aligning based on e2e into e2e_ali.."
   steps/nnet3/align.sh --nj $n_jobs --cmd "$cmd" \
     --use-gpu false \
     --scale-opts '--transition-scale=1.0 --acoustic-scale=1.0 --self-loop-scale=1.0' \
-    $train_data_dir $lang_dir exp/nn_e2e exp/nn_e2e_ali
+    $train_data_dir $lang_dir exp/e2e exp/e2e_ali
 fi
 
 echo

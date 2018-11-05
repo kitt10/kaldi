@@ -14,7 +14,7 @@ fi
 
 echo
 echo "Done. Date: $(date). Results:"
-echo "-----------------------------"
+echo "--------------------------------"
 echo -n "# System              "
 printf "% 10s" " $(basename $1)"
 echo
