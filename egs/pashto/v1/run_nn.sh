@@ -85,9 +85,17 @@ fi
 if [ $stage -le 2 ]; then
   # Get the alignments as lattices (gives the chain training more freedom).
   # use the same num-jobs as the alignments
-  steps/align_fmllr_lats.sh --nj $n_jobs --cmd "$cmd" ${train_data_dir} \
-    $lang_dir $base_dir $lat_dir
-  rm $lat_dir/fsts.*.gz # save space
+  if [ $base = "e2e" ]; then
+    steps/nnet3/align_lats.sh --nj $n_jobs --cmd "$cmd" \
+                              --acoustic-scale 1.0 \
+                              --scale-opts '--transition-scale=1.0 --self-loop-scale=1.0' \
+                              ${train_data_dir} $lang_dir $base_dir $lat_dir
+    echo "" >$lat_dir/splice_opts
+  else
+    steps/align_fmllr_lats.sh --nj $n_jobs --cmd "$cmd" ${train_data_dir} \
+                              $lang_dir $base_dir $lat_dir
+    rm $lat_dir/fsts.*.gz # save space
+  fi
 fi
 
 if [ $stage -le 3 ]; then
