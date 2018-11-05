@@ -15,7 +15,7 @@ train_data_dir=data/train
 
 # DECODE settings
 test_data_dir=data/test
-decode_train=true
+decode_train=false
 
 # Chain and training options
 train_stage=-10
@@ -208,6 +208,13 @@ if [ $stage -le 6 ]; then
 fi
 
 if [ $stage -le 7 ]; then
+  echo
+  echo "== DECODING MODEL NN based on $base =="
+  echo "$(date): Using LM $lang_dir_decode"
+
+  lm_affix=$(basename $lang_dir_decode)
+  rm -rf $dir/decode_test_$lm_affix
+
   frames_per_chunk=$(echo $chunk_width | cut -d, -f1)
   steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
     --extra-left-context $chunk_left_context \
@@ -216,9 +223,10 @@ if [ $stage -le 7 ]; then
     --extra-right-context-final 0 \
     --frames-per-chunk $frames_per_chunk \
     --nj $n_jobs --cmd "$cmd" \
-    $dir/graph $test_data_dir $dir/decode_test || exit 1;
+    $dir/graph $test_data_dir $dir/decode_test_$lm_affix || exit 1;
 
   if $decode_train; then
+    rm -rf $dir/decode_train_$lm_affix
     steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
       --extra-left-context $chunk_left_context \
       --extra-right-context $chunk_right_context \
@@ -226,11 +234,10 @@ if [ $stage -le 7 ]; then
       --extra-right-context-final 0 \
       --frames-per-chunk $frames_per_chunk \
       --nj $n_jobs --cmd "$cmd" \
-      $dir/graph $train_data_dir $dir/decode_train || exit 1;
+      $dir/graph $train_data_dir $dir/decode_train_$lm_affix || exit 1;
   fi
 
-  echo "Done. Date: $(date). Results:"
-  local/compare_wer.sh $dir
+  local/print_wer.sh $dir $lm_affix
 fi
 
 echo

@@ -8,10 +8,6 @@ stage=0
 . ./config.sh
 . utils/parse_options.sh  # e.g. this parses the --stage option if supplied.
 
-# Lang settings
-lang_num_sil_states=4
-lang_num_nonsil_states=8
-
 # Training settings
 mono_totgauss=1024
 deltas_numleaves=512
@@ -26,18 +22,7 @@ decode_tri_test=true
 decode_tri_train=true
 decode_tri2_test=true
 decode_tri2_train=true
-
-if $use_bpe; then
-    text_filename=text_bpe
-    corpus_file=$local_dir/cleaned/corpus_bpe.txt
-    lang_sil_prob=0.0
-    lang_posdep_phones=false
-else
-    text_filename=text
-    corpus_file=$local_dir/corpus.txt
-    lang_sil_prob=0.5
-    lang_posdep_phones=true
-fi
+lm_affix=$(basename $lang_dir_decode)
 
 # ===== 0: DATA PREPARATION =====
 if [ $stage -le 0 ]; then
@@ -63,10 +48,9 @@ if [ $stage -le 2 ]; then
 
   echo "== $0: Removing old files..."
   rm -rf $lang_dir
-  rm -rf $local_dir/cleaned
+  rm -rf $local_dir/tmp_$(basename $lang_dir)
   rm -rf $local_dir/dict
-  rm -rf $local_dir/lang
-  rm -rf $local_dir/tmp
+  rm -rf $local_dir/tmp_bpe
   rm -f $local_dir/bpe.txt
   rm -f $local_dir/corpus.txt
 
@@ -76,6 +60,9 @@ if [ $stage -le 2 ]; then
 
   if $use_bpe; then
     local/apply_bpe.sh
+    text_filename=text_bpe
+  else
+    text_filename=text
   fi
 
   echo "== $0: Preparing the dictionary.."
@@ -93,39 +80,10 @@ fi
 # ===== 3: LM FILES PREPARATION =====
 if [ $stage -le 3 ]; then
   echo
-  echo "===== STAGE 3: LM FILES PREPARATION AND LM CREATION (lm.arpa) ====="
+  echo "===== STAGE 3: LM FILES PREPARATION AND LM CREATION ====="
   echo
 
-  utils/prepare_lang.sh --num-sil-states $lang_num_sil_states \
-                        --num-nonsil-states $lang_num_nonsil_states \
-                        --sil-prob $lang_sil_prob \
-                        --position-dependent-phones $lang_posdep_phones \
-                        $dict_dir $oov_word $local_dir/lang $lang_dir
-
-  if $use_bpe; then
-    echo "Adding final optional silence"
-    utils/lang/bpe/add_final_optional_silence.sh --final-sil-prob 0.5 $lang_dir
-  fi
-
-  echo
-  echo "===== LM CREATION (lm.arpa and G.fst) ====="
-  echo
-  echo "== $0: MAKING lm.arpa"
-
-  rm -rf $local_dir/tmp
-  mkdir -p $local_dir/tmp
-
-  ngram-count -order $lm_order \
-              -write-vocab $local_dir/tmp/vocab-full.txt -wbdiscount \
-              -text $corpus_file \
-              -lm $local_dir/tmp/lm.arpa
-
-  echo "== $0: MAKING G.fst"
-
-  arpa2fst --disambig-symbol=#0 \
-           --read-symbol-table=$lang_dir/words.txt \
-           $local_dir/tmp/lm.arpa \
-           $lang_dir/G.fst
+  ./create_lm.sh
 fi
 
 # ===== 4: TRAIN MONO =====
@@ -148,17 +106,18 @@ if [ $stage -le 5 ] && ($decode_mono_test || $decode_mono_train); then
 
   if $decode_mono_test; then
     echo "== $0: Decoding test mono data.."
+    rm -rf exp/mono/decode_test_$lm_affix
     steps/decode.sh --nj $n_jobs --cmd $cmd \
-                    exp/mono/graph data/test exp/mono/decode_test
+                    exp/mono/graph data/test exp/mono/decode_test_$lm_affix
   fi
   if $decode_mono_train; then
     echo "== $0: Decoding train mono data.."
+    rm -rf exp/mono/decode_train_$lm_affix
     steps/decode.sh --nj $n_jobs --cmd $cmd \
-                    exp/mono/graph data/train exp/mono/decode_train
+                    exp/mono/graph data/train exp/mono/decode_train_$lm_affix
   fi
 
-  echo "Done. Date: $(date). Results:"
-  local/compare_wer.sh exp/mono
+  local/print_wer.sh exp/mono $lm_affix
 fi
 
 # ===== 6: ALIGN AND TRAIN DELTAS (TRI) =====
@@ -185,17 +144,19 @@ if [ $stage -le 7 ] && ($decode_tri_test || $decode_tri_train); then
 
   if $decode_tri_test; then
     echo "== $0: Decoding test tri data.."
+    rm -rf exp/tri/decode_test_$lm_affix
     steps/decode.sh --nj $n_jobs --cmd $cmd \
-                    exp/tri/graph data/test exp/tri/decode_test
+                    exp/tri/graph data/test exp/tri/decode_test_$lm_affix
   fi
   if $decode_tri_train; then
     echo "== $0: Decoding train tri data.."
+    rm -rf exp/tri/decode_train_$lm_affix
     steps/decode.sh --nj $n_jobs --cmd $cmd \
-                    exp/tri/graph data/train exp/tri/decode_train
+                    exp/tri/graph data/train exp/tri/decode_train_$lm_affix
   fi
 
   echo "Done. Date: $(date). Results:"
-  local/compare_wer.sh exp/tri
+  local/print_wer.sh exp/tri $lm_affix
 fi
 
 # ===== 8: ALIGN AND TRAIN MLLT (TRI2) =====
@@ -224,17 +185,18 @@ if [ $stage -le 9 ] && ($decode_tri2_test || $decode_tri2_train); then
 
   if $decode_tri2_test; then
     echo "== $0: Decoding test tri2 data.."
+    rm -rf exp/tri2/decode_test_$lm_affix
     steps/decode.sh --nj $n_jobs --cmd $cmd \
-                    exp/tri2/graph data/test exp/tri2/decode_test
+                    exp/tri2/graph data/test exp/tri2/decode_test_$lm_affix
   fi
   if $decode_tri2_train; then
     echo "== $0: Decoding train tri2 data.."
+    rm -rf exp/tri2/decode_train_$lm_affix
     steps/decode.sh --nj $n_jobs --cmd $cmd \
-                    exp/tri2/graph data/train exp/tri2/decode_train
+                    exp/tri2/graph data/train exp/tri2/decode_train_$lm_affix
   fi
 
-  echo "Done. Date: $(date). Results:"
-  local/compare_wer.sh exp/tri2
+  local/print_wer.sh exp/tri2 $lm_affix
 fi
 
 # ===== 10: ALIGN =====

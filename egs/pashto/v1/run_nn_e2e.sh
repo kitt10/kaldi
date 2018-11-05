@@ -1,25 +1,27 @@
 #!/bin/bash
 
-set -e      # exit if a pipeline returns a non-zero status
+set -e
 stage=0
 
 . ./cmd.sh
 . ./path.sh
 . ./config.sh
-. utils/parse_options.sh  # e.g. this parses the --stage option if supplied.
+. utils/parse_options.sh
 
+# Settings
+decode_train=false
+train_data_dir=data/train
+test_data_dir=data/test
+lang_dir_train=data/lang_e2e
+dir=exp/nn_e2e
+treedir=exp/chain/nn_e2e_monotree
+
+# Training and chain options
 train_stage=-10
 get_egs_stage=-10
-
 tdnn_dim=450
 minibatch_size=150=64,32/300=32,16/600=16,8/1200=8,4
 cmvn_opts="--norm-means=false --norm-vars=false"
-train_data_dir=data/train
-test_data_dir=data/test
-lang_decode=data/lang
-lang=data/lang_e2e
-treedir=exp/chain/e2e_monotree  # it's actually just a trivial tree (no tree building)
-dir=exp/nn_e2e
 
 if ! cuda-compiled; then
   cat <<EOF && exit 1
@@ -30,22 +32,22 @@ EOF
 fi
 
 if [ $stage -le 0 ]; then
-  rm -rf $lang
-  cp -r data/lang $lang
-  silphonelist=$(cat $lang/phones/silence.csl) || exit 1;
-  nonsilphonelist=$(cat $lang/phones/nonsilence.csl) || exit 1;
-  steps/nnet3/chain/gen_topo.py $nonsilphonelist $silphonelist >$lang/topo
+  rm -rf $lang_dir_train
+  cp -r $lang_dir $lang_dir_train
+  silphonelist=$(cat $lang_dir_train/phones/silence.csl) || exit 1;
+  nonsilphonelist=$(cat $lang_dir_train/phones/nonsilence.csl) || exit 1;
+  steps/nnet3/chain/gen_topo.py $nonsilphonelist $silphonelist >$lang_dir_train/topo
 fi
 
 if [ $stage -le 1 ]; then
   steps/nnet3/chain/e2e/prepare_e2e.sh --nj $n_jobs --cmd "$cmd" \
                                        --shared-phones true \
                                        --type mono \
-                                       $train_data_dir $lang $treedir
+                                       $train_data_dir $lang_dir_train $treedir
   $cmd $treedir/log/make_phone_lm.log \
   cat $train_data_dir/text \| \
-    steps/nnet3/chain/e2e/text_to_phones.py data/lang \| \
-    utils/sym2int.pl -f 2- data/lang/phones.txt \| \
+    steps/nnet3/chain/e2e/text_to_phones.py $lang_dir \| \
+    utils/sym2int.pl -f 2- $lang_dir/phones.txt \| \
     chain-est-phone-lm --num-extra-lm-states=500 \
                        ark:- $treedir/phone_lm.fst
 fi
@@ -109,20 +111,37 @@ if [ $stage -le 3 ]; then
 fi
 
 if [ $stage -le 4 ]; then
+  echo
+  echo "== DECODING E2E MODEL =="
+  echo "$(date): Using LM $lang_dir_decode"
+
   utils/mkgraph.sh \
-    --self-loop-scale 1.0 $lang_decode \
+    --self-loop-scale 1.0 $lang_dir_decode \
     $dir $dir/graph || exit 1;
 
+  lm_affix=$(basename $lang_dir_decode)
+
+  rm -rf $dir/decode_test_$lm_affix
   steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
     --nj 30 --cmd "$cmd" --beam 12 \
-    $dir/graph $test_data_dir $dir/decode_test || exit 1;
+    $dir/graph $test_data_dir $dir/decode_test_$lm_affix || exit 1;
 
-  steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
-    --nj 30 --cmd "$cmd" --beam 12 \
-    $dir/graph $train_data_dir $dir/decode_train || exit 1;
+  if $decode_train; then
+    rm -rf $dir/decode_train_$lm_affix
+    steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
+      --nj 30 --cmd "$cmd" --beam 12 \
+      $dir/graph $train_data_dir $dir/decode_train_$lm_affix || exit 1;
+  fi
 
-  echo "Done. Date: $(date). Results:"
-  local/compare_wer.sh $dir
+  local/print_wer.sh $dir $lm_affix
+fi
+
+if [ $stage -le 5 ]; then
+  echo "$(date) stage 5: Aligning based on nn_e2e into nn_e2e_ali.."
+  steps/nnet3/align.sh --nj $n_jobs --cmd "$cmd" \
+    --use-gpu false \
+    --scale-opts '--transition-scale=1.0 --acoustic-scale=1.0 --self-loop-scale=1.0' \
+    $train_data_dir $lang_dir exp/nn_e2e exp/nn_e2e_ali
 fi
 
 echo
