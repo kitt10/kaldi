@@ -23,6 +23,7 @@ mkdir -p data/{train,test}/data
 # Convert the images into kaldi matrices
 for set_name in train test; do
     local/make_features.py --images_orig_file data/${set_name}/images_orig.scp \
+                           --images_file data/${set_name}/images.scp \
                            --feat_dim 40 \
                            --save_images true \
                            --fliplr true | \

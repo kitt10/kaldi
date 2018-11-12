@@ -19,6 +19,8 @@ def parse_args():
     parser = ArgumentParser(description='Converts images into features of the standard format.')
     parser.add_argument('--images_orig_file', type=str, 
                         help='path to images_orig.scp')
+    parser.add_argument('--images_file', type=str, 
+                        help='path to images.scp')
     parser.add_argument('--allowed_lengths_file', type=str, default='data/local/allowed_lengths.txt',
                         help='path to allowed_lenghts.txt')
     parser.add_argument('--feat_dim', type=int, default=40,
@@ -101,6 +103,13 @@ if __name__ == '__main__':
             for line in f:
                 allowed_lengths.append(int(line.strip()))
 
+    if args.save_images:
+        new_paths = dict()
+        with open(args.images_file, 'r') as f:
+            for line in f:
+                im_id, new_path = line.strip().split()
+                new_paths[im_id] = new_path
+
     with open(args.images_orig_file) as f:
         for line in f:
             image_id, image_path = line.strip().split()
@@ -116,7 +125,7 @@ if __name__ == '__main__':
                 continue            
 
             if args.save_images:
-                imsave(image_path, im)
+                imsave(new_paths[image_id], im)
 
             data = np.transpose(im, (1, 0))
             data = np.divide(data, 255.)

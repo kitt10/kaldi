@@ -26,6 +26,7 @@ mkdir -p ${test_data_dir}/data
 # Convert the images into kaldi matrices
 for set_dir in $train_data_dir $test_data_dir; do
     local/foreplay/make_features.py --images_orig_file ${set_dir}/images_orig.scp \
+                                    --images_file ${set_dir}/images.scp \
                                     --allowed_lengths_file ${local_dir}/allowed_lengths.txt \
                                     --feat_dim $feature_dim \
                                     --invert_colors $invert_colors \

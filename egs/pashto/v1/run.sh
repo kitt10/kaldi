@@ -29,7 +29,7 @@ if [ $stage -le 2 ]; then
     local/make_dict.py
 
     local/fix_data_dir.sh data/train
-    local/validate_data_dir.sh data_train
+    local/validate_data_dir.sh data/train
 
     local/fix_data_dir.sh data/test
     local/validate_data_dir.sh data/test
