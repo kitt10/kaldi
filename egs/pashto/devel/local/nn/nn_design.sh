@@ -10,7 +10,6 @@ echo "== $0: $(date): NN TOPOLOGY DESIGN =="
 echo
 
 num_targets=$(tree-info ${nn_treedir}/tree | grep num-pdfs | awk '{print $2}')
-echo "num targets: $num_targets"
 cnn_opts="l2-regularize=0.075"
 tdnn_opts="l2-regularize=0.075"
 output_opts="l2-regularize=0.1"

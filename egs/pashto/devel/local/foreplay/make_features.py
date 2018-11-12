@@ -19,17 +19,17 @@ def parse_args():
     parser = ArgumentParser(description='Converts images into features of the standard format.')
     parser.add_argument('--images_orig_file', type=str, 
                         help='path to images_orig.scp')
-    parser.add_argument('--allowed_lengths_file', type=str, 
+    parser.add_argument('--allowed_lengths_file', type=str, default='data/local/allowed_lengths.txt',
                         help='path to allowed_lenghts.txt')
     parser.add_argument('--feat_dim', type=int, default=40,
                         help='height of the scaled images (feature dim)')                        
     parser.add_argument('--invert_colors', type=lambda x: (str(x).lower() == 'true'),
-                        default='true',
+                        default=True,
                         help='invert colors of images (black text on white bg?)')        
     parser.add_argument('--pad_pixels', type=int, default=4,
                         help='how many white pixels shall we pad the images?')
     parser.add_argument('--save_images', type=lambda x: (str(x).lower() == 'true'), 
-                        default='false',
+                        default=False,
                         help='save the scaled images into the eg\'s data dir?')                                                                
     parser.add_argument('--fliplr', type=lambda x: (str(x).lower()=='true'),
                         default=False,

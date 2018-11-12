@@ -19,14 +19,14 @@ from codecs import open as cod_open
 
 def parse_args():
     parser = ArgumentParser(description='Creates data/local/dict files.')
-    parser.add_argument('--corpus_file', type=str,
+    parser.add_argument('--corpus_file', type=str, default='data/local/corpus.txt'
                         help='path to the corpus file with all transcriptions')
     parser.add_argument('--dict_dir', type=str, default='data/local/dict',
                         help='dir place the dict files at')
     parser.add_argument('--oov_word', type=str, default='<UNK>', 
                         help='unknown (out-of-vocabulary) word')
     parser.add_argument('--use_bpe', type=lambda x: (str(x).lower() == 'true'),
-                        default='false', help='is BPE used?')
+                        default=False, help='is BPE used?')
     return parser.parse_args()
 
 if __name__ == '__main__':

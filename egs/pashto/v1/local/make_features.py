@@ -11,23 +11,58 @@
 
 from argparse import ArgumentParser
 from os.path import join as join_path, isfile
-from scipy.misc import imread
+from scipy.misc import imread, imresize, imsave
 from sys import stdout
 import numpy as np
 
-from signal import signal, SIGPIPE, SIG_DFL
-signal(SIGPIPE,SIG_DFL)
+def parse_args():
+    parser = ArgumentParser(description='Converts images into features of the standard format.')
+    parser.add_argument('--images_orig_file', type=str, 
+                        help='path to images_orig.scp')
+    parser.add_argument('--allowed_lengths_file', type=str, default='data/local/allowed_lengths.txt',
+                        help='path to allowed_lenghts.txt')
+    parser.add_argument('--feat_dim', type=int, default=40,
+                        help='height of the scaled images (feature dim)')                        
+    parser.add_argument('--invert_colors', type=lambda x: (str(x).lower() == 'true'),
+                        default=True,
+                        help='invert colors of images (black text on white bg?)')        
+    parser.add_argument('--pad_pixels', type=int, default=4,
+                        help='how many white pixels shall we pad the images?')
+    parser.add_argument('--save_images', type=lambda x: (str(x).lower() == 'true'), 
+                        default=False,
+                        help='save the scaled images into the eg\'s data dir?')                                                                
+    parser.add_argument('--fliplr', type=lambda x: (str(x).lower()=='true'),
+                        default=False,
+                        help="flip the image left-right for right to left languages")
+    parser.add_argument('--out_ark', type=str, default='',
+                        help='output feature file; if not supplied, it goes to pipe') 
+    
+    return parser.parse_args()
 
-parser = ArgumentParser(description='Converts images into features of the standard format.')
-parser.add_argument('--im_dir', type=str, help='data directory (should contain images.scp)')
-parser.add_argument('--fliplr', type=lambda x: (str(x).lower()=='true'), default=False,
-                    help="flip the image left-right for right to left languages")
-parser.add_argument('--allowed_len_file', type=str, default='',
-                    help='if supplied, images will be padded to one of the allowed lengths')
-parser.add_argument('--out_ark', type=str, default='',
-                    help='where to write the output feature file; otherwise goes to pipe')
-args = parser.parse_args()
+def scale_image(im):
+    sy, sx = im.shape
 
+    # Some images might be rotated
+    if sy > sx:
+        im = np.rot90(im, k=-1)
+        sy, sx = im.shape
+
+    scale_ratio = float(args.feat_dim)/sy
+    return imresize(im, (int(args.feat_dim), int(scale_ratio*sx)))
+
+def pad_image(im, base_pad_value, allowed_lengths_):
+    im_len = im.shape[1]    # width
+    allowed_len = 0
+    for l in allowed_lengths_:
+        if l > im_len+2*base_pad_value:
+            allowed_len = l
+            break
+
+    if allowed_len == 0:
+        return np.empty(0)     # image is too long
+
+    padding = np.ones((args.feat_dim, (allowed_len-im_len)//2)) * 255
+    return np.hstack((padding, im, padding))
 
 def write_kaldi_matrix(file_handle, matrix, key, right_to_left=False):
     file_handle.write(key + " [ ")
@@ -53,58 +88,37 @@ def write_kaldi_matrix(file_handle, matrix, key, right_to_left=False):
 
     file_handle.write(" ]\n")
 
-
-def horizontal_pad(im, allowed_lengths=None):
-    if allowed_lengths is None:
-        left_padding = right_padding = 0
-    else:
-        im_len = im.shape[1]    # width
-        allowed_len = 0
-        for l in allowed_lengths:
-            if l > im_len:
-                allowed_len = l
-                break
-
-        if allowed_len == 0:
-            return None     # image is too long
-
-        padding = allowed_len - im_len
-        left_padding = int(padding // 2)
-        right_padding = padding - left_padding
-
-    im_height = im.shape[0]
-    left_padded_im = np.concatenate((255*np.ones((im_height, left_padding),
-                                                 dtype=int), im), axis=1)
-    return np.concatenate((left_padded_im, 255*np.ones((im_height, right_padding),
-                                                       dtype=int)), axis=1)
-
 if __name__ == '__main__':
+    args = parse_args()
     if args.out_ark:
         out_fh = open(args.out_ark, 'wb')
     else:
         out_fh = stdout  # -> pipe
 
-    allowed_lengths = None
-    if isfile(args.allowed_len_file):
+    if isfile(args.allowed_lengths_file):
         allowed_lengths = []
-        with open(args.allowed_len_file, 'r') as f:
+        with open(args.allowed_lengths_file, 'r') as f:
             for line in f:
                 allowed_lengths.append(int(line.strip()))
 
-    num_fail = 0
-    num_ok = 0
-    with open(join_path(args.im_dir, 'images.scp')) as f:
+    with open(args.images_orig_file) as f:
         for line in f:
             image_id, image_path = line.strip().split()
-            im_data = imread(image_path, flatten=True)
+            im = imread(image_path, flatten=True)
 
-            data = horizontal_pad(im_data, allowed_lengths)
-            if data is None:
-                num_fail += 1
-                continue
+            im = scale_image(im)
 
-            num_ok += 1
-            data = np.transpose(data, (1, 0))
+            if args.invert_colors:
+                im = 255-im
+
+            im = pad_image(im, args.pad_pixels, allowed_lengths)
+            if im.size == 0:
+                continue            
+
+            if args.save_images:
+                imsave(image_path, im)
+
+            data = np.transpose(im, (1, 0))
             data = np.divide(data, 255.)
             write_kaldi_matrix(out_fh, matrix=data, key=image_id,
                                right_to_left=args.fliplr)

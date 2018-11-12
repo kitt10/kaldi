@@ -44,5 +44,5 @@ local/foreplay/collect_data.py --raw_data_path $raw_data_path \
                                --coverage_factor $al_coverage_factor || exit 1
 
 # Convert utt2spk into spk2utt for train and test
-utils/utt2spk_to_spk2utt.pl ${data_dir}/train/utt2spk > ${data_dir}/train/spk2utt
-utils/utt2spk_to_spk2utt.pl ${data_dir}/test/utt2spk > ${data_dir}/test/spk2utt
+utils/utt2spk_to_spk2utt.pl ${train_data_dir}/utt2spk > ${train_data_dir}/spk2utt
+utils/utt2spk_to_spk2utt.pl ${test_data_dir}/utt2spk > ${test_data_dir}/spk2utt

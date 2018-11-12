@@ -39,7 +39,7 @@ def parse_args():
     parser.add_argument('--pad_pixels', type=int, default=4,
                         help='how many white pixels shall we pad the images?')                       
     parser.add_argument('--save_images', type=lambda x: (str(x).lower() == 'true'), 
-                        default=False,
+                        default='false',
                         help='save the scaled images into the eg\'s data dir?')
     parser.add_argument('--frame_subsampling_factor', type=int, default=4,
                         help='see steps/nnet3/chain/train.py')

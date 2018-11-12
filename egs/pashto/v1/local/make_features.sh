@@ -15,15 +15,19 @@
 
 set -e
 
+. ./path.sh
+
 rm -rf data/{train,test}/data
 mkdir -p data/{train,test}/data
 
-echo "== $0: Preparing feature files for the test and training data.."
-for f in train test; do
-    local/make_features.py --im_dir data/$f --fliplr true \
-                           --allowed_len_file $local_dir/allowed_lengths.txt | \
+# Convert the images into kaldi matrices
+for set_name in train test; do
+    local/make_features.py --images_orig_file data/${set_name}/images_orig.scp \
+                           --feat_dim 40 \
+                           --save_images true \
+                           --fliplr true | \
     copy-feats --compress=true --compression-method=7 \
-               ark:- ark,scp:data/$f/data/images.ark,data/$f/feats.scp || exit 1
+               ark:- ark,scp:data/${set_name}/data/images.ark,data/${set_name}/feats.scp || exit 1
 
-    steps/compute_cmvn_stats.sh data/$f || exit 1;
+    steps/compute_cmvn_stats.sh data/${set_name} || exit 1;
 done

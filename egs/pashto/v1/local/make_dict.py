@@ -18,25 +18,25 @@ from codecs import open as cod_open
 
 
 def parse_args():
-    parser = ArgumentParser(description='Creates data/local/dict.')
-    parser.add_argument('--trs_files', nargs='+', type=str,
-                        help='path to all text files with transcriptions')
+    parser = ArgumentParser(description='Creates data/local/dict files.')
+    parser.add_argument('--corpus_file', type=str, default='data/local/corpus.txt',
+                        help='path to the corpus file with all transcriptions')
     parser.add_argument('--dict_dir', type=str, default='data/local/dict',
-                        help='where to create the dict directory')
-    parser.add_argument('--oov_word', type=str, default='<UNK>', help='unknown (oov) word')
+                        help='dir place the dict files at')
+    parser.add_argument('--oov_word', type=str, default='<UNK>', 
+                        help='unknown (out-of-vocabulary) word')
     parser.add_argument('--use_bpe', type=lambda x: (str(x).lower() == 'true'),
-                        default='false', help='is BPE used?')
+                        default=False, help='is BPE used?')
     return parser.parse_args()
 
 if __name__ == '__main__':
     args = parse_args()
 
     all_words = list()
-    for trs_filename in args.trs_files:
-        with cod_open(trs_filename, 'r', encoding='utf-8') as f:
-            for line in f.readlines():
-                for word in line.split()[1:]:
-                    all_words.append(word)
+    with cod_open(args.corpus_file, 'r', encoding='utf-8') as f:
+        for line in f.readlines():
+            for word in line.strip().split():
+                all_words.append(word)
                 
     all_words_unique = list(set(all_words))
     
