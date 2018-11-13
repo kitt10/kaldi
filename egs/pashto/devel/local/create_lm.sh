@@ -11,6 +11,7 @@ cfg=$1
 mkdir -p ${lang_dir}
 mkdir -p ${lang_dir}/work 
 lang_tmp=${lang_dir}/work/tmp_${lang_name}
+rm -rf ${lang}
 rm -rf $lang_tmp
 
 if $use_bpe; then

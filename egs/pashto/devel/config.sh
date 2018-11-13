@@ -52,7 +52,7 @@ export use_bpe=false            # Byte Pair Encoding [true|false]
 # -----------------------------------------------------------------------------
 
 # -- LANGUAGE MODEL -----------------------------------------------------------
-export lang_name=2g
+export lang_name=${data_name}_2g
 export lang=${lang_dir}/${lang_name} # lm directory
 export lang_order=2             # n-gram model order
 export lang_num_sil_states=4
@@ -100,7 +100,7 @@ export nn_nj_final=10
 
 # -- DECODING -----------------------------------------------------------------
 export decode_model=sat                 # id of dir with model for decoding
-export decode_lang_name=2g              # lm used for decoding
+export decode_lang_name=${data_name}_2g # lm used for decoding
 export decode_test=true                 # decode test data?
 export decode_train=false               # decode train data?
 export decode_lang=${lang_dir}/${decode_lang_name}
