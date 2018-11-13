@@ -6,6 +6,7 @@ from os import makedirs
 from os.path import join as join_path, exists
 from codecs import open as cod_open
 from scipy.misc import imread, imsave
+from sys import stdout
 
 def get_word_list(old_trs_dir):
     word_list = dict()
@@ -39,15 +40,24 @@ if __name__ == '__main__':
 
     word_list = get_word_list(old_trs_dir)
 
+    # hack - do only these spks and append to done work
+    missing_spks = ['55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', \
+		    '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', \
+		    '93', '94', '95', '96', '97', '98', '99', '5', '6', '7', '8', '9']
     for spk_dir_path in sorted(glob(join_path(data_dir, '*'))):
         dirname = spk_dir_path.split('/')[-1]
         spk_id = dirname.split('_')[0]
 
+        spk_nb = spk_id[2:]
+        if spk_nb not in missing_spks:
+            continue
+
         print('Processing speaker', spk_id)
+        stdout.flush()
 
         for xml_file_path in sorted(glob(join_path(spk_dir_path, '*.xml'))):
             filename = xml_file_path.split('/')[-1]
-            doc_nb = filename.split('_')[1][:3]
+            doc_nb = filename.split('_')[1][:3]         # TODO must be treated for af55
             if int(doc_nb) < 11:
                 continue        # separated words starts on page 11
 

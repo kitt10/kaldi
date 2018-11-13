@@ -6,6 +6,7 @@ from os import makedirs
 from os.path import join as join_path, exists
 from codecs import open as cod_open
 from scipy.misc import imread, imsave
+from sys import stdout
 
 def get_word_list(old_trs_dir):
     word_list = dict()
@@ -34,12 +35,18 @@ if __name__ == '__main__':
 
     word_list = get_word_list(old_trs_dir)
 
+    missing_spks = ['us5']
+
     for spk_dir_path in sorted(glob(join_path(data_dir, '*'))):
         dirname = spk_dir_path.split('/')[-1]
         spk_id = dirname.split('_')[0]
 
-        print('Processing speaker', spk_id)
+        if spk_id not in missing_spks:
+            continue
 
+        print('Processing speaker', spk_id)
+        stdout.flush()
+        
         for xml_file_path in sorted(glob(join_path(spk_dir_path, '*.xml'))):
             filename = xml_file_path.split('/')[-1]
             if 'final' not in filename:
@@ -57,8 +64,12 @@ if __name__ == '__main__':
             try:
                 im_page = imread(join_path(spk_dir_path, page_src), flatten=True)
             except FileNotFoundError:
-                print('File '+page_src+' not found. Skipping.')
-                continue
+                try:
+                    page_src = 'final_'+page_src            # us5: bug in the xml
+                    im_page = imread(join_path(spk_dir_path, page_src), flatten=True)
+                except FileNotFoundError:
+                    print('File '+page_src+' not found. Skipping.')
+                    continue
 
             for page in doc.findall(ns+'DL_PAGE'):
                 zones = page.findall(ns+'DL_ZONE')
