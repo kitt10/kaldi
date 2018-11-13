@@ -2,8 +2,11 @@
 
 set -e
 
+cfg=$1
+
+# shellcheck source=config.sh
+. ./${cfg}
 . ./path.sh
-. ./config.sh
 
 echo
 echo "== $0: $(date): NN ENVIRONMENT CHECK =="

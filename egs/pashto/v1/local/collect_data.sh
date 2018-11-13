@@ -30,8 +30,8 @@ mkdir -p data/log
 # Transform the raw data into the kaldi-compatible format
 local/collect_data.py --raw_data_path $raw_data_path \
                       --us_spks 12 \
-                      --af_spks 120 \
-                      --first_spknb_test 101 \
+                      --af_spks 0 \
+                      --first_spknb_test 8 \
                       --feat_dim 40 \
                       --save_images true \
                       --frame_subsampling_factor 4 || exit 1

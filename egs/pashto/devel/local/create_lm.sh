@@ -2,8 +2,11 @@
 
 # Creates the language model
 
+cfg=$1
+
+# shellcheck source=config.sh
+. ./${cfg}
 . ./path.sh
-. ./config.sh
 
 mkdir -p ${lang_dir}
 mkdir -p ${lang_dir}/work 

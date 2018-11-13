@@ -2,7 +2,10 @@
 
 set -e
 
-. ./config.sh
+cfg=$1
+
+# shellcheck source=config.sh
+. ./${cfg}
 
 echo
 echo "== $0: $(date): FMLLR ALIGNMENT =="

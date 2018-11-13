@@ -28,7 +28,8 @@ export dict_dir=${local_dir}/dict
 export images_dir=${local_dir}/images
 export bpe_dir=${local_dir}/bpe
 export lang_dir=lang
-export exp_dir=exp
+exp_dir=exp/$(basename $data_dir)   # exp/<train_data>
+export exp_dir
 # -----------------------------------------------------------------------------
 
 # -- DATA ---------------------------------------------------------------------
@@ -90,6 +91,10 @@ export nn_xent_regularize=0.1
 export nn_tdnn_dim=450
 export nn_ali_subsampling_factor=$subsampling_factor
 export nn_chunk_width=340,300,200,100
+export nn_numchunk_per_minibatch=150=64,32/300=32,16/600=16,8/1200=8,4
+export nn_numepochs=4
+export nn_nj_initial=3
+export nn_nj_final=10
 # -----------------------------------------------------------------------------
 
 # -- DECODING -----------------------------------------------------------------

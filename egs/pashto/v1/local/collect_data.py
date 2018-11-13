@@ -19,13 +19,13 @@ def parse_args():
     parser.add_argument('--train_data_dir', type=str, default='data/train',
                         help='directory for training data')
     parser.add_argument('--test_data_dir', type=str, default='data/test',
-                        help='directory for testing data')                                                
+                        help='directory for testing data')
     parser.add_argument('--local_dir', type=str, default='data/local',
                         help='the data/local dir')
     parser.add_argument('--images_dir', type=str, default='data/local/images',
                         help='the place where to save scaled images')
     parser.add_argument('--data_log_dir', type=str, default='data/log',
-                        help='the place to leave a log at')                                                
+                        help='the place to leave a log at')
     parser.add_argument('--us_spks', type=int, 
                         help='number of US speakers (0-12)')
     parser.add_argument('--af_spks', type=int, 
@@ -35,9 +35,9 @@ def parse_args():
     parser.add_argument('--first_spknb_test', type=int, default=300,
                         help='spks with geq nb will be in the test set') 
     parser.add_argument('--feat_dim', type=int, default=40,
-                        help='height of the scaled images (feature dim)')                
+                        help='height of the scaled images (feature dim)')
     parser.add_argument('--pad_pixels', type=int, default=4,
-                        help='how many white pixels shall we pad the images?')                       
+                        help='how many white pixels shall we pad the images?')
     parser.add_argument('--save_images', type=lambda x: (str(x).lower() == 'true'), 
                         default='false',
                         help='save the scaled images into the eg\'s data dir?')
@@ -46,7 +46,7 @@ def parse_args():
     parser.add_argument('--spacing_factor', type=float, default=10,
                         help='spacing (in percentage) between allowed lengths')
     parser.add_argument('--coverage_factor', type=float, default=0.01,
-                        help='percentage of widths not covered from each side')                                              
+                        help='percentage of widths not covered from each side')
 
     return parser.parse_args()
 
@@ -139,7 +139,7 @@ if __name__ == '__main__':
                             'r', encoding='utf-8') as f:
                 for line in f.readlines():
                     im_orig_id = line[line.find('(')+1:line.find(')')]
-                    trs = line[4:line.find(' </s>')]
+                    trs = line[line.find('<s>')+3:line.find('</s>')].lstrip(' ').rstrip(' ')
 
                     im_dir = im_orig_id[im_orig_id.find('-')+1:]
                     im_orig_path = join_path(data_source_path, 'words', im_dir,

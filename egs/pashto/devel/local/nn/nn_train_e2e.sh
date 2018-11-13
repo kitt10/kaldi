@@ -2,8 +2,11 @@
 
 set -e
 
+cfg=$1
+
+# shellcheck source=config.sh
+. ./${cfg}
 . ./path.sh
-. ./config.sh
 
 echo
 echo "== $0: $(date): NN TRAINING E2E =="
@@ -20,12 +23,12 @@ steps/nnet3/chain/e2e/train_e2e.py \
     --chain.frame-subsampling-factor 4 \
     --chain.alignment-subsampling-factor 4 \
     --trainer.add-option="--optimization.memory-compression-level=2" \
-    --trainer.num-chunk-per-minibatch 150=64,32/300=32,16/600=16,8/1200=8,4 \
+    --trainer.num-chunk-per-minibatch $nn_numchunk_per_minibatch \
     --trainer.frames-per-iter 1500000 \
-    --trainer.num-epochs 3 \
+    --trainer.num-epochs $nn_numepochs \
     --trainer.optimization.momentum 0 \
-    --trainer.optimization.num-jobs-initial 2 \
-    --trainer.optimization.num-jobs-final 4 \
+    --trainer.optimization.num-jobs-initial $nn_nj_initial \
+    --trainer.optimization.num-jobs-final $nn_nj_final \
     --trainer.optimization.initial-effective-lrate 0.001 \
     --trainer.optimization.final-effective-lrate 0.0001 \
     --trainer.optimization.shrink-value 1.0 \

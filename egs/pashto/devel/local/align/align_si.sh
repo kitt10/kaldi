@@ -2,9 +2,11 @@
 
 set -e
 
-. ./config.sh
+cfg=$1
+model=$2
 
-model=$1
+# shellcheck source=config.sh
+. ./${cfg}
 
 echo
 echo "== $0: $(date): SI ALIGNMENT FOR MODEL $1 =="

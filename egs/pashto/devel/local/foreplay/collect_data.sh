@@ -16,8 +16,11 @@
 
 set -e
 
+cfg=$1
+
+# shellcheck source=config.sh
+. ./${cfg}
 . ./path.sh
-. ./config.sh
 
 rm -rf ${data_dir}
 mkdir -p ${train_data_dir}

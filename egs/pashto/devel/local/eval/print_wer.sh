@@ -6,7 +6,10 @@
 #                2017  Ashish Arora
 #                2018  Martin Bulin
 
-. ./config.sh
+cfg=$1
+
+# shellcheck source=config.sh
+. ./${cfg}
 
 lm_affix=$(basename $decode_lang)
 
@@ -17,7 +20,7 @@ echo -n "# Model              "
 printf "% 10s" " ${decode_model}"
 
 if [ -d ${exp_dir}/${decode_model}/decode_test_${lm_affix} ] \
-  && [ $1 = "test" ]; then
+  && [ $2 = "test" ]; then
     echo
     echo -n "# WER TEST            "
     wer=$(cat ${exp_dir}/${decode_model}/decode_test_${lm_affix}/scoring_kaldi/best_wer | awk '{print $2}')
@@ -25,7 +28,7 @@ if [ -d ${exp_dir}/${decode_model}/decode_test_${lm_affix} ] \
 fi
 
 if [ -d ${exp_dir}/${decode_model}/decode_train_${lm_affix} ] \
-  && [ $1 = "train" ]; then
+  && [ $2 = "train" ]; then
     echo
     echo -n "# WER TRAIN           "
     wer=$(cat ${exp_dir}/${decode_model}/decode_train_${lm_affix}/scoring_kaldi/best_wer | awk '{print $2}')

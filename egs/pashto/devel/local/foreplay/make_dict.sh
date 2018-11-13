@@ -10,9 +10,11 @@
 
 set -e
 
-. ./config.sh
+cfg=$1
 
-rm -rf $lang_dir
+# shellcheck source=config.sh
+. ./${cfg}
+
 rm -rf $dict_dir
 rm -rf $bpe_dir
 rm -f $local_dir/corpus_bpe.txt
@@ -22,7 +24,7 @@ corpus_file=${local_dir}/corpus.txt
 cut -d' ' -f2- ${train_data_dir}/text ${test_data_dir}/text > $corpus_file
 
 if $use_bpe; then
-    local/foreplay/apply_bpe.sh
+    local/foreplay/apply_bpe.sh $cfg
     corpus_file=${local_dir}/corpus_bpe.txt
 fi
 

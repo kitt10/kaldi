@@ -1,7 +1,10 @@
 #!/bin/bash
 
+cfg=$1
+
+# shellcheck source=config.sh
+. ./${cfg}
 . ./path.sh
-. ./config.sh
 
 lm_affix=$(basename $decode_lang)
 
@@ -64,7 +67,7 @@ if [ $stage_from -le 2 ] && [ $stage_upto -ge 2 ] && $decode_test; then
       $test_data_dir ${exp_dir}/${decode_model}/decode_test_${lm_affix} || exit 1;
   fi
 
-  local/eval/print_wer.sh test
+  local/eval/print_wer.sh  $cfg test
 fi
 
 # ===== 3: DECODING TRAIN DATA =====
@@ -105,7 +108,7 @@ if [ $stage_from -le 3 ] && [ $stage_upto -ge 3 ] && $decode_train; then
       $train_data_dir ${exp_dir}/${decode_model}/decode_train_${lm_affix} || exit 1;
   fi
 
-  local/eval/print_wer.sh train
+  local/eval/print_wer.sh $cfg train
 fi
 
 echo
