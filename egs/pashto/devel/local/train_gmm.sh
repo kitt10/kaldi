@@ -44,5 +44,5 @@ if [ $stage_from -le 4 ] && [ $stage_upto -ge 4 ]; then
 fi
 
 echo
-echo "== $0: $(date): GMM TRAINING ($stage_from to $stage_upto). =="
+echo "== $0: $(date): DONE GMM TRAINING ($stage_from to $stage_upto). =="
 echo

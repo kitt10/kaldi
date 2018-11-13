@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Creates the language model
+set -e
 
 cfg=$1
 
@@ -10,7 +10,7 @@ cfg=$1
 
 mkdir -p ${lang_dir}
 mkdir -p ${lang_dir}/work 
-lang_tmp=${lang_dir}/work/tmp_$(basename $lang)
+lang_tmp=${lang_dir}/work/tmp_${lang_name}
 rm -rf $lang_tmp
 
 if $use_bpe; then

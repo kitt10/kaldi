@@ -1,12 +1,12 @@
 #!/bin/bash
 
+set -e
+
 cfg=$1
 
 # shellcheck source=config.sh
 . ./${cfg}
 . ./path.sh
-
-lm_affix=$(basename $decode_lang)
 
 # ===== 1: MAKING DECODING GRAPH =====
 if [ $stage_from -le 1 ] && [ $stage_upto -ge 1 ]; then
@@ -41,19 +41,19 @@ if [ $stage_from -le 2 ] && [ $stage_upto -ge 2 ] && $decode_test; then
     echo "-- Decoding a gaussian model --"
     if [ $decode_model = "sat" ]; then
       steps/decode_fmllr.sh --nj $n_jobs --cmd $cmd ${exp_dir}/${decode_model}/graph \
-        $test_data_dir ${exp_dir}/${decode_model}/decode_test_${lm_affix}
+        $test_data_dir ${exp_dir}/${decode_model}/decode_test_${decode_lang_name}
     elif [ $decode_model = "sgmm" ]; then
       steps/decode_sgmm2.sh --nj $n_jobs --cmd $cmd \
-        --transform-dir ${exp_dir}/sat/decode_test_${lm_affix} \
+        --transform-dir ${exp_dir}/sat/decode_test_${decode_lang_name} \
         ${exp_dir}/${decode_model}/graph $test_data_dir \
-        ${exp_dir}/${decode_model}/decode_test_${lm_affix}
+        ${exp_dir}/${decode_model}/decode_test_${decode_lang_name}
     else
       steps/decode.sh --nj $n_jobs --cmd $cmd ${exp_dir}/${decode_model}/graph \
-        $test_data_dir ${exp_dir}/${decode_model}/decode_test_${lm_affix}
+        $test_data_dir ${exp_dir}/${decode_model}/decode_test_${decode_lang_name}
     fi
   else
     echo "-- Decoding a chain model --"
-    rm -rf ${exp_dir}/${decode_model}/decode_test_${lm_affix}
+    rm -rf ${exp_dir}/${decode_model}/decode_test_${decode_lang_name}
 
     frames_per_chunk=$(echo $nn_chunk_width | cut -d, -f1)
     steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
@@ -64,7 +64,7 @@ if [ $stage_from -le 2 ] && [ $stage_upto -ge 2 ] && $decode_test; then
       --frames-per-chunk $frames_per_chunk \
       --nj $n_jobs --cmd $cmd \
       ${exp_dir}/${decode_model}/graph \
-      $test_data_dir ${exp_dir}/${decode_model}/decode_test_${lm_affix} || exit 1;
+      $test_data_dir ${exp_dir}/${decode_model}/decode_test_${decode_lang_name} || exit 1;
   fi
 
   local/eval/print_wer.sh  $cfg test
@@ -82,19 +82,19 @@ if [ $stage_from -le 3 ] && [ $stage_upto -ge 3 ] && $decode_train; then
     # gaussian model
     if [ $decode_model = "sat" ]; then
       steps/decode_fmllr.sh --nj $n_jobs --cmd $cmd ${exp_dir}/${decode_model}/graph \
-        $train_data_dir ${exp_dir}/${decode_model}/decode_train_${lm_affix}
+        $train_data_dir ${exp_dir}/${decode_model}/decode_train_${decode_lang_name}
     elif [ $decode_model = "sgmm" ]; then
       steps/decode_sgmm2.sh --nj $n_jobs --cmd $cmd \
-        --transform-dir ${exp_dir}/sat/decode_train_${lm_affix} \
+        --transform-dir ${exp_dir}/sat/decode_train_${decode_lang_name} \
         ${exp_dir}/${decode_model}/graph $train_data_dir \
-        ${exp_dir}/${decode_model}/decode_train_${lm_affix}
+        ${exp_dir}/${decode_model}/decode_train_${decode_lang_name}
     else
       steps/decode.sh --nj $n_jobs --cmd $cmd ${exp_dir}/${decode_model}/graph \
-        $train_data_dir ${exp_dir}/${decode_model}/decode_train_${lm_affix}
+        $train_data_dir ${exp_dir}/${decode_model}/decode_train_${decode_lang_name}
     fi
   else
     # chain model
-    rm -rf ${exp_dir}/${decode_model}/decode_test_${lm_affix}
+    rm -rf ${exp_dir}/${decode_model}/decode_test_${decode_lang_name}
 
     frames_per_chunk=$(echo $nn_chunk_width | cut -d, -f1)
     steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
@@ -105,7 +105,7 @@ if [ $stage_from -le 3 ] && [ $stage_upto -ge 3 ] && $decode_train; then
       --frames-per-chunk $frames_per_chunk \
       --nj $n_jobs --cmd $cmd \
       ${exp_dir}/${decode_model}/graph \
-      $train_data_dir ${exp_dir}/${decode_model}/decode_train_${lm_affix} || exit 1;
+      $train_data_dir ${exp_dir}/${decode_model}/decode_train_${decode_lang_name} || exit 1;
   fi
 
   local/eval/print_wer.sh $cfg train

@@ -18,18 +18,18 @@ export stage_from=0             # first stage being run
 export stage_upto=100           # last stage being run
 # -----------------------------------------------------------------------------
 
-# -- FIXED --------------------------------------------------------------------
-export data_dir=data
-export train_data_dir=${data_dir}/train
+# -- DIRS --------------------------------------------------------------------
+export data_name=tiny
+export data_dir=data/${data_name}
 export test_data_dir=${data_dir}/test
+export train_data_dir=${data_dir}/train
 export local_dir=${data_dir}/local
 export data_log_dir=${data_dir}/log
 export dict_dir=${local_dir}/dict
 export images_dir=${local_dir}/images
 export bpe_dir=${local_dir}/bpe
 export lang_dir=lang
-exp_dir=exp/$(basename $data_dir)   # exp/<train_data>
-export exp_dir
+export exp_dir=exp/exp_${data_name}   # exp/exp_<train_data_name>
 # -----------------------------------------------------------------------------
 
 # -- DATA ---------------------------------------------------------------------
@@ -52,7 +52,8 @@ export use_bpe=false            # Byte Pair Encoding [true|false]
 # -----------------------------------------------------------------------------
 
 # -- LANGUAGE MODEL -----------------------------------------------------------
-export lang=${lang_dir}/lang_2g # lm directory
+export lang_name=2g
+export lang=${lang_dir}/${lang_name} # lm directory
 export lang_order=2             # n-gram model order
 export lang_num_sil_states=4
 export lang_num_nonsil_states=8
@@ -98,8 +99,9 @@ export nn_nj_final=10
 # -----------------------------------------------------------------------------
 
 # -- DECODING -----------------------------------------------------------------
-export decode_model=sat                # id of dir with model for decoding
-export decode_lang=${lang_dir}/lang_2g  # lm used for decoding
+export decode_model=sat                 # id of dir with model for decoding
+export decode_lang_name=2g              # lm used for decoding
 export decode_test=true                 # decode test data?
 export decode_train=false               # decode train data?
+export decode_lang=${lang_dir}/${decode_lang_name}
 # -----------------------------------------------------------------------------

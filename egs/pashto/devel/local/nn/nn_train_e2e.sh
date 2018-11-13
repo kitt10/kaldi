@@ -20,8 +20,8 @@ steps/nnet3/chain/e2e/train_e2e.py \
     --chain.apply-deriv-weights true \
     --egs.stage -10 \
     --egs.opts "--num_egs_diagnostic 100 --num_utts_subset 400" \
-    --chain.frame-subsampling-factor 4 \
-    --chain.alignment-subsampling-factor 4 \
+    --chain.frame-subsampling-factor $subsampling_factor \
+    --chain.alignment-subsampling-factor $subsampling_factor \
     --trainer.add-option="--optimization.memory-compression-level=2" \
     --trainer.num-chunk-per-minibatch $nn_numchunk_per_minibatch \
     --trainer.frames-per-iter 1500000 \

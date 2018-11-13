@@ -24,7 +24,7 @@ steps/nnet3/chain/train.py \
     --chain.leaky-hmm-coefficient 0.1 \
     --chain.l2-regularize 0.00005 \
     --chain.apply-deriv-weights false \
-    --chain.lm-opts "--num-extra-lm-states=500" \
+    --chain.lm-opts="--num-extra-lm-states=500" \
     --chain.frame-subsampling-factor $subsampling_factor \
     --chain.alignment-subsampling-factor $nn_ali_subsampling_factor \
     --trainer.srand 0 \
@@ -43,7 +43,7 @@ steps/nnet3/chain/train.py \
     --egs.chunk-right-context 0 \
     --egs.chunk-left-context-initial 0 \
     --egs.chunk-right-context-final 0 \
-    --egs.opts "--frames-overlap-per-eg 0" \
+    --egs.opts="--frames-overlap-per-eg 0" \
     --cleanup.remove-egs true \
     --use-gpu $nn_use_gpu \
     --feat-dir $train_data_dir \
