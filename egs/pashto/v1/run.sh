@@ -80,8 +80,8 @@ fi
 if [ $stage -le 7 ]; then
     echo
     echo "== $0: $(date): STAGE 7: TRAINING DELTAS (TRI) =="
-    steps/train_deltas.sh --nj $nj --cmd $cmd \
-                          1024 16384 data/train data/lang exp/mono_ali exp/tri
+    steps/train_deltas.sh --cmd $cmd 1024 16384 \
+                          data/train data/lang exp/mono_ali exp/tri
 fi
 
 if [ $stage -le 8 ]; then
@@ -131,7 +131,7 @@ fi
 if [ $stage -le 13 ]; then
     echo
     echo "== $0: $(date): STAGE 13: TRAINING SAT+FMLLR (TRI3) =="
-    steps/train_sat.sh --nj $nj --cmd $cmd 4200 40000 \
+    steps/train_sat.sh --cmd $cmd 4200 40000 \
                        data/train data/lang exp/tri2_ali exp/tri3
 fi
 
@@ -155,8 +155,12 @@ fi
 
 if [ $stage -le 16 ]; then
     echo
+    echo "RESULTS SO FAR:"
+    find exp -name "best_wer" | xargs cat  | sort -k2,2g | tee RESULTS
+    echo
+    echo
     echo "== $0: $(date): STAGE 16: RUNNING CNN STAGES =="
-    local/chain/run_cnn.sh --stage=0
+    local/chain/run_cnn.sh --stage 0
 fi
 
 echo

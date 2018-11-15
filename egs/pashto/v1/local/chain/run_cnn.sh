@@ -15,7 +15,7 @@ lang_decode=data/lang
 xent_regularize=0.1
 tdnn_dim=450
 chunk_width=340,300,200,100
-numchunk_per_minibatch=150=64,32/300=32,16/600=16,8/1200=8,4
+numchunk_per_minibatch=150=32,16/300=16,8/600=8,4/1200=4,2
 nj_initial=3
 nj_final=8
 # -- End configuration section ------------------------------------------------
@@ -43,6 +43,8 @@ EOF
 fi
 
 if [ $stage -le 1 ]; then
+    echo
+    echo "== $0: $(date): STAGE 16/1: Creating a training lang =="
     rm -rf $nn_dir $nn_treedir $nn_latdir
 
     if [ -d $lang_train ] && [ ${lang_train}/L.fst -nt data/lang/L.fst ]; then
@@ -55,13 +57,24 @@ if [ $stage -le 1 ]; then
         steps/nnet3/chain/gen_topo.py $nonsilphonelist $silphonelist > ${lang_train}/topo
     fi
 
+    echo "== $0: $(date): STAGE 16/1: Aligning FMLLR lattices =="
     steps/align_fmllr_lats.sh --nj $nj --cmd $cmd data/train \
                             data/lang exp/tri3 $nn_latdir
     
     rm ${nn_latdir}/fsts.*.gz
+
+    echo "== $0: $(date): STAGE 16/1: Building a tree =="
+    steps/nnet3/chain/build_tree.sh \
+        --frame-subsampling-factor 4 \
+        --alignment-subsampling-factor 4 \
+        --context-opts "--context-width=2 --central-position=1" \
+        --cmd $cmd 300 data/train \
+        $lang_train exp/tri3 $nn_treedir
 fi
 
 if [ $stage -le 2 ]; then
+    echo
+    echo "== $0: $(date): STAGE 16/2: NN topology design =="
     num_targets=$(tree-info ${nn_treedir}/tree | grep num-pdfs | awk '{print $2}')
     cnn_opts="l2-regularize=0.075"
     tdnn_opts="l2-regularize=0.075"
@@ -110,6 +123,8 @@ EOF
 fi
 
 if [ $stage -le 3 ]; then
+    echo
+    echo "== $0: $(date): STAGE 16/3: NN training =="
     steps/nnet3/chain/train.py \
         --stage -10 \
         --cmd $cmd \
