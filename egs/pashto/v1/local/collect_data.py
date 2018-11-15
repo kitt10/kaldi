@@ -26,20 +26,20 @@ def parse_args():
                         help='the place where to save scaled images')
     parser.add_argument('--data_log_dir', type=str, default='data/log',
                         help='the place to leave a log at')
-    parser.add_argument('--us_spks', type=int, 
+    parser.add_argument('--us_spks', type=int,
                         help='number of US speakers (0-12)')
-    parser.add_argument('--af_spks', type=int, 
+    parser.add_argument('--af_spks', type=int,
                         help='number of Afgh. speakers (0-370)')
     parser.add_argument('--max_samples', type=int, default=100000,
                         help='max number of samples per speaker to consider')
     parser.add_argument('--first_spknb_test', type=int, default=300,
-                        help='spks with geq nb will be in the test set') 
+                        help='spks with geq nb will be in the test set')
     parser.add_argument('--feat_dim', type=int, default=40,
                         help='height of the scaled images (feature dim)')
     parser.add_argument('--pad_pixels', type=int, default=4,
                         help='how many white pixels shall we pad the images?')
-    parser.add_argument('--save_images', type=lambda x: (str(x).lower() == 'true'), 
-                        default='false',
+    parser.add_argument('--save_images', type=lambda x: (str(x).lower() == 'true'),
+                        default=False,
                         help='save the scaled images into the eg\'s data dir?')
     parser.add_argument('--frame_subsampling_factor', type=int, default=4,
                         help='see steps/nnet3/chain/train.py')
@@ -134,6 +134,7 @@ if __name__ == '__main__':
             if w_i%100 == 0:
                 print('Processed '+str(w_i)+' words. Have '+str(len(images_train))+' train and '\
                 +str(len(images_test))+' test samples.')
+                stdout.flush()
 
             with cod_open(join_path(data_source_path, 'transcriptions', w_id+'.txt'),
                             'r', encoding='utf-8') as f:
@@ -190,11 +191,11 @@ if __name__ == '__main__':
             f.write(line)
 
     with open(join_path(args.train_data_dir, 'images.scp'), 'w+') as f:
-        for line in images_train:
+        for line in sorted(images_train):
             f.write(line)
-    
+
     with open(join_path(args.train_data_dir, 'images_orig.scp'), 'w+') as f:
-        for line in images_orig_train:
+        for line in sorted(images_orig_train):
             f.write(line)
 
     with cod_open(join_path(args.test_data_dir, 'text'), 'w+', encoding='utf-8') as f:
@@ -206,11 +207,11 @@ if __name__ == '__main__':
             f.write(line)
 
     with open(join_path(args.test_data_dir, 'images.scp'), 'w+') as f:
-        for line in images_test:
+        for line in sorted(images_test):
             f.write(line)
 
     with open(join_path(args.test_data_dir, 'images_orig.scp'), 'w+') as f:
-        for line in images_orig_test:
+        for line in sorted(images_orig_test):
             f.write(line)
 
     # Find allowed lengths
@@ -220,7 +221,7 @@ if __name__ == '__main__':
     # Leave a log
     log_path = join_path(args.data_log_dir, 'collect_data.log')
     with open(log_path, 'w+') as f:
-        f.write(ctime()+' :: Pashto DATA PREPARATION\n')
+        f.write(ctime()+' :: Pashto COLLECTING DATA LOG\n')
         f.write('\nARGS:\n')
         for arg, val in sorted(vars(args).items(), key=lambda x: x[0]):
             f.write(str(arg)+': '+str(val)+'\n')

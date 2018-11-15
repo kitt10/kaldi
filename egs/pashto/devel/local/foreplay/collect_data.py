@@ -34,6 +34,9 @@ def parse_args():
                         help='max number of samples per speaker to consider')
     parser.add_argument('--first_spknb_test', type=int, default=300,
                         help='spks with geq nb will be in the test set')
+    parser.add_argument('--test_only_set', type=lambda x: (str(x).lower() == 'true'),
+                        default=False,
+                        help='save the test samples only and skip train samples?')
     parser.add_argument('--feat_dim', type=int, default=40,
                         help='height of the scaled images (feature dim)')
     parser.add_argument('--pad_pixels', type=int, default=4,
@@ -160,6 +163,10 @@ if __name__ == '__main__':
                     spk_id = spk_id_tmp[:2]+spk_id_tmp[2:].zfill(3)
                     if spk_id not in spks_count.keys() or \
                                     spks_count[spk_id] == args.max_samples:
+                        continue
+
+                    # if you are collecting test data only (judge sets)
+                    if args.test_only_set and int(spk_id[2:]) < args.first_spknb_test:
                         continue
 
                     spks_count[spk_id] += 1

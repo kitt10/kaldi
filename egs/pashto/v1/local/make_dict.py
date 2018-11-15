@@ -23,7 +23,7 @@ def parse_args():
                         help='path to the corpus file with all transcriptions')
     parser.add_argument('--dict_dir', type=str, default='data/local/dict',
                         help='dir place the dict files at')
-    parser.add_argument('--oov_word', type=str, default='<UNK>', 
+    parser.add_argument('--oov_word', type=str, default='<UNK>',
                         help='unknown (out-of-vocabulary) word')
     parser.add_argument('--use_bpe', type=lambda x: (str(x).lower() == 'true'),
                         default=False, help='is BPE used?')
@@ -37,9 +37,9 @@ if __name__ == '__main__':
         for line in f.readlines():
             for word in line.strip().split():
                 all_words.append(word)
-                
+
     all_words_unique = list(set(all_words))
-    
+
     # lexicon.txt
     f_lexicon = cod_open(args.dict_dir+'/lexicon.txt', 'w+', encoding='utf-8')
     for word in sorted(all_words_unique):

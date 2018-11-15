@@ -39,6 +39,7 @@ local/foreplay/collect_data.py --raw_data_path $raw_data_path \
                                --af_spks $af_spks \
                                --max_samples $max_samples \
                                --first_spknb_test $first_spknb_test \
+                               --test_only_set $test_only_set \
                                --feat_dim $feature_dim \
                                --pad_pixels $pad_pixels \
                                --save_images $save_images \

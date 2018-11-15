@@ -21,7 +21,6 @@ fi
 if [ $stage_from -le 2 ] && [ $stage_upto -ge 2 ]; then
   echo
   echo "== $0: $(date): STAGE 2: NN TRAINING PREPARATION =="
-  echo
   local/nn/nn_prepare.sh $cfg
 fi
 
@@ -29,7 +28,6 @@ fi
 if [ $stage_from -le 3 ] && [ $stage_upto -ge 3 ]; then
   echo
   echo "== $0: $(date): STAGE 3: NN DESIGN TOPOLOGY =="
-  echo
   local/nn/nn_design.sh $cfg
 fi
 
@@ -37,7 +35,6 @@ fi
 if [ $stage_from -le 4 ] && [ $stage_upto -ge 4 ]; then
   echo
   echo "== $0: $(date): STAGE 4: NN TRAIN MODEL =="
-  echo
   if [ -z $nn_base ]; then
     local/nn/nn_train_e2e.sh $cfg
   else
@@ -49,10 +46,8 @@ fi
 if [ $stage_from -le 5 ] && [ $stage_upto -ge 5 ]; then
   echo
   echo "== $0: $(date): STAGE 5: NN ALIGN =="
-  echo
   local/align/align_nn.sh $cfg
 fi
 
 echo
 echo "== $0: $(date): DONE NN TRAINING ($stage_from to $stage_upto). =="
-echo

@@ -10,14 +10,13 @@ cfg=$1
 
 echo
 echo "== $0: $(date): NN TRAINING BASED ON ${nn_base} =="
-echo
 
 if [ ! -f ${exp_dir}/${nn_base}/fsts.1.gz ]; then   # this check might be tuned
     nn_ali_subsampling_factor=1
 fi
 
 steps/nnet3/chain/train.py \
-    --stage -10 \
+    --stage $nn_train_stage \
     --cmd $cmd \
     --feat.cmvn-opts "--norm-means=false --norm-vars=false" \
     --chain.xent-regularize $nn_xent_regularize \
@@ -53,4 +52,3 @@ steps/nnet3/chain/train.py \
 
 echo
 echo "== $0: $(date): DONE NN TRAINING BASED ON ${nn_base}. =="
-echo

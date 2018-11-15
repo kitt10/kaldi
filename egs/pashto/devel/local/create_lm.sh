@@ -36,7 +36,6 @@ fi
 
 echo
 echo "== $0: $(date): LM CREATION (lm.arpa and G.fst) =="
-echo
 
 ngram-count -order $lang_order \
             -write-vocab ${lang_tmp}/vocab-full.txt -wbdiscount \
@@ -50,4 +49,3 @@ arpa2fst --disambig-symbol=#0 \
 
 echo
 echo "== $0: $(date): DONE LM CREATION. =="
-echo

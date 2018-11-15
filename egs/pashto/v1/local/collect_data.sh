@@ -30,11 +30,10 @@ mkdir -p data/log
 # Transform the raw data into the kaldi-compatible format
 local/collect_data.py --raw_data_path $raw_data_path \
                       --us_spks 12 \
-                      --af_spks 0 \
-                      --first_spknb_test 8 \
+                      --af_spks 98 \
+                      --first_spknb_test 89 \
                       --feat_dim 40 \
-                      --save_images true \
-                      --frame_subsampling_factor 4 || exit 1
+                      --save_images false || exit 1
 
 # Convert utt2spk into spk2utt for train and test
 utils/utt2spk_to_spk2utt.pl data/train/utt2spk > data/train/spk2utt

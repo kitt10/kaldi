@@ -14,6 +14,9 @@ lang_decode=data/lang
 xent_regularize=0.1
 tdnn_dim=450
 chunk_width=340,300,200,100
+numchunk_per_minibatch=150=64,32/300=32,16/600=16,8/1200=8,4
+nj_initial=3
+nj_final=8
 # -- End configuration section ------------------------------------------------
 
 . ./utils/parse_options.sh
@@ -107,39 +110,39 @@ fi
 
 if [ $stage -le 3 ]; then
     steps/nnet3/chain/train.py \
-        --stage=-10 \
-        --cmd=$cmd \
-        --feat.cmvn-opts="--norm-means=false --norm-vars=false" \
+        --stage -10 \
+        --cmd $cmd \
+        --feat.cmvn-opts "--norm-means=false --norm-vars=false" \
         --chain.xent-regularize $xent_regularize \
-        --chain.leaky-hmm-coefficient=0.1 \
-        --chain.l2-regularize=0.00005 \
-        --chain.apply-deriv-weights=false \
+        --chain.leaky-hmm-coefficient 0.1 \
+        --chain.l2-regularize 0.00005 \
+        --chain.apply-deriv-weights false \
         --chain.lm-opts="--num-extra-lm-states=500" \
-        --chain.frame-subsampling-factor=4 \
-        --chain.alignment-subsampling-factor=4 \
-        --trainer.srand=0 \
-        --trainer.max-param-change=2.0 \
-        --trainer.num-epochs=4 \
-        --trainer.frames-per-iter=1500000 \
-        --trainer.optimization.num-jobs-initial=2 \
-        --trainer.optimization.num-jobs-final=4 \
-        --trainer.optimization.initial-effective-lrate=0.001 \
-        --trainer.optimization.final-effective-lrate=0.0001 \
-        --trainer.optimization.shrink-value=1.0 \
-        --trainer.num-chunk-per-minibatch=150=64,32/300=32,16/600=16,8/1200=8,4 \
-        --trainer.optimization.momentum=0.0 \
-        --egs.chunk-width=$chunk_width \
-        --egs.chunk-left-context=0 \
-        --egs.chunk-right-context=0 \
-        --egs.chunk-left-context-initial=0 \
-        --egs.chunk-right-context-final=0 \
+        --chain.frame-subsampling-factor 4 \
+        --chain.alignment-subsampling-factor 4 \
+        --trainer.srand 0 \
+        --trainer.max-param-change 2.0 \
+        --trainer.num-epochs 4 \
+        --trainer.frames-per-iter 1500000 \
+        --trainer.optimization.num-jobs-initial $nj_initial \
+        --trainer.optimization.num-jobs-final $nj_final \
+        --trainer.optimization.initial-effective-lrate 0.001 \
+        --trainer.optimization.final-effective-lrate 0.0001 \
+        --trainer.optimization.shrink-value 1.0 \
+        --trainer.num-chunk-per-minibatch $numchunk_per_minibatch \
+        --trainer.optimization.momentum 0.0 \
+        --egs.chunk-width $chunk_width \
+        --egs.chunk-left-context 0 \
+        --egs.chunk-right-context 0 \
+        --egs.chunk-left-context-initial 0 \
+        --egs.chunk-right-context-final 0 \
         --egs.opts="--frames-overlap-per-eg 0" \
-        --cleanup.remove-egs=true \
-        --use-gpu=true \
-        --feat-dir=data/train \
-        --tree-dir=$nn_treedir \
-        --lat-dir=$nn_latdir \
-        --dir=$nn_dir  || exit 1;
+        --cleanup.remove-egs true \
+        --use-gpu true \
+        --feat-dir data/train \
+        --tree-dir $nn_treedir \
+        --lat-dir $nn_latdir \
+        --dir $nn_dir  || exit 1;
 fi   
 
 if [ $stage -le 4 ]; then

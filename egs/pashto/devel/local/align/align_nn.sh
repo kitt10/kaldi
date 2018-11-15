@@ -9,7 +9,6 @@ cfg=$1
 
 echo
 echo "== $0: $(date): NN ALIGNMENT FOR MODEL $nn_id =="
-echo
 steps/nnet3/align.sh --nj $n_jobs --cmd $cmd \
                      --use-gpu false \
                      --scale-opts '--transition-scale=1.0 --acoustic-scale=1.0 --self-loop-scale=1.0' \
@@ -17,4 +16,3 @@ steps/nnet3/align.sh --nj $n_jobs --cmd $cmd \
 
 echo
 echo "== $0: $(date): DONE NN ALIGNMENT FOR MODEL $nn_id. =="
-echo

@@ -10,7 +10,6 @@ cfg=$1
 
 echo
 echo "== $0: $(date): NN TOPOLOGY DESIGN =="
-echo
 
 num_targets=$(tree-info ${nn_treedir}/tree | grep num-pdfs | awk '{print $2}')
 cnn_opts="l2-regularize=0.075"
@@ -81,4 +80,3 @@ steps/nnet3/xconfig_to_configs.py \
 
 echo
 echo "== $0: $(date): DONE NN TOPOLOGY DESIGN. =="
-echo

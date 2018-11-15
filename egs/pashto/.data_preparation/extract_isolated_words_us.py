@@ -35,14 +35,9 @@ if __name__ == '__main__':
 
     word_list = get_word_list(old_trs_dir)
 
-    missing_spks = ['us5']
-
     for spk_dir_path in sorted(glob(join_path(data_dir, '*'))):
         dirname = spk_dir_path.split('/')[-1]
         spk_id = dirname.split('_')[0]
-
-        if spk_id not in missing_spks:
-            continue
 
         print('Processing speaker', spk_id)
         stdout.flush()

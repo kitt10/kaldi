@@ -10,7 +10,6 @@ cfg=$1
 
 echo
 echo "== $0: $(date): NN ENVIRONMENT CHECK =="
-echo
 
 if $nn_use_gpu && ! cuda-compiled; then
   cat <<EOF && exit 1
@@ -20,11 +19,14 @@ configure and make on a machine where "nvcc" is installed.
 EOF
 fi
 
-for f in $train_data_dir/feats.scp ${exp_dir}/${nn_base}/ali.1.gz \
-  ${exp_dir}/${nn_base}/final.mdl; do
-    [ ! -f $f ] && echo "$0: !!E: Expected file $f to exist." && exit 1
-done
+[ ! -f $train_data_dir/feats.scp ] && \
+  echo "$0: !!E: Expected file $f to exist." && exit 1
+
+if [ ! -z $nn_base ]; then
+  for f in ${exp_dir}/${nn_base}/ali.1.gz ${exp_dir}/${nn_base}/final.mdl; do
+      [ ! -f $f ] && echo "$0: !!E: Expected file $f to exist." && exit 1
+  done
+fi
 
 echo
 echo "== $0: $(date): DONE NN ENVIRONMENT CHECK. =="
-echo

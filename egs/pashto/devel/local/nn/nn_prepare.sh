@@ -10,7 +10,6 @@ cfg=$1
 
 echo
 echo "== $0: $(date): NN TRAINING PREPARATION =="
-echo
 
 echo "-- $0: $(date): Removing old directories in use..."
 rm -rf $nn_dir $nn_treedir $nn_latdir
@@ -66,4 +65,3 @@ fi
 
 echo
 echo "== $0: $(date): DONE NN TRAINING PREPARATION. =="
-echo

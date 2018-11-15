@@ -10,10 +10,9 @@ cfg=$1
 
 echo
 echo "== $0: $(date): NN TRAINING E2E =="
-echo
 
 steps/nnet3/chain/e2e/train_e2e.py \
-    --stage -10 \
+    --stage $nn_train_stage \
     --cmd $cmd \
     --feat.cmvn-opts "--norm-means=false --norm-vars=false" \
     --chain.leaky-hmm-coefficient 0.1 \
@@ -40,4 +39,3 @@ steps/nnet3/chain/e2e/train_e2e.py \
 
 echo
 echo "== $0: $(date): DONE NN TRAINING E2E. =="
-echo

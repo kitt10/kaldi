@@ -20,4 +20,7 @@ export PATH=$PWD/utils/:${KALDI_ROOT}/tools/openfst/bin:$PWD:$PATH
 . ${KALDI_ROOT}/tools/config/common_path.sh
 
 # -- CUDA ---------------------------------------------------------------------
-#export LD_LIBRARY_PATH=/home/jtrmal/.local/lib/
+export LD_LIBRARY_PATH=/home/jtrmal/.local/lib/
+
+# -- PROPER DATA SORTING ------------------------------------------------------
+export LC_ALL=C

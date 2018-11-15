@@ -28,7 +28,7 @@ if [ $cmd = "run.pl" ]; then
         tee log/train_nn_${data_name}_${timestamp}.o
     elif [ $script = "decode" ]; then
         local/decode.sh $cfg | \
-        tee log/decode_${decode_model}_${data_name}_${lang_name}_${timestamp}.o
+        tee log/decode_${data_name}_${decode_model}_${decode_data_name}_${decode_lang_name}_${timestamp}.o
     fi
 elif [ $cmd = "queue.pl" ]; then
     echo "== $0: $(date): RUNNING ON GRID =="
@@ -36,26 +36,26 @@ elif [ $cmd = "queue.pl" ]; then
         qsub -cwd \
          -o log/prepare_data_${data_name}_${timestamp}.o \
          -e log/prepare_data_${data_name}_${timestamp}.e \
-         -l 'mem_free=8G,ram_free=8G' local/prepare_data.sh $cfg 
+         -l 'mem_free=8G,ram_free=8G' local/prepare_data.sh $cfg
     elif [ $script = "create_lm" ]; then
         qsub -cwd \
          -o log/create_lm_${lang_name}_${data_name}_${timestamp}.o \
          -e log/create_lm_${lang_name}_${data_name}_${timestamp}.e \
-         -l 'mem_free=8G,ram_free=8G' local/create_lm.sh $cfg 
+         -l 'mem_free=8G,ram_free=8G' local/create_lm.sh $cfg
     elif [ $script = "train_gmm" ]; then
         qsub -cwd \
          -o log/train_gmm_${data_name}_${timestamp}.o \
          -e log/train_gmm_${data_name}_${timestamp}.e \
-         -l 'mem_free=8G,ram_free=8G' local/train_gmm.sh $cfg 
+         -l 'mem_free=8G,ram_free=8G' local/train_gmm.sh $cfg
     elif [ $script = "train_nn" ]; then
         qsub -cwd \
          -o log/train_nn_${data_name}_${timestamp}.o \
          -e log/train_nn_${data_name}_${timestamp}.e \
-         -l 'gpu=1,mem_free=8G,ram_free=8G' -q g.q local/train_nn.sh $cfg 
+         -l 'gpu=1,mem_free=8G,ram_free=8G' -q g.q local/train_nn.sh $cfg
     elif [ $script = "decode" ]; then
-        qsub -cwd 
-         -o log/decode_${decode_model}_${data_name}_${lang_name}_${timestamp}.o \
-         -e log/decode_${decode_model}_${data_name}_${lang_name}_${timestamp}.e \
-         -l 'mem_free=8G,ram_free=8G' local/decode.sh $cfg 
+        qsub -cwd \
+         -o log/decode_${data_name}_${decode_model}_${decode_data_name}_${lang_name}_${timestamp}.o \
+         -e log/decode_${data_name}_${decode_model}_${decode_data_name}_${lang_name}_${timestamp}.e \
+         -l 'mem_free=8G,ram_free=8G' local/decode.sh $cfg
     fi
 fi
