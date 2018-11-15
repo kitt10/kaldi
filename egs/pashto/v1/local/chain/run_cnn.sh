@@ -5,6 +5,7 @@ set -e -o pipefail
 # -- Begin configuration section ----------------------------------------------
 stage=0
 nj=30
+nj_test=10
 feature_dim=40
 nn_dir=exp/cnn
 nn_treedir=exp/work/cnn_tree
@@ -158,7 +159,7 @@ if [ $stage -le 4 ]; then
       --extra-left-context-initial 0 \
       --extra-right-context-final 0 \
       --frames-per-chunk $frames_per_chunk \
-      --nj $nj --cmd $cmd \
+      --nj $nj_test --cmd $cmd \
       exp/${nn_dir}/graph \
       data/test exp/${nn_dir}/decode_test || exit 1;
 

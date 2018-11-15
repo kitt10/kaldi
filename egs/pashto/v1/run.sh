@@ -2,6 +2,7 @@
 
 # -- Begin configuration section ----------------------------------------------
 nj=32
+nj_test=10
 stage=0
 # -- End configuration section ------------------------------------------------
 
@@ -37,7 +38,7 @@ if [ $stage -le 2 ]; then
     echo "== $0: $(date): STAGE 2: CREATING A CORPUS FILE =="
     rm -rf data/local/corpus.txt
     cut -d' ' -f2- data/train/text data/test/text > data/local/corpus.txt
-    
+     
     echo
     echo "== $0: $(date): STAGE 2: CREATING A DICTIONARY =="
     mkdir -p data/local/dict
@@ -49,7 +50,7 @@ if [ $stage -le 3 ]; then
     echo "== $0: $(date): STAGE 3: CREATING THE LANGUAGE MODEL =="
     local/create_lm.sh
 fi
-exit    
+
 if [ $stage -le 4 ]; then
     echo
     echo "== $0: $(date): STAGE 4: TRAINING MONO =="
@@ -65,7 +66,7 @@ if [ $stage -le 5 ]; then
 
     echo
     echo "== $0: $(date): STAGE 5: DECODING MONO =="
-    steps/decode.sh --nj $nj --cmd $cmd exp/mono/graph data/test\
+    steps/decode.sh --nj $nj_test --cmd $cmd exp/mono/graph data/test\
                              exp/mono/decode_test
 fi
 
@@ -90,7 +91,7 @@ if [ $stage -le 8 ]; then
 
     echo
     echo "== $0: $(date): STAGE 8: DECODING TRI =="
-    steps/decode.sh --nj $nj --cmd $cmd exp/tri/graph data/test\
+    steps/decode.sh --nj $nj_test --cmd $cmd exp/tri/graph data/test\
                     exp/tri/decode_test
 fi
 
@@ -116,7 +117,7 @@ if [ $stage -le 11 ]; then
 
     echo
     echo "== $0: $(date): STAGE 11: DECODING TRI2 =="
-    steps/decode.sh --nj $nj --cmd $cmd exp/tri2/graph data/test\
+    steps/decode.sh --nj $nj_test --cmd $cmd exp/tri2/graph data/test\
                     exp/tri2/decode_test
 fi
 
@@ -141,7 +142,7 @@ if [ $stage -le 14 ]; then
 
     echo
     echo "== $0: $(date): STAGE 14: DECODING TRI3 =="
-    steps/decode_fmllr.sh --nj $nj --cmd $cmd \
+    steps/decode_fmllr.sh --nj $nj_test --cmd $cmd \
                           exp/tri3/graph data/test exp/tri3/decode_test
 fi
 
