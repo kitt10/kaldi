@@ -20,6 +20,15 @@ set -e
 
 corpus_location=$1
 
+if [ -d data ]; then
+    read -p "Data folder already exists. Overwrite it? [y/n] " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        echo "Stopping."
+        exit 1;
+    fi
+fi
+
 rm -rf data
 mkdir -p data/train
 mkdir -p data/test

@@ -20,13 +20,13 @@ set -e
 if [ $stage -le -1 ]; then
     echo
     echo "== $0: $(date): STAGE -1: CORPUS EXTRACTION =="
-    local/corpus_extraction/extract_words.sh $corpus_dir
+    local/corpus_extraction/extract_words.sh $corpus_dir || exit 1;
 fi
 
 if [ $stage -le 0 ]; then
     echo
     echo "== $0: $(date): STAGE 0: COLLECTING DATA =="
-    local/collect_data.sh $corpus_dir
+    local/collect_data.sh $corpus_dir || exit 1;
 fi
 
 if [ $stage -le 1 ]; then
@@ -48,7 +48,7 @@ if [ $stage -le 2 ]; then
     echo "== $0: $(date): STAGE 2: CREATING A CORPUS FILE =="
     rm -rf data/local/corpus.txt
     cut -d' ' -f2- data/train/text data/test/text > data/local/corpus.txt
-     
+
     echo
     echo "== $0: $(date): STAGE 2: CREATING A DICTIONARY =="
     mkdir -p data/local/dict
