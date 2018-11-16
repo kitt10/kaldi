@@ -21,7 +21,7 @@ done
 
 if $corpus_ready; then
     echo
-    echo "== $0: $(date): Corpus is already extraced. Checking data. =="
+    echo "== $0: $(date): Corpus is already extracted. Checking data. =="
     for set_id in us af; do
         local/corpus_extraction/check_fix_words.py --corpus_dir $corpus_dir \
                                                     --set_id $set_id \
