@@ -160,7 +160,7 @@ if [ $stage -le 16 ]; then
     echo
     echo
     echo "== $0: $(date): STAGE 16: RUNNING CNN STAGES =="
-    local/chain/run_cnn.sh --stage 0
+    local/chain/run_cnn.sh --stage 3
 fi
 
 echo

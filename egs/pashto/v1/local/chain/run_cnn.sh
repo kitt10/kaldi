@@ -15,7 +15,8 @@ lang_decode=data/lang
 xent_regularize=0.1
 tdnn_dim=450
 chunk_width=340,300,200,100
-numchunk_per_minibatch=150=32,16/300=16,8/600=8,4/1200=4,2
+#numchunk_per_minibatch=150=32,16/300=16,8/600=8,4/1200=4,2
+numchunk_per_minibatch=150=16,8/300=8,4/600=4,2/1200=2,1
 nj_initial=3
 nj_final=8
 # -- End configuration section ------------------------------------------------
@@ -126,7 +127,7 @@ if [ $stage -le 3 ]; then
     echo
     echo "== $0: $(date): STAGE 16/3: NN training =="
     steps/nnet3/chain/train.py \
-        --stage -10 \
+        --stage 29 \
         --cmd $cmd \
         --feat.cmvn-opts "--norm-means=false --norm-vars=false" \
         --chain.xent-regularize $xent_regularize \
@@ -163,9 +164,9 @@ fi
 
 if [ $stage -le 4 ]; then
     utils/mkgraph.sh --self-loop-scale 1.0 \
-      $lang_decode exp/${nn_dir} exp/${nn_dir}/graph || exit 1;
+      $lang_decode ${nn_dir} ${nn_dir}/graph || exit 1;
 
-    rm -rf exp/${nn_dir}/decode_test
+    rm -rf ${nn_dir}/decode_test
 
     frames_per_chunk=$(echo $chunk_width | cut -d, -f1)
     steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
@@ -175,8 +176,8 @@ if [ $stage -le 4 ]; then
       --extra-right-context-final 0 \
       --frames-per-chunk $frames_per_chunk \
       --nj $nj_test --cmd $cmd \
-      exp/${nn_dir}/graph \
-      data/test exp/${nn_dir}/decode_test || exit 1;
+      ${nn_dir}/graph \
+      data/test ${nn_dir}/decode_test || exit 1;
 
     echo
     echo "Done. Date: $(date). Results:"
@@ -185,6 +186,6 @@ if [ $stage -le 4 ]; then
     printf "% 10s" " ${nn_dir}"
     echo
     echo -n "# WER TEST            "
-    wer=$(cat exp/${nn_dir}/decode_test/scoring_kaldi/best_wer | awk '{print $2}')
+    wer=$(cat ${nn_dir}/decode_test/scoring_kaldi/best_wer | awk '{print $2}')
     printf "% 10s" $wer
 fi
