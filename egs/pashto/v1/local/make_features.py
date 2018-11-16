@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-# Copyright      2017  Chun Chieh Chang
-#                2018  Martin Bulin
+# Authors      2017  Chun Chieh Chang
+#              2018  Martin Bulin
 
 """ This script converts images to Kaldi-format feature matrices. The input to
     this script is the path to a data directory, e.g. "data/train". This script

@@ -15,8 +15,8 @@ lang_decode=data/lang
 xent_regularize=0.1
 tdnn_dim=450
 chunk_width=340,300,200,100
-#numchunk_per_minibatch=150=32,16/300=16,8/600=8,4/1200=4,2
-numchunk_per_minibatch=150=16,8/300=8,4/600=4,2/1200=2,1
+numchunk_per_minibatch=150=32,16/300=16,8/600=8,4/1200=4,2
+#numchunk_per_minibatch=150=16,8/300=8,4/600=4,2/1200=2,1  # try if training fails
 nj_initial=3
 nj_final=8
 # -- End configuration section ------------------------------------------------
@@ -61,7 +61,7 @@ if [ $stage -le 1 ]; then
     echo "== $0: $(date): STAGE 16/1: Aligning FMLLR lattices =="
     steps/align_fmllr_lats.sh --nj $nj --cmd $cmd data/train \
                             data/lang exp/tri3 $nn_latdir
-    
+
     rm ${nn_latdir}/fsts.*.gz
 
     echo "== $0: $(date): STAGE 16/1: Building a tree =="
@@ -127,7 +127,7 @@ if [ $stage -le 3 ]; then
     echo
     echo "== $0: $(date): STAGE 16/3: NN training =="
     steps/nnet3/chain/train.py \
-        --stage 29 \
+        --stage -10 \
         --cmd $cmd \
         --feat.cmvn-opts "--norm-means=false --norm-vars=false" \
         --chain.xent-regularize $xent_regularize \
@@ -160,7 +160,7 @@ if [ $stage -le 3 ]; then
         --tree-dir $nn_treedir \
         --lat-dir $nn_latdir \
         --dir $nn_dir  || exit 1;
-fi   
+fi
 
 if [ $stage -le 4 ]; then
     utils/mkgraph.sh --self-loop-scale 1.0 \

@@ -1,9 +1,13 @@
 #!/bin/bash
 
+# Author     2018  Martin Bulin
+
 # -- Begin configuration section ----------------------------------------------
 nj=32
 nj_test=10
-stage=0
+stage=-1
+corpus_dir="/export/corpora4/ARL_OCR/win/OSI_Pashto_Project_572GB/\
+database/WordImages"
 # -- End configuration section ------------------------------------------------
 
 . ./utils/parse_options.sh
@@ -13,10 +17,16 @@ stage=0
 
 set -e
 
+if [ $stage -le -1 ]; then
+    echo
+    echo "== $0: $(date): STAGE -1: CORPUS EXTRACTION =="
+    local/corpus_extraction/extract_words.sh $corpus_dir
+fi
+
 if [ $stage -le 0 ]; then
     echo
     echo "== $0: $(date): STAGE 0: COLLECTING DATA =="
-    local/collect_data.sh
+    local/collect_data.sh $corpus_dir
 fi
 
 if [ $stage -le 1 ]; then
@@ -160,7 +170,7 @@ if [ $stage -le 16 ]; then
     echo
     echo
     echo "== $0: $(date): STAGE 16: RUNNING CNN STAGES =="
-    local/chain/run_cnn.sh --stage 3
+    local/chain/run_cnn.sh --stage 0
 fi
 
 echo

@@ -18,8 +18,7 @@ set -e
 
 . ./path.sh
 
-raw_data_path="/export/corpora4/ARL_OCR/win/OSI_Pashto_Project_572GB/database/\
-WordImages"
+corpus_location=$1
 
 rm -rf data
 mkdir -p data/train
@@ -28,7 +27,7 @@ mkdir -p data/local
 mkdir -p data/log
 
 # Transform the raw data into the kaldi-compatible format
-local/collect_data.py --raw_data_path $raw_data_path \
+local/collect_data.py --raw_data_path $corpus_location \
                       --us_spks 12 \
                       --af_spks 98 \
                       --first_spknb_test 89 \

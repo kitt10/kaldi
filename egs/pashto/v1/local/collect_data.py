@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright     2018  Martin Bulin
-# Apache 2.0
+# Author     2018  Martin Bulin
 
 from argparse import ArgumentParser
 from os import makedirs, listdir
