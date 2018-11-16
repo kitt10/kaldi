@@ -37,9 +37,9 @@ mkdir -p data/log
 
 # Transform the raw data into the kaldi-compatible format
 local/collect_data.py --raw_data_path $corpus_location \
-                      --us_spks 12 \
-                      --af_spks 98 \
-                      --first_spknb_test 89 \
+                      --us_spks 0 \
+                      --af_spks 370 \
+                      --first_spknb_test 351 \
                       --feat_dim 40 \
                       --save_images false || exit 1
 

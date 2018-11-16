@@ -4,7 +4,7 @@
 
 # -- Begin configuration section ----------------------------------------------
 nj=32
-nj_test=10
+nj_test=20
 stage=-1
 corpus_dir="/export/corpora4/ARL_OCR/win/OSI_Pashto_Project_572GB/\
 database/WordImages"
