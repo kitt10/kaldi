@@ -7,10 +7,10 @@ stage=0
 nj=30
 nj_test=10
 feature_dim=40
-nn_dir=exp/cnn
-nn_treedir=exp/work/cnn_tree
-nn_latdir=exp/work/cnn_lat
-lang_train=data/lang_cnn_train
+nn_dir=exp/nn
+nn_treedir=exp/work/nn_tree
+nn_latdir=exp/work/nn_lat
+lang_train=data/lang_nn_train
 lang_decode=data/lang
 xent_regularize=0.1
 tdnn_dim=450
@@ -41,6 +41,10 @@ EOF
     for f in data/train/feats.scp exp/tri3/ali.1.gz exp/tri3/final.mdl; do
         [ ! -f $f ] && echo "$0: !!E: Expected file $f to exist." && exit 1
     done
+
+    # hack: script steps/nnet3/chain/e2e/get_egs_e2e.sh 
+    # expects allowed_lenghts.txt to be in the train directory
+    cp data/local/allowed_lengths.txt data/train/allowed_lengths.txt
 fi
 
 if [ $stage -le 1 ]; then

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Author     2018  Martin Bulin
+# Author     2018  Martin Bulin (bulinmartin@gmail.com)
 
 # -- Begin configuration section ----------------------------------------------
 nj=32
@@ -169,8 +169,8 @@ if [ $stage -le 16 ]; then
     find exp -name "best_wer" | xargs cat  | sort -k2,2g | tee RESULTS
     echo
     echo
-    echo "== $0: $(date): STAGE 16: RUNNING CNN STAGES =="
-    local/chain/run_cnn.sh --stage 0
+    echo "== $0: $(date): STAGE 16: RUNNING NNET STAGES =="
+    local/chain/run_nn.sh --stage 0
 fi
 
 echo
