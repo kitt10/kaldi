@@ -1,0 +1,4 @@
+!SIL !SIL SIL_S
+<UNK> <UNK> SPN_S
+<eps> <eps> SIL
+bet bet b_B e_I t_E

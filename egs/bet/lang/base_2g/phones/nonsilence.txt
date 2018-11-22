@@ -1,0 +1,12 @@
+b_B
+b_E
+b_I
+b_S
+e_B
+e_E
+e_I
+e_S
+t_B
+t_E
+t_I
+t_S

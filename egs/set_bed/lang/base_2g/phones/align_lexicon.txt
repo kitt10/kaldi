@@ -1,0 +1,10 @@
+!SIL !SIL SIL_S
+<UNK> <UNK> SPN_S
+<eps> <eps> SIL
+bad bad b_B a_I d_E
+bed bed b_B e_I d_E
+beds beds b_B e_I d_I s_E
+bet bet b_B e_I t_E
+dad dad d_B a_I d_E
+sad sad s_B a_I d_E
+set set s_B e_I t_E

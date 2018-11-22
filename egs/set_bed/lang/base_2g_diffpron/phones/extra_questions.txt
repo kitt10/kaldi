@@ -1,0 +1,9 @@
+a_B b_B d_B e_B s_B t_B 
+a_E b_E d_E e_E s_E t_E 
+a_I b_I d_I e_I s_I t_I 
+a_S b_S d_S e_S s_S t_S 
+SIL SPN 
+SIL_B SPN_B 
+SIL_E SPN_E 
+SIL_I SPN_I 
+SIL_S SPN_S 

@@ -11,16 +11,15 @@ export LC_ALL=C                 # proper data sorting
 export n_jobs=2                # no of parallel jobs
 #export script="prepare_data"
 #export script="create_lm"
-#export script="train_gmm"
+export script="train_gmm"
 #export script="train_nn"
 #export script="decode"
-export script="kws"
 export stage_from=0             # first stage being run
 export stage_upto=100           # last stage being run
 # -----------------------------------------------------------------------------
 
 # -- DIRS --------------------------------------------------------------------
-export data_name=us
+export data_name=base
 export data_dir=data/${data_name}
 export test_data_dir=${data_dir}/test
 export train_data_dir=${data_dir}/train
@@ -34,17 +33,14 @@ export exp_dir=exp/exp_${data_name}   # exp/exp_<train_data_name>
 # -----------------------------------------------------------------------------
 
 # -- DATA ---------------------------------------------------------------------
-export raw_data_path="/export/corpora4/ARL_OCR/win/OSI_Pashto_Project_572GB/\
-database/WordImages"
+export raw_data_path=corpus
 
 export feature_dim=40           # height of images
-export save_images=false        # save scaled images into the eg's dir?
-export us_spks=12               # number of US speakers [0-12]
-export af_spks=24               # number of AF speakers [0-370]
+export save_images=true        # save scaled images into the eg's dir?
 export max_samples=10000        # maximal number of samples from one speaker
-export first_spknb_test=300     # spks with geq nb will be in the test set
+export first_spknb_test=5     # spks with geq nb will be in the test set
 export test_only_set=false      # save only test samples, skip training samples
-export invert_colors=true       # black text on white background? [true|false]
+export invert_colors=false       # black text on white background? [true|false]
 export pad_pixels=4             # number of pixels padded to each image side
 export subsampling_factor=4
 export al_spacing_factor=10     # see get_allowed_lengths.py

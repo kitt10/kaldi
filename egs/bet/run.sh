@@ -29,9 +29,6 @@ if [ $cmd = "run.pl" ]; then
     elif [ $script = "decode" ]; then
         local/decode.sh $cfg | \
         tee log/decode_${data_name}_${decode_model}_${decode_data_name}_${decode_lang_name}_${timestamp}.o
-    elif [ $script = "kws" ]; then
-        local/kws.sh $cfg | \
-        tee log/kws_${data_name}_${timestamp}.o
     fi
 elif [ $cmd = "queue.pl" ]; then
     echo "== $0: $(date): RUNNING ON GRID =="
@@ -60,10 +57,5 @@ elif [ $cmd = "queue.pl" ]; then
          -o log/decode_${data_name}_${decode_model}_${decode_data_name}_${lang_name}_${timestamp}.o \
          -e log/decode_${data_name}_${decode_model}_${decode_data_name}_${lang_name}_${timestamp}.e \
          -l 'mem_free=8G,ram_free=8G' local/decode.sh $cfg
-    elif [ $script = "kws" ]; then
-        qsub -cwd \
-         -o log/kws_${data_name}_${timestamp}.o \
-         -e log/kws_${data_name}_${timestamp}.e \
-         -l 'mem_free=8G,ram_free=8G' local/kws.sh $cfg         
     fi
 fi

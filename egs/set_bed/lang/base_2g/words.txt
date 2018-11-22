@@ -1,0 +1,13 @@
+<eps> 0
+!SIL 1
+<UNK> 2
+bad 3
+bed 4
+beds 5
+bet 6
+dad 7
+sad 8
+set 9
+#0 10
+<s> 11
+</s> 12

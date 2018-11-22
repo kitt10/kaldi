@@ -1,0 +1,5 @@
+shared split SIL SIL_B SIL_E SIL_I SIL_S
+shared split SPN SPN_B SPN_E SPN_I SPN_S
+shared split b_B b_E b_I b_S
+shared split e_B e_E e_I e_S
+shared split t_B t_E t_I t_S

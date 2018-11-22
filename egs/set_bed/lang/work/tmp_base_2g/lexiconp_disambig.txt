@@ -1,0 +1,9 @@
+bad	1.0	b_B a_I d_E
+bed	1.0	b_B e_I d_E
+beds	1.0	b_B e_I d_I s_E
+bet	1.0	b_B e_I t_E
+dad	1.0	d_B a_I d_E
+sad	1.0	s_B a_I d_E
+set	1.0	s_B e_I t_E
+!SIL	1.0	SIL_S
+<UNK>	1.0	SPN_S

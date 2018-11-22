@@ -1,0 +1,5 @@
+spk06_01.jpg;<s> bad dad </s>
+spk06_02.jpg;<s> bet </s>
+spk06_03.jpg;<s> set bed </s>
+spk06_04.jpg;<s> sad dad </s>
+spk06_05.jpg;<s> beds </s>

@@ -1,0 +1,11 @@
+-pau-
+</s>
+<s>
+<unk>
+bad
+bed
+beds
+bet
+dad
+sad
+set
