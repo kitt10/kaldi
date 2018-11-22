@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Apache 2.0
+
 set -e
 
 . ./path.sh

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-# Authors      2017  Chun Chieh Chang
-#              2018  Martin Bulin
+# Author      2018  Martin Bulin (bulinmartin@gmail.com)
+# Based on    ../../../cifar/v1/image/ocr/make_features.py
+# Apache 2.0
 
 """ This script converts images to Kaldi-format feature matrices. The input to
     this script is the path to a data directory, e.g. "data/train". This script

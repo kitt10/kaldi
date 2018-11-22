@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Apache 2.0
+
+
 # Extracts features for the "train" and "test" data subsets.
 # -> data/train/
 # --> feats.scp, cmvn.scp

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-# Author     2018  Martin Bulin
+# Author      2018  Martin Bulin (bulinmartin@gmail.com)
+# Apache 2.0
 
 # Take the pashto original (large .bmp) images and the (.xml) annotations
 # and extract the isolated words (starting on page 11)
@@ -17,6 +18,8 @@ from sys import stdout
 
 def parse_args():
     parser = ArgumentParser(description='Extracts isolated words from database.')
+    parser.add_argument('--database_dir', type=str, 
+                        help='where the original database is located')
     parser.add_argument('--corpus_dir', type=str, 
                         help='where to extract the corpus')
     parser.add_argument('--set_id', type=str, choices=['us', 'af'],
@@ -40,8 +43,8 @@ if __name__ == '__main__':
         print('E: Corpus dir exists but is not complete. Remove it safely and try again.')
         exit(1)
     
-    source_data_dir = '/export/corpora4/ARL_OCR/win/OSI_Pashto_Project_572GB/database/'+set_folder[sid]
-    words_list_file = 'local/corpus_extraction/words.lst'
+    source_data_dir = join_path(args.database_dir, set_folder[sid])
+    words_list_file = join_path(args.database_dir, 'words.lst')
 
     sorted_words = dict()
     with cod_open(words_list_file, 'r', encoding='utf-8') as f:

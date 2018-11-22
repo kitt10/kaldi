@@ -3,8 +3,7 @@
 #
 
 # -- KALDI ROOT ---------------------------------------------------------------
-KALDI_ROOT=$(pwd)/../../..
-export KALDI_ROOT
+export KALDI_ROOT=$(pwd)/../../..
 
 # -- SRILM (besides other) ----------------------------------------------------
 [ -f ${KALDI_ROOT}/tools/env.sh ] && . ${KALDI_ROOT}/tools/env.sh
@@ -18,9 +17,6 @@ export PATH=$PWD/utils/:${KALDI_ROOT}/tools/openfst/bin:$PWD:$PATH
 && exit 1
 
 . ${KALDI_ROOT}/tools/config/common_path.sh
-
-# -- CUDA ---------------------------------------------------------------------
-export LD_LIBRARY_PATH=/home/jtrmal/.local/lib/
 
 # -- PROPER DATA SORTING ------------------------------------------------------
 export LC_ALL=C

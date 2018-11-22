@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-# Author     2018  Martin Bulin
+# Author      2018  Martin Bulin (bulinmartin@gmail.com)
+# Apache 2.0
 
 # Check if every transcription have an image
 # Check for duplicate transcription lines in one file

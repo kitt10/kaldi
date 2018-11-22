@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Author      2018  Martin Bulin (bulinmartin@gmail.com)
+# Based on    ../../../../uw3/v1/local/chain/run_cnn_1a.sh
+# Apache 2.0
+
 set -e -o pipefail
 
 # -- Begin configuration section ----------------------------------------------
@@ -7,10 +11,10 @@ stage=0
 nj=30
 nj_test=10
 feature_dim=40
-nn_dir=exp/nn
-nn_treedir=exp/work/nn_tree
-nn_latdir=exp/work/nn_lat
-lang_train=data/lang_nn_train
+cnn_dir=exp/cnn
+cnn_treedir=exp/work/cnn_tree
+cnn_latdir=exp/work/cnn_lat
+lang_train=data/lang_cnn_train
 lang_decode=data/lang
 xent_regularize=0.1
 tdnn_dim=450
@@ -50,7 +54,7 @@ fi
 if [ $stage -le 1 ]; then
     echo
     echo "== $0: $(date): STAGE 16/1: Creating a training lang =="
-    rm -rf $nn_dir $nn_treedir $nn_latdir
+    rm -rf $cnn_dir $cnn_treedir $cnn_latdir
 
     if [ -d $lang_train ] && [ ${lang_train}/L.fst -nt data/lang/L.fst ]; then
         echo "-- $0: $(date): LM $lang_train (chain-type topology) already exists.\
@@ -74,13 +78,13 @@ if [ $stage -le 1 ]; then
         --alignment-subsampling-factor 4 \
         --context-opts "--context-width=2 --central-position=1" \
         --cmd $cmd 300 data/train \
-        $lang_train exp/tri3 $nn_treedir
+        $lang_train exp/tri3 $cnn_treedir
 fi
 
 if [ $stage -le 2 ]; then
     echo
     echo "== $0: $(date): STAGE 16/2: NN topology design =="
-    num_targets=$(tree-info ${nn_treedir}/tree | grep num-pdfs | awk '{print $2}')
+    num_targets=$(tree-info ${cnn_treedir}/tree | grep num-pdfs | awk '{print $2}')
     cnn_opts="l2-regularize=0.075"
     tdnn_opts="l2-regularize=0.075"
     output_opts="l2-regularize=0.1"
@@ -88,10 +92,10 @@ if [ $stage -le 2 ]; then
     common2="${cnn_opts} required-time-offsets= height-offsets=-2,-1,0,1,2 num-filters-out=70"
     common3="${cnn_opts} required-time-offsets= height-offsets=-1,0,1 num-filters-out=70"
 
-    mkdir -p ${nn_dir}/configs
+    mkdir -p ${cnn_dir}/configs
 
     learning_rate_factor=$(echo "print 0.5/${xent_regularize}" | python)
-    cat <<EOF > ${nn_dir}/configs/network.xconfig
+    cat <<EOF > ${cnn_dir}/configs/network.xconfig
     input dim=$feature_dim name=input
     conv-relu-batchnorm-layer name=cnn1 height-in=$feature_dim height-out=$feature_dim time-offsets=-3,-2,-1,0,1,2,3 $common1
     conv-relu-batchnorm-layer name=cnn2 height-in=$feature_dim height-out=$((feature_dim/2)) time-offsets=-2,-1,0,1,2 $common1 height-subsample-out=2
@@ -123,8 +127,8 @@ EOF
 
 
     steps/nnet3/xconfig_to_configs.py \
-        --xconfig-file ${nn_dir}/configs/network.xconfig \
-        --config-dir ${nn_dir}/configs/
+        --xconfig-file ${cnn_dir}/configs/network.xconfig \
+        --config-dir ${cnn_dir}/configs/
 fi
 
 if [ $stage -le 3 ]; then
@@ -161,16 +165,16 @@ if [ $stage -le 3 ]; then
         --cleanup.remove-egs true \
         --use-gpu true \
         --feat-dir data/train \
-        --tree-dir $nn_treedir \
-        --lat-dir $nn_latdir \
-        --dir $nn_dir  || exit 1;
+        --tree-dir $cnn_treedir \
+        --lat-dir $cnn_latdir \
+        --dir $cnn_dir  || exit 1;
 fi
 
 if [ $stage -le 4 ]; then
     utils/mkgraph.sh --self-loop-scale 1.0 \
-      $lang_decode ${nn_dir} ${nn_dir}/graph || exit 1;
+      $lang_decode ${cnn_dir} ${cnn_dir}/graph || exit 1;
 
-    rm -rf ${nn_dir}/decode_test
+    rm -rf ${cnn_dir}/decode_test
 
     frames_per_chunk=$(echo $chunk_width | cut -d, -f1)
     steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
@@ -180,16 +184,16 @@ if [ $stage -le 4 ]; then
       --extra-right-context-final 0 \
       --frames-per-chunk $frames_per_chunk \
       --nj $nj_test --cmd $cmd \
-      ${nn_dir}/graph \
-      data/test ${nn_dir}/decode_test || exit 1;
+      ${cnn_dir}/graph \
+      data/test ${cnn_dir}/decode_test || exit 1;
 
     echo
     echo "Done. Date: $(date). Results:"
     echo "--------------------------------"
     echo -n "# Model              "
-    printf "% 10s" " ${nn_dir}"
+    printf "% 10s" " ${cnn_dir}"
     echo
     echo -n "# WER TEST            "
-    wer=$(cat ${nn_dir}/decode_test/scoring_kaldi/best_wer | awk '{print $2}')
+    wer=$(cat ${cnn_dir}/decode_test/scoring_kaldi/best_wer | awk '{print $2}')
     printf "% 10s" $wer
 fi

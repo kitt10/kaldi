@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Apache 2.0
+
 # Collects the data.
 # -> data/train/
 # --> text, images.scp, utt2spk, spk2utt

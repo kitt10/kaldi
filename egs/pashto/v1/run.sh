@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Author     2018  Martin Bulin (bulinmartin@gmail.com)
+# Apache 2.0
+
 
 # -- Begin configuration section ----------------------------------------------
 nj=32
@@ -38,11 +40,11 @@ fi
 if [ $stage -le 2 ]; then
     echo
     echo "== $0: $(date): STAGE 2: CHECKING DATA DIRECTORIES =="
-    local/fix_data_dir.sh data/train
-    local/validate_data_dir.sh data/train
+    local/image/fix_data_dir.sh data/train
+    local/image/validate_data_dir.sh data/train
 
-    local/fix_data_dir.sh data/test
-    local/validate_data_dir.sh data/test
+    local/image/fix_data_dir.sh data/test
+    local/image/validate_data_dir.sh data/test
 
     echo
     echo "== $0: $(date): STAGE 2: CREATING A CORPUS FILE =="
@@ -170,7 +172,7 @@ if [ $stage -le 16 ]; then
     echo
     echo
     echo "== $0: $(date): STAGE 16: RUNNING NNET STAGES =="
-    local/chain/run_nn.sh --stage 0
+    local/chain/run_cnn.sh --stage 0
 fi
 
 echo
