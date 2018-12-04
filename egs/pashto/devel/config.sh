@@ -14,13 +14,14 @@ export n_jobs=2                # no of parallel jobs
 #export script="train_gmm"
 #export script="train_nn"
 #export script="decode"
-export script="kws"
+#export script="kws"
+export script="kws_yenda"
 export stage_from=0             # first stage being run
-export stage_upto=100           # last stage being run
+export stage_upto=2           # last stage being run
 # -----------------------------------------------------------------------------
 
 # -- DIRS --------------------------------------------------------------------
-export data_name=us
+export data_name=t_20_all
 export data_dir=data/${data_name}
 export test_data_dir=${data_dir}/test
 export train_data_dir=${data_dir}/train
@@ -109,4 +110,11 @@ export decode_test=true                 # decode test data?
 export decode_train=false               # decode train data?
 export decode_lang=${lang_dir}/${decode_lang_name}
 export decode_data=data/${decode_data_name}
+# -----------------------------------------------------------------------------
+
+# -- KWS ----------------------------------------------------------------------
+export kws_dec_dir=exp/exp_${data_name}/${decode_model}/d_test_\
+${decode_data_name}_${decode_lang_name}
+export kws_n_keywords=5
+export kws_min_count=20
 # -----------------------------------------------------------------------------
