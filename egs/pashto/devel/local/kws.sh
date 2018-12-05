@@ -118,4 +118,21 @@ if [ $stage_from -le 5 ] && [ $stage_upto -ge 5 ]; then
     $lang $kws_data $kws_system
 fi
 
+if [ $stage_from -le 6 ] && [ $stage_upto -ge 6 ]; then
+  echo
+  echo "== $0: $(date): STAGE 6: SAVING RESULTS =="
+
+  cp ${output}/hitlist local/kws/example/hitlist
+  printf "Scores $(date) (lmwt $min_lmwt to $max_lmwt)\n" > local/kws/example/scores
+  for lmwt in $(seq $min_lmwt $max_lmwt) ; do
+    mkdir -p local/kws/example/lmwt_${lmwt}
+    cp ${kws_system}/kws_${lmwt}/results local/kws/example/lmwt_${lmwt}/results
+    cp ${kws_system}/kws_${lmwt}/score.txt local/kws/example/lmwt_${lmwt}/score
+    printf "\nLMWT $lmwt\n" >> local/kws/example/scores
+    cat local/kws/example/lmwt_${lmwt}/score >> local/kws/example/scores
+  done
+
+  cat local/kws/example/scores
+fi
+
 echo "Done"

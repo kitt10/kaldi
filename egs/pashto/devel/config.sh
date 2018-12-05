@@ -15,7 +15,7 @@ export n_jobs=2                # no of parallel jobs
 #export script="train_nn"
 #export script="decode"
 export script="kws"
-export stage_from=0             # first stage being run
+export stage_from=6             # first stage being run
 export stage_upto=100           # last stage being run
 # -----------------------------------------------------------------------------
 
@@ -114,7 +114,7 @@ export decode_data=data/${decode_data_name}
 # -- KWS ----------------------------------------------------------------------
 export kws_dataset=test
 export kws_ref_model_name=nne2e
-export kws_model_name=nne2e
+export kws_model_name=sat
 export kws_data=${data_dir}/${kws_dataset}
 export kws_ref_model=${exp_dir}/${kws_ref_model_name}
 export kws_system=${exp_dir}/${kws_model_name}/d_${kws_dataset}_${data_name}_${lang_name}
