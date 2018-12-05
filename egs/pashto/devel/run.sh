@@ -32,9 +32,6 @@ if [ $cmd = "run.pl" ]; then
     elif [ $script = "kws" ]; then
         local/kws.sh $cfg | \
         tee log/kws_${data_name}_${timestamp}.o
-    elif [ $script = "kws_yenda" ]; then
-        local/kws_yenda/run_kws.sh $cfg | \
-        tee log/kws_yenda_${data_name}_${timestamp}.o
     fi
 elif [ $cmd = "queue.pl" ]; then
     echo "== $0: $(date): RUNNING ON GRID =="
@@ -68,10 +65,5 @@ elif [ $cmd = "queue.pl" ]; then
          -o log/kws_${data_name}_${timestamp}.o \
          -e log/kws_${data_name}_${timestamp}.e \
          -l 'mem_free=8G,ram_free=8G' local/kws.sh $cfg
-    elif [ $script = "kws_yenda" ]; then
-        qsub -cwd \
-         -o log/kws_yenda_${data_name}_${timestamp}.o \
-         -e log/kws_yenda_${data_name}_${timestamp}.e \
-         -l 'mem_free=8G,ram_free=8G' local/kws_yenda/run_kws.sh $cfg
     fi
 fi
