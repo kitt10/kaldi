@@ -11,9 +11,9 @@ cmd=run.pl
 nj_align=4
 data=data/test
 lang=data/lang
-ref_model=exp/sat
-system=exp/nn_e2e/decode_test/
-keywords=local/kws/example/keywords.txt
+ref_model=exp/sat                         # model used for hitlist creation
+system=exp/cnn_e2e/decode_test/           # choose your KWS system here
+keywords=local/kws/example/keywords.txt   # put your keywords in here
 output=data/test/kws/
 min_lmwt=8
 max_lmwt=10
@@ -126,22 +126,26 @@ fi
 if [ $stage -le 6 ]; then
   echo
   echo "== $0: $(date): STAGE 6: SAVING RESULTS =="
+  
+  find $system -maxdepth 2 -name "score.txt" | \
+    xargs -I % sh -c "printf %': '; awk 'FNR == 1' %;" | \
+      sort -rn -k5 | head -n 1 > local/kws/example/RESULTS.kws
 
-  cp ${output}/hitlist local/kws/example/hitlist
-  printf "Scores $(date) (lmwt $min_lmwt to $max_lmwt)\n" > local/kws/example/scores
-  printf "Keywords:\n" >> local/kws/example/scores
-  cat local/kws/example/keywords.txt >> local/kws/example/scores
-  printf "\n" >> local/kws/example/scores
-  for lmwt in $(seq $min_lmwt $max_lmwt) ; do
-    mkdir -p local/kws/example/lmwt_${lmwt}
-    cp ${system}/kws_${lmwt}/results local/kws/example/lmwt_${lmwt}/results
-    cp ${system}/kws_${lmwt}/score.txt local/kws/example/lmwt_${lmwt}/score
-    printf "\nLMWT $lmwt\n" >> local/kws/example/scores
-    cat local/kws/example/lmwt_${lmwt}/score >> local/kws/example/scores
-    cp local/kws/example/scores KWS_RESULTS
-  done
+  find $system -maxdepth 2 -name "score.txt" | \
+    xargs -I % sh -c "printf %': '; awk 'FNR == 2' %;" | \
+      sort -rn -k5 | head -n 1 >> local/kws/example/RESULTS.kws
 
-  cat local/kws/example/scores
+  find $system -maxdepth 2 -name "score.txt" | \
+    xargs -I % sh -c "printf %': '; awk 'FNR == 3' %;" | \
+      sort -rn -k5 | head -n 1 >> local/kws/example/RESULTS.kws
+
+  find $system -maxdepth 2 -name "score.txt" | \
+    xargs -I % sh -c "printf %': '; awk 'FNR == 5' %;" | \
+      sort -rn -k5 | head -n 1 >> local/kws/example/RESULTS.kws
+
+  echo
+  echo "== $0: $(date): Best KWS results: =="
+  cat local/kws/example/RESULTS.kws
 fi
 
-echo "Done"
+echo "Done."
