@@ -125,27 +125,34 @@ fi
 
 if [ $stage -le 6 ]; then
   echo
-  echo "== $0: $(date): STAGE 6: SAVING RESULTS =="
-  
-  find $system -maxdepth 2 -name "score.txt" | \
-    xargs -I % sh -c "printf %': '; awk 'FNR == 1' %;" | \
-      sort -rn -k5 | head -n 1 > local/kws/example/RESULTS.kws
-
-  find $system -maxdepth 2 -name "score.txt" | \
-    xargs -I % sh -c "printf %': '; awk 'FNR == 2' %;" | \
-      sort -rn -k5 | head -n 1 >> local/kws/example/RESULTS.kws
-
-  find $system -maxdepth 2 -name "score.txt" | \
-    xargs -I % sh -c "printf %': '; awk 'FNR == 3' %;" | \
-      sort -rn -k5 | head -n 1 >> local/kws/example/RESULTS.kws
-
-  find $system -maxdepth 2 -name "score.txt" | \
-    xargs -I % sh -c "printf %': '; awk 'FNR == 5' %;" | \
-      sort -rn -k5 | head -n 1 >> local/kws/example/RESULTS.kws
+  echo "== $0: $(date): STAGE 6: RESULTS =="
+    
+  echo
+  echo "== $0: $(date): Keywords: =="
+  cat local/kws/example/keywords.txt
 
   echo
-  echo "== $0: $(date): Best KWS results: =="
-  cat local/kws/example/RESULTS.kws
+  echo "== $0: $(date): KWS Result: =="
+  find $system -name "score.txt" -path "*details*" | \
+    xargs -I % sh -c "printf %': '; head -n 1 %;" | \
+      sort -rn -k5 | head -n 1
+
+  #find $system -name "score.txt" -path "*details*" | \
+  #  xargs -I % sh -c "printf %': '; awk 'FNR == 1' %;" | \
+  #    sort -rn -k5 | head -n 1 > ${system}/RESULTS.kws
+  #
+  #find $system -name "score.txt" -path "*details*" | \
+  #  xargs -I % sh -c "printf %': '; awk 'FNR == 2' %;" | \
+  #    sort -rn -k5 | head -n 1 >> ${system}/RESULTS.kws
+  #
+  #find $system -name "score.txt" -path "*details*" | \
+  #  xargs -I % sh -c "printf %': '; awk 'FNR == 3' %;" | \
+  #    sort -rn -k5 | head -n 1 >> ${system}/RESULTS.kws
+  #
+  #find $system -name "score.txt" -path "*details*" | \
+  #  xargs -I % sh -c "printf %': '; awk 'FNR == 5' %;" | \
+  #    sort -rn -k5 | head -n 1 >> ${system}/RESULTS.kws
 fi
 
-echo "Done."
+echo
+echo "== $0: $(date): DONE. =="

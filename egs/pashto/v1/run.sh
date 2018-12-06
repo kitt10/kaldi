@@ -143,7 +143,7 @@ fi
 if [ $stage -le 13 ]; then
     echo
     echo "== $0: $(date): STAGE 13: TRAINING SAT+FMLLR (TRI3) =="
-    steps/train_sat.sh --cmd $cmd 4200 40000 \
+    steps/train_sat.sh --cmd $cmd 8192 131072 \
                        data/train data/lang exp/tri2_ali exp/tri3
 fi
 
