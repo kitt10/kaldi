@@ -32,6 +32,9 @@ if [ $cmd = "run.pl" ]; then
     elif [ $script = "kws" ]; then
         local/kws.sh $cfg | \
         tee log/kws_${data_name}_${timestamp}.o
+    elif [ $script = "predict" ]; then
+        local/predict.sh $cfg | \
+        tee log/predict_${timestamp}.o
     fi
 elif [ $cmd = "queue.pl" ]; then
     echo "== $0: $(date): RUNNING ON GRID =="
@@ -65,5 +68,10 @@ elif [ $cmd = "queue.pl" ]; then
          -o log/kws_${data_name}_${timestamp}.o \
          -e log/kws_${data_name}_${timestamp}.e \
          -l 'mem_free=8G,ram_free=8G' local/kws.sh $cfg
+    elif [ $script = "predict" ]; then
+        qsub -cwd \
+         -o log/predict_${timestamp}.o \
+         -e log/predict_${timestamp}.e \
+         -l 'mem_free=8G,ram_free=8G' local/predict.sh $cfg
     fi
 fi

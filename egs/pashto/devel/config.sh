@@ -3,7 +3,7 @@
 #
 
 # -- KALDI SYSTEM -------------------------------------------------------------
-export cmd="run.pl"           # [run.pl|queue.pl]
+export cmd="run.pl"             # [run.pl|queue.pl]
 export LC_ALL=C                 # proper data sorting
 # -----------------------------------------------------------------------------
 
@@ -14,8 +14,9 @@ export n_jobs=2                # no of parallel jobs
 #export script="train_gmm"
 #export script="train_nn"
 #export script="decode"
-export script="kws"
-export stage_from=6             # first stage being run
+#export script="kws"
+export script="predict"
+export stage_from=0             # first stage being run
 export stage_upto=100           # last stage being run
 # -----------------------------------------------------------------------------
 
@@ -119,4 +120,10 @@ export kws_data=${data_dir}/${kws_dataset}
 export kws_ref_model=${exp_dir}/${kws_ref_model_name}
 export kws_system=${exp_dir}/${kws_model_name}/d_${kws_dataset}_${data_name}_${lang_name}
 export kws_keywords=local/kws/example/keywords.txt
+# -----------------------------------------------------------------------------
+
+# -- ONLINE PREDICTION ----------------------------------------------------------------------
+export predict_model_dir=predict/model
+export predict_data_dir=predict/data
+export predict_results_dir=predict/results
 # -----------------------------------------------------------------------------
