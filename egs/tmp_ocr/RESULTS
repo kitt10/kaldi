@@ -1,0 +1,2 @@
+%WER 66.71 [ 489 / 733, 271 ins, 19 del, 199 sub ] exp/tri2/decode_test/wer_17_1.0
+%WER 99.73 [ 731 / 733, 0 ins, 624 del, 107 sub ] exp/cnn_e2e/decode_test/wer_12_0.0
