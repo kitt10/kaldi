@@ -158,10 +158,14 @@ if [ $stage -le 3 ]; then
 fi
 
 if [ $stage -le 4 ]; then
+    rm -rf ${nn_dir}/graph
+
     utils/mkgraph.sh --self-loop-scale 1.0 \
       $lang_decode ${nn_dir} ${nn_dir}/graph || exit 1;
 
-    rm -rf ${nn_dir}/decode_test
+    lm_name=$(basename $lang_decode)
+
+    rm -rf ${nn_dir}/decode_test_${lm_name}
 
     frames_per_chunk=$(echo $chunk_width | cut -d, -f1)
     steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
@@ -172,19 +176,7 @@ if [ $stage -le 4 ]; then
       --frames-per-chunk $frames_per_chunk \
       --nj $nj_test --cmd $cmd \
       ${nn_dir}/graph \
-      data/test ${nn_dir}/decode_test || exit 1;
-
-    if $decode_train; then
-        steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
-            --extra-left-context 0 \
-            --extra-right-context 0 \
-            --extra-left-context-initial 0 \
-            --extra-right-context-final 0 \
-            --frames-per-chunk $frames_per_chunk \
-            --nj $nj --cmd $cmd \
-            ${nn_dir}/graph \
-            data/train ${nn_dir}/decode_train || exit 1;
-    fi
+      data/test ${nn_dir}/decode_test_${lm_name} || exit 1;
 
     echo
     echo "Done. Date: $(date). Results:"
@@ -193,6 +185,30 @@ if [ $stage -le 4 ]; then
     printf "% 10s" " ${nn_dir}"
     echo
     echo -n "# WER TEST            "
-    wer=$(cat ${nn_dir}/decode_test/scoring_kaldi/best_wer | awk '{print $2}')
+    wer=$(cat ${nn_dir}/decode_test_${lm_name}/scoring_kaldi/best_wer | awk '{print $2}')
     printf "% 10s" $wer
+
+    if $decode_train; then
+        rm -rf ${nn_dir}/decode_train_${lm_name}
+
+        steps/nnet3/decode.sh --acwt 1.0 --post-decode-acwt 10.0 \
+            --extra-left-context 0 \
+            --extra-right-context 0 \
+            --extra-left-context-initial 0 \
+            --extra-right-context-final 0 \
+            --frames-per-chunk $frames_per_chunk \
+            --nj $nj --cmd $cmd \
+            ${nn_dir}/graph \
+            data/train ${nn_dir}/decode_train_${lm_name}|| exit 1;
+
+        echo
+        echo "Done. Date: $(date). Results:"
+        echo "--------------------------------"
+        echo -n "# Model              "
+        printf "% 10s" " ${nn_dir}"
+        echo
+        echo -n "# WER TRAIN            "
+        wer=$(cat ${nn_dir}/decode_train_${lm_name}/scoring_kaldi/best_wer | awk '{print $2}')
+        printf "% 10s" $wer
+    fi
 fi

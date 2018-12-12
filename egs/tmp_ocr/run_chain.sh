@@ -61,7 +61,7 @@ if [ $stage -le 2 ]; then
     echo
     echo "== $0: $(date): STAGE 2/2: CREATING A CORPUS FILE =="
     rm -rf data/local/corpus.txt
-    cut -d' ' -f2- data/train/text data/test/text > data/local/corpus.txt
+    cut -d' ' -f2- data/train/text > data/local/corpus.txt
 
     echo
     echo "== $0: $(date): STAGE 2/3: CREATING A DICTIONARY =="
