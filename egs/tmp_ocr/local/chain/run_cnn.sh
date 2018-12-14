@@ -14,6 +14,7 @@ lang_train=data/lang_cnn_train
 lang_decode=data/lang
 xent_regularize=0.1
 tdnn_dim=450
+tdnn_dim=450
 chunk_width=340,300,200,100
 #numchunk_per_minibatch=150=32,16/300=16,8/600=8,4/1200=4,2
 numchunk_per_minibatch=150=16,8/300=8,4/600=4,2/1200=2,1  # try if training fails
@@ -160,10 +161,10 @@ fi
 if [ $stage -le 4 ]; then
     rm -rf ${nn_dir}/graph
 
-    utils/mkgraph.sh --self-loop-scale 1.0 \
-      $lang_decode ${nn_dir} ${nn_dir}/graph || exit 1;
-
     lm_name=$(basename $lang_decode)
+
+    utils/mkgraph.sh --self-loop-scale 1.0 \
+      $lang_decode ${nn_dir} ${nn_dir}/graph_${lm_name} || exit 1;
 
     rm -rf ${nn_dir}/decode_test_${lm_name}
 
@@ -175,7 +176,7 @@ if [ $stage -le 4 ]; then
       --extra-right-context-final 0 \
       --frames-per-chunk $frames_per_chunk \
       --nj $nj_test --cmd $cmd \
-      ${nn_dir}/graph \
+      ${nn_dir}/graph_${lm_name} \
       data/test ${nn_dir}/decode_test_${lm_name} || exit 1;
 
     echo
@@ -198,7 +199,7 @@ if [ $stage -le 4 ]; then
             --extra-right-context-final 0 \
             --frames-per-chunk $frames_per_chunk \
             --nj $nj --cmd $cmd \
-            ${nn_dir}/graph \
+            ${nn_dir}/graph_${lm_name} \
             data/train ${nn_dir}/decode_train_${lm_name}|| exit 1;
 
         echo

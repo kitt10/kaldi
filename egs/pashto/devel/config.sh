@@ -20,7 +20,7 @@ export stage_from=0             # first stage being run
 export stage_upto=100           # last stage being run
 # -----------------------------------------------------------------------------
 
-# -- DIRS --------------------------------------------------------------------
+# -- DIRS ---------------------------------------------------------------------
 export data_name=t_20_all
 export data_dir=data/${data_name}
 export test_data_dir=${data_dir}/test
@@ -45,7 +45,7 @@ export af_spks=24               # number of AF speakers [0-370]
 export max_samples=10000        # maximal number of samples from one speaker
 export first_spknb_test=300     # spks with geq nb will be in the test set
 export test_only_set=false      # save only test samples, skip training samples
-export invert_colors=true       # black text on white background? [true|false]
+export invert_colors=false      # black text on white background? [true|false]
 export pad_pixels=4             # number of pixels padded to each image side
 export subsampling_factor=4
 export al_spacing_factor=10     # see get_allowed_lengths.py
@@ -126,4 +126,7 @@ export kws_keywords=local/kws/example/keywords.txt
 export predict_model_dir=predict/model
 export predict_data_dir=predict/data
 export predict_results_dir=predict/results
+export east_model_dir=local/text_localization/east/trained_model
+export predict_work_dir_loc=predict/work_loc
+export predict_work_dir_ocr=predict/work_ocr
 # -----------------------------------------------------------------------------
